@@ -1,5 +1,8 @@
 language: java
 
+before_install:
+  - sudo apt-get install -y ant-optional
+
 script:
   - ant -f base/build.xml build AllBaseTests
   - ant -f build.xml build
