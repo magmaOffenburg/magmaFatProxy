@@ -16,8 +16,11 @@ It should be compatible with older JREs, too, but this is not verified.
 - [Usage](#usage)
 - [Command Line Interface](#command-line-interface)
 - [Concepts](#concepts)
+- [High Level Commands](#high-level-commands)
 - [Implementation](#implementation)
 - [Command Line Parameter](#command-line-parameter)
+- [Authors](#authors)
+- [Contact](#contact)
 
 ## Installation
 
