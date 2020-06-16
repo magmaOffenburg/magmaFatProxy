@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="magmaFatProxy">
+	<property name="buildDir" value="jar/build" />
+
+	<target name="clean">
+		<delete dir="${buildDir}" />
+	</target>
+
+	<target name="compile">
+		<mkdir dir="${buildDir}" />
+		<javac destdir="${buildDir}" includeantruntime="false" source="1.8" target="1.8">
+			<src path="base/src" />
+			<src path="srcCommon" />
+			<src path="srcAgent" />
+			<classpath>
+				<fileset dir="lib">
+					<include name="**/*.jar" />
+				</fileset>
+				<fileset dir="base/lib">
+					<include name="**/*.jar" />
+				</fileset>
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="jar" depends="compile">
+		<jar destfile="jar/magmaFatProxy.jar" basedir="${buildDir}">
+			<manifest>
+				<attribute name="Main-Class" value="magma.fatproxy.MagmaFatProxy" />
+			</manifest>
+			<zipgroupfileset dir="lib/runtime" includes="magmaProxy.jar" />
+			<zipgroupfileset dir="lib/runtime" includes="magmaMonitor.jar" />
+			<zipgroupfileset dir="lib/runtime" includes="kdolib.jar" />
+			<zipgroupfileset dir="base/lib/runtime" includes="commons-math3-3.3.jar" />
+			<zipgroupfileset dir="base/lib/runtime" includes="gson-2.7.jar" />
+			<zipfileset dir="config" includes="behaviors/**" />
+			<zipfileset dir="config" includes="properties/**" />
+		</jar>
+	</target>
+
+	<target name="deploy" depends="jar">
+		<mkdir dir="jar/out/magmaFatProxy" />
+		<copy file="jar/magmaFatProxy.jar" todir="jar/out/magmaFatProxy" />
+		<copy file="scripts/start.sh" todir="jar/out/magmaFatProxy" />
+
+		<zip destfile="jar/magmaFatProxy.zip" basedir="jar/out" />
+
+		<delete dir="jar/out" />
+	</target>
+</project>

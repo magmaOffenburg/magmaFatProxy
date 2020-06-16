@@ -27,8 +27,7 @@ util/excel/~$*.*
 
 test.xml
 /result.properties
-jar/build/
-jar/out/
+jar/
 log/
 *.TMP
 *.java-*
