@@ -41,7 +41,26 @@ public class SimsparkAgentFatProxyServer extends SimsparkAgentProxyServer implem
 	public SimsparkAgentFatProxyServer(SimsparkAgentProxyServerParameter parameterObject)
 	{
 		super(parameterObject);
+	}
 
+	/**
+	 * Factory method to create agent proxy
+	 * @param clientSocket the socket the agent proxy works on
+	 * @return a new instance of agent proxy
+	 */
+	@Override
+	protected synchronized AgentProxy createAgentProxy(Socket clientSocket)
+	{
+		if (monitor == null || !monitor.isConnected()) {
+			startMonitor();
+		}
+		AgentProxy agentProxy = new AgentFatProxy(clientSocket, ssHost, ssPort, showMessages, monitor);
+		agentProxy.start(clientSocket, ssHost, ssPort, showMessages);
+		return agentProxy;
+	}
+
+	private void startMonitor()
+	{
 		try {
 			new MonitorThread().start();
 			Thread.sleep(1000);
@@ -51,19 +70,6 @@ public class SimsparkAgentFatProxyServer extends SimsparkAgentProxyServer implem
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-	}
-
-	/**
-	 * Factory method to create agent proxy
-	 * @param clientSocket the socket the agent proxy works on
-	 * @return a new instance of agent proxy
-	 */
-	@Override
-	protected AgentProxy createAgentProxy(Socket clientSocket)
-	{
-		AgentProxy agentProxy = new AgentFatProxy(clientSocket, ssHost, ssPort, showMessages, monitor);
-		agentProxy.start(clientSocket, ssHost, ssPort, showMessages);
-		return agentProxy;
 	}
 
 	private class MonitorThread extends Thread
@@ -77,6 +83,7 @@ public class SimsparkAgentFatProxyServer extends SimsparkAgentProxyServer implem
 				monitor.addRuntimeListener(SimsparkAgentFatProxyServer.this);
 				monitor.startMonitor();
 			} catch (ConnectionException e) {
+				e.printStackTrace();
 			}
 		}
 	}
