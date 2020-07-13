@@ -1,3 +1,4 @@
+#!/bin/bash
 #*******************************************************************************
 # Copyright 2008 - 2020 Hochschule Offenburg
 #
@@ -15,8 +16,9 @@
 # You should have received a copy of the GNU General Public License
 # along with magmaOffenburg. If not, see <http://www.gnu.org/licenses/>.
 #*******************************************************************************
+
 while [ true ]
 do
-sleep 120s
-killall -9 rcssserver3d
+	sleep 120s
+	killall -9 rcssserver3d
 done

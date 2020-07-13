@@ -1,3 +1,4 @@
+#!/bin/bash
 #*******************************************************************************
 # Copyright 2008 - 2020 Hochschule Offenburg
 #
@@ -15,7 +16,7 @@
 # You should have received a copy of the GNU General Public License
 # along with magmaOffenburg. If not, see <http://www.gnu.org/licenses/>.
 #*******************************************************************************
-#!/bin/bash
+
 sed -i "s/\$agentSyncMode = true/\$agentSyncMode = false/" ~/.simspark/spark.rb
 sudo sed -i "s/\$enableRealTimeMode = false/\$enableRealTimeMode = true/" /usr/local/share/rcssserver3d/rcssserver3d.rb
 
