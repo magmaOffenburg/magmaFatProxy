@@ -30,7 +30,7 @@
 			</manifest>
 			<zipgroupfileset dir="lib/runtime" includes="magmaProxy.jar" />
 			<zipgroupfileset dir="lib/runtime" includes="magmaMonitor.jar" />
-			<zipgroupfileset dir="lib/runtime" includes="kdolib.jar" />
+			<zipgroupfileset dir="lib/runtime" includes="kdoLib.jar" />
 			<zipgroupfileset dir="base/lib/runtime" includes="commons-math3-3.3.jar" />
 			<zipgroupfileset dir="base/lib/runtime" includes="gson-2.7.jar" />
 			<zipfileset dir="config" includes="behaviors/**" />
