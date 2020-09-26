@@ -1,5 +1,7 @@
 # magmaFatProxy
 
+![Build Status](https://github.com/magmaOffenburg/magmaFatProxy/workflows/Build/badge.svg)
+
 Fat Proxy for the [RoboCup 3D Soccer Simulation League](http://wiki.robocup.org/wiki/Soccer_Simulation_League) created by the [magmaOffenburg team](http://robocup.hs-offenburg.de/).
 
 The Fat Proxy is a proxy for client agents, connecting to the
