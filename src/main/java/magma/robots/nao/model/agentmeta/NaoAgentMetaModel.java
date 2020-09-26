@@ -22,8 +22,6 @@ import hso.autonomy.agent.model.agentmeta.impl.BodyPartConfiguration;
 import hso.autonomy.agent.model.agentmeta.impl.HingeJointConfiguration;
 import hso.autonomy.agent.model.agentmeta.impl.SensorConfiguration;
 import hso.autonomy.util.geometry.Pose3D;
-import java.net.URL;
-import java.net.URLClassLoader;
 import java.util.ArrayList;
 import java.util.List;
 import magma.agent.communication.perception.ISimsparkEffectorNames;
