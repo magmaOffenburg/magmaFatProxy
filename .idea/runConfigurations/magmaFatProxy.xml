@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="magmaFatProxy" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="magma.fatproxy.MagmaFatProxy" />
+    <module name="magmaFatProxy" />
+    <option name="PROGRAM_PARAMETERS" value="--proxyport=3120" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

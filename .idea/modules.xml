@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/FatProxy.iml" filepath="$PROJECT_DIR$/FatProxy.iml" />
-      <module fileurl="file://$PROJECT_DIR$/base/base.iml" filepath="$PROJECT_DIR$/base/base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/magmaFatProxy.iml" filepath="$PROJECT_DIR$/magmaFatProxy.iml" />
     </modules>
   </component>
 </project>
