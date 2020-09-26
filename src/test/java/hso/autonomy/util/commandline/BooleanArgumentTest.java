@@ -5,16 +5,16 @@
  *******************************************************************************/
 package hso.autonomy.util.commandline;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class BooleanArgumentTest
 {
 	private BooleanArgument testee;
 
-	@Before
+	@BeforeEach
 	public void setUp()
 	{
 		testee = new BooleanArgument("flag", null);

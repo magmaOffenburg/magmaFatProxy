@@ -5,9 +5,10 @@
  *******************************************************************************/
 package hso.autonomy.util.commandline;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class EnumArgumentTest
 {
@@ -30,10 +31,10 @@ public class EnumArgumentTest
 		assertEquals(arg.parse(""), null);
 	}
 
-	@Test(expected = ArgumentParsingException.class)
+	@Test
 	public void testInvalidValue()
 	{
 		EnumArgument<TestEnum> arg = new EnumArgument<>("test", null, "", TestEnum.class);
-		assertEquals(arg.parse("--test=invalid"), null);
+		assertThrows(ArgumentParsingException.class, () -> { assertEquals(arg.parse("--test=invalid"), null); });
 	}
 }

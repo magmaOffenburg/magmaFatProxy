@@ -17,14 +17,14 @@
  *******************************************************************************/
 package magma.agent.model.worldmodel.impl;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import hso.autonomy.agent.model.worldmodel.IVisibleObject;
 import hso.autonomy.agent.model.worldmodel.impl.VisibleObject;
 import magma.agent.model.worldmodel.IBall;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author Klaus Dorer
@@ -36,7 +36,7 @@ public class BallTest
 
 	private ThisPlayer thisPlayer;
 
-	@Before
+	@BeforeEach
 	public void setUp()
 	{
 		testee = new Ball(0.042f, .94f, Vector3D.ZERO, IBall.COLLISION_DISTANCE, 0.02f);

@@ -13,6 +13,7 @@ import hso.autonomy.agent.model.agentmodel.ISensor;
 import hso.autonomy.util.geometry.Angle;
 import hso.autonomy.util.geometry.IPose3D;
 import org.apache.commons.math3.geometry.euclidean.threed.Rotation;
+import org.apache.commons.math3.geometry.euclidean.threed.RotationConvention;
 import org.apache.commons.math3.geometry.euclidean.threed.RotationOrder;
 
 /**
@@ -98,8 +99,9 @@ public class IMU extends Sensor implements IIMU
 	 */
 	protected void compensateGyroDrift()
 	{
-		double[] angles = originalOrientation.getAngles(RotationOrder.ZYX);
-		orientation = new Rotation(RotationOrder.ZYX, (angles[0] + zOffset.radians()), angles[1], angles[2]);
+		double[] angles = originalOrientation.getAngles(RotationOrder.ZYX, RotationConvention.VECTOR_OPERATOR);
+		orientation = new Rotation(RotationOrder.ZYX, RotationConvention.VECTOR_OPERATOR,
+				(angles[0] + zOffset.radians()), angles[1], angles[2]);
 	}
 
 	@Override

@@ -9,6 +9,7 @@ import java.util.List;
 import org.apache.commons.math3.geometry.euclidean.threed.CardanEulerSingularityException;
 import org.apache.commons.math3.geometry.euclidean.threed.NotARotationMatrixException;
 import org.apache.commons.math3.geometry.euclidean.threed.Rotation;
+import org.apache.commons.math3.geometry.euclidean.threed.RotationConvention;
 import org.apache.commons.math3.geometry.euclidean.threed.RotationOrder;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
@@ -108,7 +109,7 @@ public class Geometry
 	 */
 	public static Rotation createXRotation(double angle)
 	{
-		return new Rotation(Vector3D.PLUS_I, angle);
+		return new Rotation(Vector3D.PLUS_I, angle, RotationConvention.VECTOR_OPERATOR);
 	}
 
 	/**
@@ -119,7 +120,7 @@ public class Geometry
 	 */
 	public static Rotation createYRotation(double angle)
 	{
-		return new Rotation(Vector3D.PLUS_J, angle);
+		return new Rotation(Vector3D.PLUS_J, angle, RotationConvention.VECTOR_OPERATOR);
 	}
 
 	/**
@@ -130,7 +131,7 @@ public class Geometry
 	 */
 	public static Rotation createZRotation(double angle)
 	{
-		return new Rotation(Vector3D.PLUS_K, angle);
+		return new Rotation(Vector3D.PLUS_K, angle, RotationConvention.VECTOR_OPERATOR);
 	}
 
 	/**
@@ -142,7 +143,7 @@ public class Geometry
 	public static Angle getHorizontalAngle(Rotation rotation)
 	{
 		try {
-			double[] angles = rotation.getAngles(RotationOrder.ZXY);
+			double[] angles = rotation.getAngles(RotationOrder.ZXY, RotationConvention.VECTOR_OPERATOR);
 			return Angle.rad(angles[0]);
 		} catch (CardanEulerSingularityException e) {
 			e.printStackTrace();
@@ -233,7 +234,7 @@ public class Geometry
 	{
 		// Process the top view z-normalized orientation
 		double angle = getTopViewZAngle(orientation);
-		return new Rotation(Vector3D.PLUS_K, angle).applyTo(orientation);
+		return new Rotation(Vector3D.PLUS_K, angle, RotationConvention.VECTOR_OPERATOR).applyTo(orientation);
 	}
 
 	/**

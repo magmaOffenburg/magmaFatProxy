@@ -17,11 +17,11 @@
  *******************************************************************************/
 package magma.agent.model.worldmodel;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import magma.common.spark.PlayMode;
 import magma.common.spark.PlaySide;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * Test case for GameState enum

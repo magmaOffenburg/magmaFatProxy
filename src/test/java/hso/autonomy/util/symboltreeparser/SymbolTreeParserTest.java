@@ -5,19 +5,21 @@
  *******************************************************************************/
 package hso.autonomy.util.symboltreeparser;
 
-import junit.framework.TestCase;
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author Simon Raffeiner
  */
-public class SymbolTreeParserTest extends TestCase
+public class SymbolTreeParserTest
 {
 	private SymbolTreeParser testee = null;
 
-	@Override
-	@Before
+	@BeforeEach
 	public void setUp()
 	{
 		testee = new SymbolTreeParser();
@@ -152,14 +154,14 @@ public class SymbolTreeParserTest extends TestCase
 
 		SymbolNode timeNode = (SymbolNode) list.children.get(0);
 		SymbolNode timeSubNode = (SymbolNode) timeNode.children.get(1);
-		assertEquals((String) timeNode.children.get(0), "time");
-		assertEquals((String) timeSubNode.children.get(0), "now");
-		assertEquals((String) timeSubNode.children.get(1), "51.82");
+		assertEquals(timeNode.children.get(0), "time");
+		assertEquals(timeSubNode.children.get(0), "now");
+		assertEquals(timeSubNode.children.get(1), "51.82");
 
 		SymbolNode gameStateNode = (SymbolNode) list.children.get(1);
 		SymbolNode gameStateSubNode = (SymbolNode) gameStateNode.children.get(1);
-		assertEquals((String) gameStateNode.children.get(0), "GS");
-		assertEquals((String) gameStateSubNode.children.get(0), "t");
-		assertEquals((String) gameStateSubNode.children.get(1), "0.00");
+		assertEquals(gameStateNode.children.get(0), "GS");
+		assertEquals(gameStateSubNode.children.get(0), "t");
+		assertEquals(gameStateSubNode.children.get(1), "0.00");
 	}
 }

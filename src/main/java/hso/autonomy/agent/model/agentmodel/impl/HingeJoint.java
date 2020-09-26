@@ -17,6 +17,7 @@ import hso.autonomy.util.misc.FuzzyCompare;
 import hso.autonomy.util.misc.ValueUtil;
 import java.util.Map;
 import org.apache.commons.math3.geometry.euclidean.threed.Rotation;
+import org.apache.commons.math3.geometry.euclidean.threed.RotationConvention;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 
 /**
@@ -243,7 +244,7 @@ public class HingeJoint extends Sensor implements IHingeJoint
 	public Rotation getRotation()
 	{
 		if (rotation == null) {
-			rotation = new Rotation(jointAxis, Math.toRadians(angle));
+			rotation = new Rotation(jointAxis, Math.toRadians(angle), RotationConvention.VECTOR_OPERATOR);
 		}
 		return rotation;
 	}

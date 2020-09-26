@@ -26,6 +26,7 @@ import kdo.util.parameter.IParameterList;
 import magma.agent.decision.behavior.SupportFoot;
 import magma.agent.model.thoughtmodel.IRoboCupThoughtModel;
 import org.apache.commons.math3.geometry.euclidean.threed.Rotation;
+import org.apache.commons.math3.geometry.euclidean.threed.RotationConvention;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 
 /**
@@ -114,9 +115,11 @@ public class IKGetOnLegStepMovement extends IKStepMovementBase
 	public Vector3D getIntendedLeaningVector()
 	{
 		if (supportFoot == SupportFoot.LEFT) {
-			return new Rotation(Vector3D.PLUS_J, Math.toRadians(-3)).applyTo(Vector3D.PLUS_K);
+			return new Rotation(Vector3D.PLUS_J, Math.toRadians(-3), RotationConvention.VECTOR_OPERATOR)
+					.applyTo(Vector3D.PLUS_K);
 		} else {
-			return new Rotation(Vector3D.PLUS_J, Math.toRadians(3)).applyTo(Vector3D.PLUS_K);
+			return new Rotation(Vector3D.PLUS_J, Math.toRadians(3), RotationConvention.VECTOR_OPERATOR)
+					.applyTo(Vector3D.PLUS_K);
 		}
 
 		// return Vector3D.PLUS_K;

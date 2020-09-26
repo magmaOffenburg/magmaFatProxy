@@ -17,9 +17,9 @@
  *******************************************************************************/
 package magma.agent.decision.behavior.complex.walk;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
-import static org.mockito.Matchers.any;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -36,8 +36,8 @@ import magma.agent.model.worldmodel.IPlayer;
 import magma.agent.model.worldmodel.impl.WorldModelBaseTest;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class WalkToPositionTest extends WorldModelBaseTest
 {
@@ -52,7 +52,7 @@ public class WalkToPositionTest extends WorldModelBaseTest
 	private ArrayList<IPlayer> teammatesAtBall;
 
 	@Override
-	@Before
+	@BeforeEach
 	public void setUp()
 	{
 		super.setUp();

@@ -5,16 +5,17 @@
  *******************************************************************************/
 package hso.autonomy.util.commandline;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class StringArgumentTest
 {
 	private StringArgument testee;
 
-	@Before
+	@BeforeEach
 	public void setUp()
 	{
 		testee = new StringArgument("argument", "defaultValue", null);
@@ -58,11 +59,11 @@ public class StringArgumentTest
 		testParse("value1", "--argument=value1", "--argument=value2", "--argument=value3");
 	}
 
-	@Test(expected = ArgumentParsingException.class)
+	@Test
 	public void testParseRequiredArgument()
 	{
 		testee.setRequired(true);
-		testParse("", "");
+		assertThrows(ArgumentParsingException.class, () -> { testParse("", ""); });
 	}
 
 	@Test

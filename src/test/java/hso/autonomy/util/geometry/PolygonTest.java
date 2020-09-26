@@ -5,10 +5,10 @@
  *******************************************************************************/
 package hso.autonomy.util.geometry;
 
-import static junit.framework.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class PolygonTest
 {

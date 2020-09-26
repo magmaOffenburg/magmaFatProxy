@@ -67,6 +67,7 @@ import magma.common.spark.TeamColor;
 import org.apache.commons.math3.geometry.euclidean.threed.Line;
 import org.apache.commons.math3.geometry.euclidean.threed.Plane;
 import org.apache.commons.math3.geometry.euclidean.threed.Rotation;
+import org.apache.commons.math3.geometry.euclidean.threed.RotationConvention;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
 
@@ -572,7 +573,8 @@ public class RoboCupWorldModel extends WorldModel implements IRoboCupWorldModel
 			// If we have a compass sensor in the root body, use it to estimate the
 			// current orientation
 			if (compass != null) {
-				orientationEstimation = new Rotation(Vector3D.PLUS_K, compass.getAngle().radians());
+				orientationEstimation =
+						new Rotation(Vector3D.PLUS_K, compass.getAngle().radians(), RotationConvention.VECTOR_OPERATOR);
 			}
 		}
 
@@ -655,8 +657,10 @@ public class RoboCupWorldModel extends WorldModel implements IRoboCupWorldModel
 			Pose3D thisPlayerPose, Pose3D cameraPose, Vector3D position, float heightAboveGround)
 	{
 		// transform camera to global coordinate system
-		Pose3D rotationVision = new Pose3D(Vector3D.ZERO, new Rotation(Vector3D.PLUS_K, Math.PI / 2));
-		Pose3D rotationTorso = new Pose3D(Vector3D.ZERO, new Rotation(Vector3D.PLUS_K, -Math.PI / 2));
+		Pose3D rotationVision = new Pose3D(
+				Vector3D.ZERO, new Rotation(Vector3D.PLUS_K, Math.PI / 2, RotationConvention.VECTOR_OPERATOR));
+		Pose3D rotationTorso = new Pose3D(
+				Vector3D.ZERO, new Rotation(Vector3D.PLUS_K, -Math.PI / 2, RotationConvention.VECTOR_OPERATOR));
 		Pose3D globalPose = thisPlayerPose.applyTo(rotationTorso).applyTo(cameraPose).applyTo(rotationVision);
 
 		// intersect ray to ball with field plane

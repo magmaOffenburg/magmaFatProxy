@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.Duration;
 import org.apache.commons.math3.geometry.euclidean.threed.Rotation;
+import org.apache.commons.math3.geometry.euclidean.threed.RotationConvention;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 
 public class GsonUtil
@@ -52,7 +53,8 @@ public class GsonUtil
 								Vector3D axis = context.deserialize(src.getAsJsonObject().get("axis"), Vector3D.class);
 								if (axis != null) {
 									double angle = src.getAsJsonObject().getAsJsonPrimitive("angle").getAsDouble();
-									return new Rotation(axis, Math.toRadians(angle));
+									return new Rotation(
+											axis, Math.toRadians(angle), RotationConvention.VECTOR_OPERATOR);
 								}
 								JsonObject gyro = src.getAsJsonObject();
 								return new Rotation(gyro.get("q0").getAsDouble(), gyro.get("q1").getAsDouble(),

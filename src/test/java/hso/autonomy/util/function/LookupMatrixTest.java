@@ -5,12 +5,12 @@
  *******************************************************************************/
 package hso.autonomy.util.function;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.FileNotFoundException;
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  *
@@ -23,7 +23,7 @@ public class LookupMatrixTest
 	/**
 	 * @throws java.lang.Exception
 	 */
-	@Before
+	@BeforeEach
 	public void setUp() throws Exception
 	{
 		float[][] matrix = {{0, 1}, {2, 3}};
@@ -73,7 +73,7 @@ public class LookupMatrixTest
 	// }
 
 	@Test
-	@Ignore
+	@Disabled
 	public void testRuntime() throws FileNotFoundException
 	{
 		testee = new LookupMatrix("motorMappings/JointToMotorLookupFootM2.csv");

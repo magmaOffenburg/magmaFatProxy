@@ -5,9 +5,9 @@
  *******************************************************************************/
 package hso.autonomy.agent.model.agentmodel.impl;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotSame;
-import static org.junit.Assert.assertSame;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
+import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -28,8 +28,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  *
@@ -39,7 +39,7 @@ public class BodyModelTest
 {
 	private BodyModel testee;
 
-	@Before
+	@BeforeEach
 	public void setUp() throws Exception
 	{
 		AgentMetaModel metaModel2 = new AgentMetaModel("name", null, new Pose3D(), 0) {
@@ -135,7 +135,7 @@ public class BodyModelTest
 
 		testee.updateFromPerception(perception);
 
-		HingeJoint hingeJoint = (HingeJoint) testee.getJoint("joint1");
+		HingeJoint hingeJoint = testee.getJoint("joint1");
 		assertEquals(20.0f, hingeJoint.getAngle(), 0.0001);
 		assertEquals(0.0f, hingeJoint.getNextAxisSpeed(), 0.0001);
 		// TODO switch these three lines on once the miraculous factor 2 in
@@ -177,11 +177,11 @@ public class BodyModelTest
 	{
 		BodyModel copy = new BodyModel(testee);
 
-		HingeJoint hj1 = (HingeJoint) copy.getJoint("joint1");
+		HingeJoint hj1 = copy.getJoint("joint1");
 		hj1.performAxisSpeed(3.0f);
 		testee.updateJointsSpeed(copy);
 
-		HingeJoint hj1Source = (HingeJoint) testee.getJoint("joint1");
+		HingeJoint hj1Source = testee.getJoint("joint1");
 		assertEquals(3.0f, hj1Source.getNextAxisSpeed(), 0.00001);
 	}
 }

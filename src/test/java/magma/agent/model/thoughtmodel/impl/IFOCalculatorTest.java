@@ -17,7 +17,7 @@
  *******************************************************************************/
 package magma.agent.model.thoughtmodel.impl;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
@@ -25,8 +25,8 @@ import java.util.List;
 import magma.agent.model.worldmodel.IPlayer;
 import magma.agent.model.worldmodel.impl.WorldModelBaseTest;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * Test for the {@link IFOCalculator} class
@@ -40,7 +40,7 @@ public class IFOCalculatorTest extends WorldModelBaseTest
 	private List<IPlayer> sourceList;
 
 	@Override
-	@Before
+	@BeforeEach
 	public void setUp()
 	{
 		super.setUp();

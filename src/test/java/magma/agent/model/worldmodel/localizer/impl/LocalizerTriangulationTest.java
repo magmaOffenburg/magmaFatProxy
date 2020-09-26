@@ -18,17 +18,17 @@
 package magma.agent.model.worldmodel.localizer.impl;
 
 import static java.lang.Math.toRadians;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-import static org.mockito.Matchers.any;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.when;
 
 import hso.autonomy.agent.model.worldmodel.localizer.impl.LocalizerTriangulation;
 import hso.autonomy.util.geometry.Pose3D;
 import hso.autonomy.util.misc.FuzzyCompare;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * Unit test for {@link LocalizerTriangulation}
@@ -38,7 +38,7 @@ import org.junit.Test;
 public class LocalizerTriangulationTest extends LocalizerBaseTest
 {
 	@Override
-	@Before
+	@BeforeEach
 	public void setUp()
 	{
 		super.setUp();

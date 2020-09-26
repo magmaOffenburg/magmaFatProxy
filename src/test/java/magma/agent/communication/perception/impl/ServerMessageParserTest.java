@@ -17,9 +17,9 @@
  *******************************************************************************/
 package magma.agent.communication.perception.impl;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import hso.autonomy.agent.communication.perception.IPerceptor;
 import hso.autonomy.agent.communication.perception.ITimerPerceptor;
@@ -33,8 +33,8 @@ import java.util.Map;
 import magma.agent.communication.perception.IGameStatePerceptor;
 import magma.agent.communication.perception.IHearPerceptor;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author Simon Raffeiner
@@ -43,7 +43,7 @@ public class ServerMessageParserTest
 {
 	private ServerMessageParser testee;
 
-	@Before
+	@BeforeEach
 	public void setUp()
 	{
 		testee = new ServerMessageParser();
@@ -157,24 +157,24 @@ public class ServerMessageParserTest
 		IVisibleObjectPerceptor ball = (IVisibleObjectPerceptor) map.get("B");
 		PlayerPos player1 = (PlayerPos) map.get("PRoboLog1");
 
-		assertEquals("", 19.11, flag1.getDistance(), 0.0001);
-		assertEquals("", 111.69, flag1.getHorizontalAngleDeg(), 0.0001);
-		assertEquals("", -9.57, flag1.getLatitudeAngleDeg(), 0.0001);
-		assertEquals("", 9.88, goal2.getDistance(), 0.0001);
-		assertEquals("", 139.29, goal2.getHorizontalAngleDeg(), 0.0001);
-		assertEquals("", -21.07, goal2.getLatitudeAngleDeg(), 0.0001);
-		assertEquals("", 18.34, ball.getDistance(), 0.0001);
-		assertEquals("", 4.66, ball.getHorizontalAngleDeg(), 0.0001);
-		assertEquals("", -9.9, ball.getLatitudeAngleDeg(), 0.0001);
-		assertEquals("", 37.5, player1.getDistance(), 0.0001);
-		assertEquals("", 16.15, player1.getHorizontalAngleDeg(), 0.0001);
-		assertEquals("", 0, player1.getLatitudeAngleDeg(), 0.0001);
-		assertEquals("", "RoboLog", player1.getTeamname());
-		assertEquals("", 1, player1.getId());
+		assertEquals(19.11, flag1.getDistance(), 0.0001);
+		assertEquals(111.69, flag1.getHorizontalAngleDeg(), 0.0001);
+		assertEquals(-9.57, flag1.getLatitudeAngleDeg(), 0.0001);
+		assertEquals(9.88, goal2.getDistance(), 0.0001);
+		assertEquals(139.29, goal2.getHorizontalAngleDeg(), 0.0001);
+		assertEquals(-21.07, goal2.getLatitudeAngleDeg(), 0.0001);
+		assertEquals(18.34, ball.getDistance(), 0.0001);
+		assertEquals(4.66, ball.getHorizontalAngleDeg(), 0.0001);
+		assertEquals(-9.9, ball.getLatitudeAngleDeg(), 0.0001);
+		assertEquals(37.5, player1.getDistance(), 0.0001);
+		assertEquals(16.15, player1.getHorizontalAngleDeg(), 0.0001);
+		assertEquals(0, player1.getLatitudeAngleDeg(), 0.0001);
+		assertEquals("RoboLog", player1.getTeamname());
+		assertEquals(1, player1.getId());
 
 		PlayerPos player2 = (PlayerPos) map.get("PRoboLog2");
 		;
-		assertEquals("", 2, player2.getId());
+		assertEquals(2, player2.getId());
 		assertEquals(37.5, player2.getDistance(), 0.001);
 	}
 

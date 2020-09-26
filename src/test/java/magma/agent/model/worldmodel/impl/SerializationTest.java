@@ -17,7 +17,7 @@
  *******************************************************************************/
 package magma.agent.model.worldmodel.impl;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import hso.autonomy.agent.model.worldmodel.IWorldModel;
 import hso.autonomy.util.file.SerializationUtil;
@@ -26,7 +26,7 @@ import magma.agent.model.worldmeta.impl.RCServerMetaModelV63;
 import magma.agent.model.worldmodel.IBall;
 import magma.robots.nao.model.agentmeta.NaoAgentMetaModel;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * Tests for Serialization of world model

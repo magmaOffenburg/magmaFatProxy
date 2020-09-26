@@ -23,6 +23,7 @@ import hso.autonomy.util.misc.ValueUtil;
 import java.io.Serializable;
 import org.apache.commons.math3.geometry.euclidean.threed.CardanEulerSingularityException;
 import org.apache.commons.math3.geometry.euclidean.threed.Rotation;
+import org.apache.commons.math3.geometry.euclidean.threed.RotationConvention;
 import org.apache.commons.math3.geometry.euclidean.threed.RotationOrder;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 
@@ -69,9 +70,12 @@ public class BalancingEngine implements Serializable
 
 		// Create torso target orientation (also describing the plane to adjust
 		// the feet)
-		Rotation rotXAdjustment = new Rotation(Vector3D.PLUS_I, Math.toRadians(footXAdjustment));
-		Rotation rotYAdjustment = new Rotation(Vector3D.PLUS_J, Math.toRadians(footYAdjustment));
-		Rotation rotYFull = new Rotation(Vector3D.PLUS_J, Math.toRadians(yDifferenceAngle));
+		Rotation rotXAdjustment =
+				new Rotation(Vector3D.PLUS_I, Math.toRadians(footXAdjustment), RotationConvention.VECTOR_OPERATOR);
+		Rotation rotYAdjustment =
+				new Rotation(Vector3D.PLUS_J, Math.toRadians(footYAdjustment), RotationConvention.VECTOR_OPERATOR);
+		Rotation rotYFull =
+				new Rotation(Vector3D.PLUS_J, Math.toRadians(yDifferenceAngle), RotationConvention.VECTOR_OPERATOR);
 		Rotation torsoTargetRotation = topViewOrientation.applyTo(
 				rotYFull.applyTo(rotXAdjustment).applyTo(rotYFull.applyInverseTo(rotYAdjustment)));
 
@@ -90,8 +94,8 @@ public class BalancingEngine implements Serializable
 
 		for (int i = 0; i < poses.length; i++) {
 			// ========== ANGLES ========== //
-			adjustedLimbRotation = new Rotation(
-					RotationOrder.XYZ, -1 * Math.toRadians(poses[i].xAngle), -1 * Math.toRadians(poses[i].yAngle), 0)
+			adjustedLimbRotation = new Rotation(RotationOrder.XYZ, RotationConvention.VECTOR_OPERATOR,
+					-1 * Math.toRadians(poses[i].xAngle), -1 * Math.toRadians(poses[i].yAngle), 0)
 										   .applyTo(torsoTargetRotation)
 										   .revert();
 			angles = getXYZRotations(adjustedLimbRotation);
@@ -116,7 +120,7 @@ public class BalancingEngine implements Serializable
 	{
 		try {
 			double[] angles;
-			angles = orientation.getAngles(RotationOrder.XYZ);
+			angles = orientation.getAngles(RotationOrder.XYZ, RotationConvention.VECTOR_OPERATOR);
 			angles[0] = Math.toDegrees(angles[0]);
 			angles[1] = Math.toDegrees(angles[1]);
 			angles[2] = Math.toDegrees(angles[2]);

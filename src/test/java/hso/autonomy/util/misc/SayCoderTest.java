@@ -5,11 +5,11 @@
  *******************************************************************************/
 package hso.autonomy.util.misc;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  *

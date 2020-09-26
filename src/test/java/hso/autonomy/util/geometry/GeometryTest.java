@@ -5,13 +5,14 @@
  *******************************************************************************/
 package hso.autonomy.util.geometry;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
 import org.apache.commons.math3.geometry.euclidean.threed.Rotation;
+import org.apache.commons.math3.geometry.euclidean.threed.RotationConvention;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author Klaus Dorer
@@ -121,13 +122,13 @@ public class GeometryTest
 	public void testGetAverageRotation() throws Exception
 	{
 		ArrayList<Rotation> rotations = new ArrayList<>();
-		Rotation targetRot = new Rotation(Vector3D.PLUS_K, Math.toRadians(90));
+		Rotation targetRot = new Rotation(Vector3D.PLUS_K, Math.toRadians(90), RotationConvention.VECTOR_OPERATOR);
 
-		rotations.add(new Rotation(Vector3D.PLUS_K, Math.toRadians(89)));
-		rotations.add(new Rotation(Vector3D.PLUS_K, Math.toRadians(91)));
-		rotations.add(new Rotation(Vector3D.PLUS_K, Math.toRadians(90)));
-		rotations.add(new Rotation(Vector3D.PLUS_K, Math.toRadians(92)));
-		rotations.add(new Rotation(Vector3D.PLUS_K, Math.toRadians(88)));
+		rotations.add(new Rotation(Vector3D.PLUS_K, Math.toRadians(89), RotationConvention.VECTOR_OPERATOR));
+		rotations.add(new Rotation(Vector3D.PLUS_K, Math.toRadians(91), RotationConvention.VECTOR_OPERATOR));
+		rotations.add(new Rotation(Vector3D.PLUS_K, Math.toRadians(90), RotationConvention.VECTOR_OPERATOR));
+		rotations.add(new Rotation(Vector3D.PLUS_K, Math.toRadians(92), RotationConvention.VECTOR_OPERATOR));
+		rotations.add(new Rotation(Vector3D.PLUS_K, Math.toRadians(88), RotationConvention.VECTOR_OPERATOR));
 
 		Rotation avgRot = Geometry.getAverageRotation(rotations);
 
@@ -138,7 +139,7 @@ public class GeometryTest
 	public void testGetLocalHorizontalSpeed()
 	{
 		double angle = Angle.deg(30).radians();
-		Rotation orientation = new Rotation(Vector3D.PLUS_K, angle);
+		Rotation orientation = new Rotation(Vector3D.PLUS_K, angle, RotationConvention.VECTOR_OPERATOR);
 		Vector3D speed = new Vector3D(1, 0, 0.5);
 		Vector2D result = Geometry.getLocalHorizontalSpeed(orientation, speed);
 		assertEquals(Math.cos(angle), result.getX(), 0.0001f);

@@ -5,18 +5,18 @@
  *******************************************************************************/
 package hso.autonomy.agent.model.thoughtmodel.impl;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import hso.autonomy.agent.model.thoughtmodel.IThoughtModel;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class ConsecutiveTruthValueTest
 {
 	private ConsecutiveTruthValue testee;
 
-	@Before
+	@BeforeEach
 	public void setUp() throws Exception
 	{
 		testee = new WrapperCTV(1, 3);
@@ -28,7 +28,7 @@ public class ConsecutiveTruthValueTest
 		float time = 0.0f;
 		assertFalse(testee.isValid());
 		testee.setValidity(true, time++);
-		assertTrue("Did not believe first perception", testee.isValid());
+		assertTrue(testee.isValid(), "Did not believe first perception");
 
 		testee.setValidity(false, time++);
 		testee.setValidity(false, time++);

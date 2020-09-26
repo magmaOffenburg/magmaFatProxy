@@ -17,10 +17,10 @@
  *******************************************************************************/
 package magma.agent.decision.behavior.movement;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author kdorer
@@ -35,7 +35,7 @@ public class MovementPhaseTest
 	/**
 	 * @throws java.lang.Exception
 	 */
-	@Before
+	@BeforeEach
 	public void setUp() throws Exception
 	{
 		previous = new MovementPhase("previous", 10).add("J1", 10);

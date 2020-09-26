@@ -17,7 +17,7 @@
  *******************************************************************************/
 package magma.agent.model.worldmodel.impl;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import hso.autonomy.util.geometry.Angle;
 import hso.autonomy.util.geometry.Geometry;
@@ -26,8 +26,8 @@ import java.util.Map;
 import magma.agent.IMagmaConstants;
 import org.apache.commons.math3.geometry.euclidean.threed.Rotation;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author Klaus Dorer, korak
@@ -43,7 +43,7 @@ public class PlayerTest
 
 	private Player testee;
 
-	@Before
+	@BeforeEach
 	public void setUp() throws Exception
 	{
 		testee = new Player(0, "testTeam", true, 0.02f);

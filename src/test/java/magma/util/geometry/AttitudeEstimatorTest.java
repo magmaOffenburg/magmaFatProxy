@@ -17,12 +17,12 @@
  *******************************************************************************/
 package magma.util.geometry;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author kdorer
@@ -39,7 +39,7 @@ public class AttitudeEstimatorTest
 	/**
 	 * @throws java.lang.Exception
 	 */
-	@Before
+	@BeforeEach
 	public void setUp() throws Exception
 	{
 		// Create an attitude estimator
@@ -589,7 +589,7 @@ public class AttitudeEstimatorTest
 
 	// Test: Test the execution time of the magnitude method
 	@Test
-	@Ignore
+	@Disabled
 	public void testSpeed()
 	{
 		// Set up the estimator
@@ -601,7 +601,7 @@ public class AttitudeEstimatorTest
 
 	// Test: Test the execution time of the fused yaw method
 	@Test
-	@Ignore
+	@Disabled
 	public void testSpeedFusedYaw()
 	{
 		// Set up the estimator
@@ -613,7 +613,7 @@ public class AttitudeEstimatorTest
 
 	// Test: Test the execution time of the ZYX yaw method
 	@Test
-	@Ignore
+	@Disabled
 	public void testSpeedZYXYaw()
 	{
 		// Set up the estimator

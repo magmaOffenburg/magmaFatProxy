@@ -17,7 +17,7 @@
  *******************************************************************************/
 package magma.agent.model.agentmodel.impl;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import hso.autonomy.agent.model.agentmeta.impl.HingeJointConfiguration;
 import hso.autonomy.agent.model.agentmodel.IAgentModel;
@@ -26,8 +26,8 @@ import hso.autonomy.agent.model.agentmodel.impl.HingeJoint;
 import hso.autonomy.util.file.SerializationUtil;
 import magma.robots.nao.model.agentmeta.NaoAgentMetaModel;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * Tests for Serialization of agent model
@@ -37,7 +37,7 @@ public class SerializationTest
 {
 	private HingeJoint testee1;
 
-	@Before
+	@BeforeEach
 	public void setUp() throws Exception
 	{
 		testee1 = new HingeJoint(

@@ -38,6 +38,7 @@ import magma.agent.decision.behavior.ikMovement.walk.IKFinalBallStepMovement;
 import magma.agent.decision.behavior.ikMovement.walk.IKGetOnLegStepMovement;
 import magma.agent.model.thoughtmodel.IRoboCupThoughtModel;
 import org.apache.commons.math3.geometry.euclidean.threed.Rotation;
+import org.apache.commons.math3.geometry.euclidean.threed.RotationConvention;
 import org.apache.commons.math3.geometry.euclidean.threed.RotationOrder;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
@@ -356,7 +357,8 @@ public class IKKickBehavior extends IKMovementBehaviorBase implements IKick
 				new Pose2D(kickParams.getPosY(), -kickParams.getPosX()),
 				new Pose6D(stabilizeParams.supportFootStabilizationPosition),
 				new Pose6D(stabilizeParams.freeFootTargetPosition, stabilizeParams.freeFootTargetAngles),
-				new Rotation(RotationOrder.XYZ, Math.toRadians(stabilizeParams.intendedTargetLeaningForwards),
+				new Rotation(RotationOrder.XYZ, RotationConvention.VECTOR_OPERATOR,
+						Math.toRadians(stabilizeParams.intendedTargetLeaningForwards),
 						Math.toRadians(stabilizeParams.intendedTargetLeaningSidewards), 0)
 						.applyTo(Vector3D.PLUS_K),
 				new Pose2D(kickParams.get(Param.RUN_TO_X), -kickParams.get(Param.RUN_TO_Y)),
@@ -376,7 +378,8 @@ public class IKKickBehavior extends IKMovementBehaviorBase implements IKick
 				new Pose2D(kickParams.getPosY(), kickParams.getPosX()),
 				new Pose6D(stabilizeParams.supportFootStabilizationPosition),
 				new Pose6D(stabilizeParams.freeFootTargetPosition, stabilizeParams.freeFootTargetAngles),
-				new Rotation(RotationOrder.XYZ, Math.toRadians(stabilizeParams.intendedTargetLeaningForwards),
+				new Rotation(RotationOrder.XYZ, RotationConvention.VECTOR_OPERATOR,
+						Math.toRadians(stabilizeParams.intendedTargetLeaningForwards),
 						Math.toRadians(stabilizeParams.intendedTargetLeaningSidewards), 0)
 						.applyTo(Vector3D.PLUS_K),
 				new Pose2D(kickParams.get(Param.RUN_TO_X), kickParams.get(Param.RUN_TO_Y)),

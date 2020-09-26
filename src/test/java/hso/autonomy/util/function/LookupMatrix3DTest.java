@@ -5,11 +5,11 @@
  *******************************************************************************/
 package hso.autonomy.util.function;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  *
@@ -22,7 +22,7 @@ public class LookupMatrix3DTest
 	/**
 	 * @throws java.lang.Exception
 	 */
-	@Before
+	@BeforeEach
 	public void setUp() throws Exception
 	{
 		float[][][] matrix = {{{0, 1}, {2, 3}}, {{4, 5}, {6, 7}}};
@@ -48,7 +48,7 @@ public class LookupMatrix3DTest
 	}
 
 	@Test
-	@Ignore
+	@Disabled
 	public void testReadFromFile()
 	{
 		// testee = new

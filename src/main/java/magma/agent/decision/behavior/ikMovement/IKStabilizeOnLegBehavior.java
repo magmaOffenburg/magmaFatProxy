@@ -29,6 +29,7 @@ import magma.agent.decision.behavior.ikMovement.walk.IKCoMShiftingStepMovement;
 import magma.agent.decision.behavior.ikMovement.walk.IKGetOnLegStepMovement;
 import magma.agent.model.thoughtmodel.IRoboCupThoughtModel;
 import org.apache.commons.math3.geometry.euclidean.threed.Rotation;
+import org.apache.commons.math3.geometry.euclidean.threed.RotationConvention;
 import org.apache.commons.math3.geometry.euclidean.threed.RotationOrder;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 
@@ -184,7 +185,8 @@ public class IKStabilizeOnLegBehavior extends IKMovementBehaviorBase
 		return new IKStabilizeOnLegBehavior(IBehaviorConstants.STABILIZE.RIGHT, thoughtModel, SupportFoot.LEFT,
 				new Pose6D(params.supportFootStabilizationPosition),
 				new Pose6D(params.freeFootTargetPosition, params.freeFootTargetAngles),
-				new Rotation(RotationOrder.XYZ, Math.toRadians(params.intendedTargetLeaningForwards),
+				new Rotation(RotationOrder.XYZ, RotationConvention.VECTOR_OPERATOR,
+						Math.toRadians(params.intendedTargetLeaningForwards),
 						Math.toRadians(params.intendedTargetLeaningSidewards), 0)
 						.applyTo(Vector3D.PLUS_K),
 				parameterMap.get(IBehaviorConstants.STABILIZE.BASE_NAME));
@@ -198,7 +200,8 @@ public class IKStabilizeOnLegBehavior extends IKMovementBehaviorBase
 		return new IKStabilizeOnLegBehavior(IBehaviorConstants.STABILIZE.LEFT, thoughtModel, SupportFoot.RIGHT,
 				new Pose6D(params.supportFootStabilizationPosition),
 				new Pose6D(params.freeFootTargetPosition, params.freeFootTargetAngles),
-				new Rotation(RotationOrder.XYZ, Math.toRadians(params.intendedTargetLeaningForwards),
+				new Rotation(RotationOrder.XYZ, RotationConvention.VECTOR_OPERATOR,
+						Math.toRadians(params.intendedTargetLeaningForwards),
 						Math.toRadians(params.intendedTargetLeaningSidewards), 0)
 						.applyTo(Vector3D.PLUS_K),
 				parameterMap.get(IBehaviorConstants.STABILIZE.BASE_NAME));

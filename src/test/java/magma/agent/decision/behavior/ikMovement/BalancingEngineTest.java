@@ -17,16 +17,17 @@
  *******************************************************************************/
 package magma.agent.decision.behavior.ikMovement;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import hso.autonomy.util.geometry.Geometry;
 import hso.autonomy.util.geometry.Pose6D;
 import org.apache.commons.math3.geometry.euclidean.threed.Rotation;
+import org.apache.commons.math3.geometry.euclidean.threed.RotationConvention;
 import org.apache.commons.math3.geometry.euclidean.threed.RotationOrder;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author Stefan Glaser
@@ -51,7 +52,7 @@ public class BalancingEngineTest
 
 	float maxAbsCoronalAdjustment;
 
-	@Before
+	@BeforeEach
 	public void setUp()
 	{
 		poseLeft = new Pose6D(-0.12, 0.01, -0.67, 0, 0, 15);
@@ -79,7 +80,8 @@ public class BalancingEngineTest
 	@Test
 	public void testEngineStaticWithIntendedLeaning()
 	{
-		Rotation intendedLeaningRotation = new Rotation(Vector3D.PLUS_I, Math.toRadians(10));
+		Rotation intendedLeaningRotation =
+				new Rotation(Vector3D.PLUS_I, Math.toRadians(10), RotationConvention.VECTOR_OPERATOR);
 		intendedLeaning = intendedLeaningRotation.applyTo(Vector3D.PLUS_K);
 
 		Vector3D expectedLeftPos = com.add(intendedLeaningRotation.applyInverseTo(poseLeft.getPosition()));
@@ -92,7 +94,7 @@ public class BalancingEngineTest
 	}
 
 	@Test
-	@Ignore
+	@Disabled
 	public void testEngineDynamicNoIntendedLeaning()
 	{
 		intendedLeaning = Vector3D.PLUS_K;
@@ -104,10 +106,12 @@ public class BalancingEngineTest
 		int xDeg = 10;
 		int yDeg = -5;
 
-		Rotation zFreeOrientation = new Rotation(RotationOrder.ZXY, 0, Math.toRadians(xDeg), Math.toRadians(yDeg));
+		Rotation zFreeOrientation = new Rotation(
+				RotationOrder.ZXY, RotationConvention.VECTOR_OPERATOR, 0, Math.toRadians(xDeg), Math.toRadians(yDeg));
 
 		Rotation adjustmentRotation = zFreeOrientation.applyTo(new Rotation(RotationOrder.YXZ,
-				Math.toRadians(-yDeg * saggitalAdjustmentFactor), Math.toRadians(-xDeg * coronalAdjustmentFactor), 0));
+				RotationConvention.VECTOR_OPERATOR, Math.toRadians(-yDeg * saggitalAdjustmentFactor),
+				Math.toRadians(-xDeg * coronalAdjustmentFactor), 0));
 
 		Vector3D expectedLeftPos = com.add(adjustmentRotation.applyInverseTo(poseLeft.getPosition()));
 		Vector3D expectedRightPos = com.add(adjustmentRotation.applyInverseTo(poseRight.getPosition()));
@@ -133,10 +137,11 @@ public class BalancingEngineTest
 	}
 
 	@Test
-	@Ignore
+	@Disabled
 	public void testEngineDynamicWithIntendedLeaning()
 	{
-		Rotation intendedLeaningRotation = new Rotation(Vector3D.PLUS_I, Math.toRadians(10));
+		Rotation intendedLeaningRotation =
+				new Rotation(Vector3D.PLUS_I, Math.toRadians(10), RotationConvention.VECTOR_OPERATOR);
 		intendedLeaning = intendedLeaningRotation.applyTo(Vector3D.PLUS_K);
 
 		// int range = 66;
@@ -146,15 +151,12 @@ public class BalancingEngineTest
 		int xDeg = 10;
 		int yDeg = -5;
 
-		Rotation zFreeOrientation = new Rotation(RotationOrder.ZXY, //
-				0,													//
-				Math.toRadians(xDeg),								//
-				Math.toRadians(yDeg));
+		Rotation zFreeOrientation = new Rotation(
+				RotationOrder.ZXY, RotationConvention.VECTOR_OPERATOR, 0, Math.toRadians(xDeg), Math.toRadians(yDeg));
 
-		Rotation adjustmentRotation = zFreeOrientation.applyTo(new Rotation(RotationOrder.YXZ, //
-				Math.toRadians(-yDeg * saggitalAdjustmentFactor),							   //
-				Math.toRadians(-(10 - xDeg) * coronalAdjustmentFactor),						   //
-				0));
+		Rotation adjustmentRotation = zFreeOrientation.applyTo(new Rotation(RotationOrder.YXZ,
+				RotationConvention.VECTOR_OPERATOR, Math.toRadians(-yDeg * saggitalAdjustmentFactor),
+				Math.toRadians(-(10 - xDeg) * coronalAdjustmentFactor), 0));
 
 		Vector3D expectedLeftPos = com.add(adjustmentRotation.applyInverseTo(poseLeft.getPosition()));
 		Vector3D expectedRightPos = com.add(adjustmentRotation.applyInverseTo(poseRight.getPosition()));
@@ -231,8 +233,8 @@ public class BalancingEngineTest
 		Rotation orientationEstimation;
 
 		for (int zDdeg = -zRange; zDdeg <= zRange; zDdeg += zStep) {
-			orientationEstimation =
-					new Rotation(RotationOrder.ZXY, Math.toRadians(zDdeg), Math.toRadians(xDeg), Math.toRadians(yDeg));
+			orientationEstimation = new Rotation(RotationOrder.ZXY, RotationConvention.VECTOR_OPERATOR,
+					Math.toRadians(zDdeg), Math.toRadians(xDeg), Math.toRadians(yDeg));
 
 			resultingPoses = BalancingEngine.adjustTargetPoses(orientationEstimation, params, poseLeft, poseRight);
 
@@ -253,32 +255,33 @@ public class BalancingEngineTest
 
 	protected void comparePoses(Pose6D pose1, Pose6D pose2)
 	{
-		assertEquals("BalancingEngine x", pose1.x, pose2.x, 0.00001);
-		assertEquals("BalancingEngine y", pose1.y, pose2.y, 0.00001);
-		assertEquals("BalancingEngine z", pose1.z, pose2.z, 0.00001);
-		assertEquals("BalancingEngine xAngle", pose1.xAngle, pose2.xAngle, 0.00001);
-		assertEquals("BalancingEngine yAngle", pose1.yAngle, pose2.yAngle, 0.00001);
-		assertEquals("BalancingEngine zAngle", pose1.zAngle, pose2.zAngle, 0.00001);
+		assertEquals(pose1.x, pose2.x, 0.00001, "BalancingEngine x");
+		assertEquals(pose1.y, pose2.y, 0.00001, "BalancingEngine y");
+		assertEquals(pose1.z, pose2.z, 0.00001, "BalancingEngine z");
+		assertEquals(pose1.xAngle, pose2.xAngle, 0.00001, "BalancingEngine xAngle");
+		assertEquals(pose1.yAngle, pose2.yAngle, 0.00001, "BalancingEngine yAngle");
+		assertEquals(pose1.zAngle, pose2.zAngle, 0.00001, "BalancingEngine zAngle");
 	}
 
 	@Test
-	@Ignore
+	@Disabled
 	public void testRotations()
 	{
 		double xAngle = Math.toRadians(10);
 		double yAngle = Math.toRadians(20);
 		double zAngle = Math.toRadians(0);
 
-		Rotation torsoTarget = new Rotation(RotationOrder.ZXY, zAngle, xAngle, yAngle);
+		Rotation torsoTarget =
+				new Rotation(RotationOrder.ZXY, RotationConvention.VECTOR_OPERATOR, zAngle, xAngle, yAngle);
 
 		System.out.println("Torso Target:");
 		Geometry.printRotationMatrix(torsoTarget);
 
-		Rotation rotX = new Rotation(Vector3D.PLUS_I, -xAngle / 4.5);
-		Rotation rotY = new Rotation(Vector3D.PLUS_J, -yAngle / 10.4);
+		Rotation rotX = new Rotation(Vector3D.PLUS_I, -xAngle / 4.5, RotationConvention.VECTOR_OPERATOR);
+		Rotation rotY = new Rotation(Vector3D.PLUS_J, -yAngle / 10.4, RotationConvention.VECTOR_OPERATOR);
 
-		Rotation rotYFull = new Rotation(Vector3D.PLUS_J, yAngle);
-		Rotation rotYNegFull = new Rotation(Vector3D.PLUS_J, -yAngle);
+		Rotation rotYFull = new Rotation(Vector3D.PLUS_J, yAngle, RotationConvention.VECTOR_OPERATOR);
+		Rotation rotYNegFull = new Rotation(Vector3D.PLUS_J, -yAngle, RotationConvention.VECTOR_OPERATOR);
 
 		Rotation rot2 = rotYNegFull.applyTo(rotX).applyTo(rotYFull).applyTo(rotY);
 		Rotation rot3 = rotYNegFull.applyTo(rotX).applyTo(rotYNegFull.applyInverseTo(rotY));

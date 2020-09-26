@@ -25,6 +25,7 @@ import magma.agent.decision.behavior.ikMovement.IIKMovement;
 import magma.agent.decision.behavior.ikMovement.StepParameters;
 import magma.agent.model.thoughtmodel.IRoboCupThoughtModel;
 import org.apache.commons.math3.geometry.euclidean.threed.Rotation;
+import org.apache.commons.math3.geometry.euclidean.threed.RotationConvention;
 import org.apache.commons.math3.geometry.euclidean.threed.RotationOrder;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
@@ -218,7 +219,8 @@ public class IKStaticWalkMovement extends IKStepMovementBase implements IIKWalkM
 		double acceleration = currentStep.yTargetDistance - previousStep.yTargetDistance;
 		double xAngle = Math.toRadians(acceleration * -800);
 
-		return new Rotation(RotationOrder.XYZ, xAngle, yAngle, 0).applyTo(Vector3D.PLUS_K);
+		return new Rotation(RotationOrder.XYZ, RotationConvention.VECTOR_OPERATOR, xAngle, yAngle, 0)
+				.applyTo(Vector3D.PLUS_K);
 	}
 
 	/**
@@ -234,7 +236,8 @@ public class IKStaticWalkMovement extends IKStepMovementBase implements IIKWalkM
 		double xAngle = Math.toRadians(-1 * params.getMaxForwardLeaning());
 		double yAngle = Math.toRadians(params.getMaxSidewardsLeaning());
 
-		return new Rotation(RotationOrder.XYZ, xAngle, yAngle, 0).applyTo(Vector3D.PLUS_K);
+		return new Rotation(RotationOrder.XYZ, RotationConvention.VECTOR_OPERATOR, xAngle, yAngle, 0)
+				.applyTo(Vector3D.PLUS_K);
 	}
 
 	@Override

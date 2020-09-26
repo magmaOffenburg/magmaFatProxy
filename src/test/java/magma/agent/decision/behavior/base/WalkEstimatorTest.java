@@ -17,7 +17,7 @@
  *******************************************************************************/
 package magma.agent.decision.behavior.base;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import hso.autonomy.util.geometry.Angle;
 import hso.autonomy.util.geometry.IPose2D;
@@ -27,8 +27,8 @@ import java.util.ArrayList;
 import java.util.List;
 import magma.agent.decision.behavior.IWalkEstimator.WalkMode;
 import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  *
@@ -41,7 +41,7 @@ public class WalkEstimatorTest
 	/**
 	 * @throws java.lang.Exception
 	 */
-	@Before
+	@BeforeEach
 	public void setUp() throws Exception
 	{
 		// we do not want to change unit tests if we are able to run faster

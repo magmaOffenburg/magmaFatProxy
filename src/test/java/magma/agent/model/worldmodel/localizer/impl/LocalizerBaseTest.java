@@ -28,8 +28,8 @@ import java.util.List;
 import java.util.Map;
 import magma.agent.model.worldmeta.impl.RCServerMetaModelV62;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * Unit test for {@link hso.autonomy.agent.model.worldmodel.localizer.IReferencePoint}
@@ -60,7 +60,7 @@ public class LocalizerBaseTest
 
 	List<IReferencePoint> flags = null;
 
-	@Before
+	@BeforeEach
 	public void setUp()
 	{
 		Map<String, Vector3D> landmarks = RCServerMetaModelV62.INSTANCE.getLandmarks();

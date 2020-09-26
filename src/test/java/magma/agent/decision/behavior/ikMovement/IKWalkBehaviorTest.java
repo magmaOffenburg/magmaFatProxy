@@ -17,19 +17,19 @@
  *******************************************************************************/
 package magma.agent.decision.behavior.ikMovement;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import hso.autonomy.util.geometry.Angle;
 import hso.autonomy.util.geometry.Pose2D;
 import magma.agent.decision.behavior.SupportFoot;
 import magma.agent.decision.behavior.ikMovement.walk.IKWalkMovementParametersBase;
 import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 public class IKWalkBehaviorTest
 {
-	@Ignore
+	@Disabled
 	@Test
 	public void testCalculateFreeFootPose()
 	{

@@ -17,9 +17,10 @@
  *******************************************************************************/
 package magma.agent.communication.perception.impl;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import hso.autonomy.agent.communication.perception.IAccelerometerPerceptor;
 import hso.autonomy.agent.communication.perception.IGyroPerceptor;
@@ -38,8 +39,8 @@ import magma.agent.communication.perception.IGameStatePerceptor;
 import magma.agent.communication.perception.IHearPerceptor;
 import magma.agent.communication.perception.IPlayerPos;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * Unit Test class for a complete "End-to-End" Test case: SimSpark message in,
@@ -55,7 +56,7 @@ public class PerceptionTest
 
 	private ServerMessageParser parser;
 
-	@Before
+	@BeforeEach
 	public void setUp()
 	{
 		// switching off logging
@@ -265,8 +266,8 @@ public class PerceptionTest
 
 		IGameStatePerceptor gs = testee.getGameState();
 
-		assertEquals("", 7.98, gs.getTime(), 0.0001);
-		assertEquals("", "BeforeKickOff", gs.getPlaymode());
+		assertEquals(7.98, gs.getTime(), 0.0001);
+		assertEquals("BeforeKickOff", gs.getPlaymode());
 
 		// string in time
 		//		try {
@@ -276,15 +277,15 @@ public class PerceptionTest
 		//			 expected
 		//		}
 
-		assertEquals("", 7.98, gs.getTime(), 0.0001);
-		assertEquals("", "BeforeKickOff", gs.getPlaymode());
+		assertEquals(7.98, gs.getTime(), 0.0001);
+		assertEquals("BeforeKickOff", gs.getPlaymode());
 
 		// number in playmode
 		parse("(GS (t 65) (pm 34))");
 		gs = testee.getGameState();
 
-		assertEquals("", 65, gs.getTime(), 0.0001);
-		assertEquals("", "34", gs.getPlaymode());
+		assertEquals(65, gs.getTime(), 0.0001);
+		assertEquals("34", gs.getPlaymode());
 
 		// incomplete message
 		try {
@@ -294,8 +295,8 @@ public class PerceptionTest
 			// expected
 		}
 
-		assertEquals("", 65, gs.getTime(), 0.0001);
-		assertEquals("", "34", gs.getPlaymode());
+		assertEquals(65, gs.getTime(), 0.0001);
+		assertEquals("34", gs.getPlaymode());
 
 		// incomplete message
 		try {
@@ -305,8 +306,8 @@ public class PerceptionTest
 			// expected
 		}
 
-		assertEquals("", 65, gs.getTime(), 0.0001);
-		assertEquals("", "34", gs.getPlaymode());
+		assertEquals(65, gs.getTime(), 0.0001);
+		assertEquals("34", gs.getPlaymode());
 	}
 
 	/**
@@ -371,7 +372,7 @@ public class PerceptionTest
 		parse("(time (now 231.18))");
 		time = testee.getTime();
 
-		assertEquals("", 231.18, time.getTime(), 0.0001);
+		assertEquals(231.18, time.getTime(), 0.0001);
 
 		// char in float
 		//		try {
@@ -381,7 +382,7 @@ public class PerceptionTest
 		//			 expected
 		//		}
 
-		assertEquals("", 231.18, time.getTime(), 0.0001);
+		assertEquals(231.18, time.getTime(), 0.0001);
 
 		// incomplete 1
 		try {
@@ -391,7 +392,7 @@ public class PerceptionTest
 			// expected
 		}
 
-		assertEquals("", 231.18, time.getTime(), 0.0001);
+		assertEquals(231.18, time.getTime(), 0.0001);
 
 		// incomplete 2
 		try {
@@ -401,7 +402,7 @@ public class PerceptionTest
 			// expected
 		}
 
-		assertEquals("", 231.18, time.getTime(), 0.0001);
+		assertEquals(231.18, time.getTime(), 0.0001);
 	}
 
 	/**
@@ -463,26 +464,26 @@ public class PerceptionTest
 		ball = testee.getVisibleObject("B");
 
 		assertEquals("F1L", flag1.getName());
-		assertEquals("", 19.11, flag1.getDistance(), 0.0001);
-		assertEquals("", 111.69, flag1.getHorizontalAngleDeg(), 0.0001);
-		assertEquals("", -9.57, flag1.getLatitudeAngleDeg(), 0.0001);
+		assertEquals(19.11, flag1.getDistance(), 0.0001);
+		assertEquals(111.69, flag1.getHorizontalAngleDeg(), 0.0001);
+		assertEquals(-9.57, flag1.getLatitudeAngleDeg(), 0.0001);
 
 		assertEquals("G1R", goal2.getName());
-		assertEquals("", 9.88, goal2.getDistance(), 0.0001);
-		assertEquals("", 139.29, goal2.getHorizontalAngleDeg(), 0.0001);
-		assertEquals("", -21.07, goal2.getLatitudeAngleDeg(), 0.0001);
+		assertEquals(9.88, goal2.getDistance(), 0.0001);
+		assertEquals(139.29, goal2.getHorizontalAngleDeg(), 0.0001);
+		assertEquals(-21.07, goal2.getLatitudeAngleDeg(), 0.0001);
 
 		assertEquals("B", ball.getName());
-		assertEquals("", 18.34, ball.getDistance(), 0.0001);
-		assertEquals("", 4.66, ball.getHorizontalAngleDeg(), 0.0001);
-		assertEquals("", -9.9, ball.getLatitudeAngleDeg(), 0.0001);
+		assertEquals(18.34, ball.getDistance(), 0.0001);
+		assertEquals(4.66, ball.getHorizontalAngleDeg(), 0.0001);
+		assertEquals(-9.9, ball.getLatitudeAngleDeg(), 0.0001);
 
 		assertEquals("PRoboLog1", player1.getName());
-		assertEquals("", 37.5, player1.getDistance(), 0.0001);
-		assertEquals("", 16.15, player1.getHorizontalAngleDeg(), 0.0001);
-		assertEquals("", 0, player1.getLatitudeAngleDeg(), 0.0001);
-		assertEquals("", "RoboLog", player1.getTeamname());
-		assertEquals("", 1, player1.getId());
+		assertEquals(37.5, player1.getDistance(), 0.0001);
+		assertEquals(16.15, player1.getHorizontalAngleDeg(), 0.0001);
+		assertEquals(0, player1.getLatitudeAngleDeg(), 0.0001);
+		assertEquals("RoboLog", player1.getTeamname());
+		assertEquals(1, player1.getId());
 
 		// new player
 		parse("(See (P (team RoboLog) (id 1) (pol 3.50 16.5 -9.00)) "
@@ -495,23 +496,23 @@ public class PerceptionTest
 
 		assertEquals(3, testee.getVisiblePlayers().size());
 
-		assertEquals("", 3.5, player1.getDistance(), 0.0001);
-		assertEquals("", 16.5, player1.getHorizontalAngleDeg(), 0.0001);
-		assertEquals("", -9, player1.getLatitudeAngleDeg(), 0.0001);
-		assertEquals("", "RoboLog", player1.getTeamname());
-		assertEquals("", 1, player1.getId());
+		assertEquals(3.5, player1.getDistance(), 0.0001);
+		assertEquals(16.5, player1.getHorizontalAngleDeg(), 0.0001);
+		assertEquals(-9, player1.getLatitudeAngleDeg(), 0.0001);
+		assertEquals("RoboLog", player1.getTeamname());
+		assertEquals(1, player1.getId());
 
-		assertEquals("", 5, player2.getDistance(), 0.0001);
-		assertEquals("", 1.15, player2.getHorizontalAngleDeg(), 0.0001);
-		assertEquals("", 0.01, player2.getLatitudeAngleDeg(), 0.0001);
-		assertEquals("", "magmaOffenburg", player2.getTeamname());
-		assertEquals("", 2, player2.getId());
+		assertEquals(5, player2.getDistance(), 0.0001);
+		assertEquals(1.15, player2.getHorizontalAngleDeg(), 0.0001);
+		assertEquals(0.01, player2.getLatitudeAngleDeg(), 0.0001);
+		assertEquals("magmaOffenburg", player2.getTeamname());
+		assertEquals(2, player2.getId());
 
-		assertEquals("", 1.0, player3.getDistance(), 0.0001);
-		assertEquals("", 2.0, player3.getHorizontalAngleDeg(), 0.0001);
-		assertEquals("", 3.0, player3.getLatitudeAngleDeg(), 0.0001);
-		assertEquals("", "RoboLog", player3.getTeamname());
-		assertEquals("", 3, player3.getId());
+		assertEquals(1.0, player3.getDistance(), 0.0001);
+		assertEquals(2.0, player3.getHorizontalAngleDeg(), 0.0001);
+		assertEquals(3.0, player3.getLatitudeAngleDeg(), 0.0001);
+		assertEquals("RoboLog", player3.getTeamname());
+		assertEquals(3, player3.getId());
 
 		// incomplete 1
 		try {
@@ -521,9 +522,9 @@ public class PerceptionTest
 			// expected
 		}
 
-		assertEquals("", 19.11, flag1.getDistance(), 0.0001);
-		assertEquals("", 111.69, flag1.getHorizontalAngleDeg(), 0.0001);
-		assertEquals("", -9.57, flag1.getLatitudeAngleDeg(), 0.0001);
+		assertEquals(19.11, flag1.getDistance(), 0.0001);
+		assertEquals(111.69, flag1.getHorizontalAngleDeg(), 0.0001);
+		assertEquals(-9.57, flag1.getLatitudeAngleDeg(), 0.0001);
 
 		// incomplete 2
 		try {
@@ -533,9 +534,9 @@ public class PerceptionTest
 			// expected
 		}
 
-		assertEquals("", 19.11, flag1.getDistance(), 0.0001);
-		assertEquals("", 111.69, flag1.getHorizontalAngleDeg(), 0.0001);
-		assertEquals("", -9.57, flag1.getLatitudeAngleDeg(), 0.0001);
+		assertEquals(19.11, flag1.getDistance(), 0.0001);
+		assertEquals(111.69, flag1.getHorizontalAngleDeg(), 0.0001);
+		assertEquals(-9.57, flag1.getLatitudeAngleDeg(), 0.0001);
 
 		// incomplete 3
 		try {
@@ -545,9 +546,9 @@ public class PerceptionTest
 			// expected
 		}
 
-		assertEquals("", 19.11, flag1.getDistance(), 0.0001);
-		assertEquals("", 111.69, flag1.getHorizontalAngleDeg(), 0.0001);
-		assertEquals("", -9.57, flag1.getLatitudeAngleDeg(), 0.0001);
+		assertEquals(19.11, flag1.getDistance(), 0.0001);
+		assertEquals(111.69, flag1.getHorizontalAngleDeg(), 0.0001);
+		assertEquals(-9.57, flag1.getLatitudeAngleDeg(), 0.0001);
 
 		// incomplete 4
 		try {
@@ -557,9 +558,9 @@ public class PerceptionTest
 			// expected
 		}
 
-		assertEquals("", 19.11, flag1.getDistance(), 0.0001);
-		assertEquals("", 111.69, flag1.getHorizontalAngleDeg(), 0.0001);
-		assertEquals("", -9.57, flag1.getLatitudeAngleDeg(), 0.0001);
+		assertEquals(19.11, flag1.getDistance(), 0.0001);
+		assertEquals(111.69, flag1.getHorizontalAngleDeg(), 0.0001);
+		assertEquals(-9.57, flag1.getLatitudeAngleDeg(), 0.0001);
 
 		// incomplete 5
 		try {
@@ -608,12 +609,12 @@ public class PerceptionTest
 	 *
 	 * @throws Exception Expected!
 	 */
-	@Test(expected = PerceptorConversionException.class)
+	@Test
 	public void testPlayerPMissing() throws Exception
 	{
 		String message = "(See (B (pol 0.36 16.48 -60.37)) ( (id 0) (pol 1.50 -79.82 49.85)))";
 
-		parse(message);
+		assertThrows(PerceptorConversionException.class, () -> { parse(message); });
 	}
 
 	/**
@@ -717,13 +718,13 @@ public class PerceptionTest
 		parse(msg);
 
 		ILinePerceptor line = testee.getVisibleLines().get(0);
-		assertEquals("", 3.01, line.getDistance(), 0.0001);
-		assertEquals("", 35.26, line.getHorizontalAngleDeg(), 0.0001);
-		assertEquals("", -33.07, line.getLatitudeAngleDeg(), 0.0001);
+		assertEquals(3.01, line.getDistance(), 0.0001);
+		assertEquals(35.26, line.getHorizontalAngleDeg(), 0.0001);
+		assertEquals(-33.07, line.getLatitudeAngleDeg(), 0.0001);
 
-		assertEquals("", 2.64, line.getDistance2(), 0.0001);
-		assertEquals("", 60.13, line.getHorizontalAngleDeg2(), 0.0001);
-		assertEquals("", -38.41, line.getLatitudeAngleDeg2(), 0.0001);
+		assertEquals(2.64, line.getDistance2(), 0.0001);
+		assertEquals(60.13, line.getHorizontalAngleDeg2(), 0.0001);
+		assertEquals(-38.41, line.getLatitudeAngleDeg2(), 0.0001);
 	}
 
 	/**
@@ -740,8 +741,8 @@ public class PerceptionTest
 		// should not get an exception
 		ILinePerceptor line = testee.getVisibleLines().get(0);
 
-		assertEquals("", 9.88, line.getDistance2(), 0.0001);
-		assertEquals("", 139.29, line.getHorizontalAngleDeg2(), 0.0001);
-		assertEquals("", -21.07, line.getLatitudeAngleDeg2(), 0.0001);
+		assertEquals(9.88, line.getDistance2(), 0.0001);
+		assertEquals(139.29, line.getHorizontalAngleDeg2(), 0.0001);
+		assertEquals(-21.07, line.getLatitudeAngleDeg2(), 0.0001);
 	}
 }

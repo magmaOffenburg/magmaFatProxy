@@ -5,11 +5,11 @@
  *******************************************************************************/
 package hso.autonomy.util.geometry;
 
-import static junit.framework.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
 import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class Line2DTest
 {

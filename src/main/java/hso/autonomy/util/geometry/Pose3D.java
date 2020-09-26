@@ -7,6 +7,7 @@ package hso.autonomy.util.geometry;
 
 import java.text.DecimalFormat;
 import org.apache.commons.math3.geometry.euclidean.threed.Rotation;
+import org.apache.commons.math3.geometry.euclidean.threed.RotationConvention;
 import org.apache.commons.math3.geometry.euclidean.threed.RotationOrder;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 
@@ -87,7 +88,8 @@ public class Pose3D implements IPose3D
 	 */
 	public Pose3D(double x, double y, Angle horizontalAngle)
 	{
-		this(new Vector3D(x, y, 0), new Rotation(Vector3D.PLUS_K, horizontalAngle.radians()));
+		this(new Vector3D(x, y, 0),
+				new Rotation(Vector3D.PLUS_K, horizontalAngle.radians(), RotationConvention.VECTOR_OPERATOR));
 	}
 
 	/**
@@ -108,7 +110,7 @@ public class Pose3D implements IPose3D
 	 */
 	public Pose3D(Vector3D position, Angle horizontalAngle)
 	{
-		this(position, new Rotation(Vector3D.PLUS_K, horizontalAngle.radians()));
+		this(position, new Rotation(Vector3D.PLUS_K, horizontalAngle.radians(), RotationConvention.VECTOR_OPERATOR));
 	}
 
 	@Override
@@ -216,7 +218,7 @@ public class Pose3D implements IPose3D
 	public String toString()
 	{
 		double[][] mat = orientation.getMatrix();
-		double[] angles = orientation.getAngles(RotationOrder.XYZ);
+		double[] angles = orientation.getAngles(RotationOrder.XYZ, RotationConvention.VECTOR_OPERATOR);
 
 		return position.toString(new DecimalFormat("#.##")) + "\n" +
 				String.format(								//

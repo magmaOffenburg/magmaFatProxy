@@ -23,6 +23,7 @@ import kdo.util.parameter.IParameterList;
 import magma.agent.decision.behavior.SupportFoot;
 import magma.agent.model.thoughtmodel.IRoboCupThoughtModel;
 import org.apache.commons.math3.geometry.euclidean.threed.Rotation;
+import org.apache.commons.math3.geometry.euclidean.threed.RotationConvention;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 
 /**
@@ -109,7 +110,8 @@ public class IKCoMShiftingStepMovement extends IKStepMovementBase
 
 		// Transform target positions to final rotated body system to gain an
 		// accurate movement
-		Rotation rot = new Rotation(Vector3D.PLUS_K, -targetPose.angle.radians() / 2);
+		Rotation rot =
+				new Rotation(Vector3D.PLUS_K, -targetPose.angle.radians() / 2, RotationConvention.VECTOR_OPERATOR);
 		leftFootTargetPosition = rot.applyTo(leftFootTargetPosition);
 		rightFootTargetPosition = rot.applyTo(rightFootTargetPosition);
 

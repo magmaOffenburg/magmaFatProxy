@@ -23,6 +23,7 @@ import hso.autonomy.agent.model.agentmodel.impl.ik.impl.JacobianTransposeAgentIK
 import hso.autonomy.util.geometry.Geometry;
 import magma.robots.nao.INaoConstants;
 import org.apache.commons.math3.geometry.euclidean.threed.Rotation;
+import org.apache.commons.math3.geometry.euclidean.threed.RotationConvention;
 import org.apache.commons.math3.geometry.euclidean.threed.RotationOrder;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 
@@ -106,8 +107,8 @@ public class NaoLegCalculator extends JacobianTransposeAgentIKSolver
 		// localTargetOrientation.rotX(targetAgnelsRad.getX());
 		// MatrixUtil.rotateY(localTargetOrientation, targetAgnelsRad.getY());
 
-		Rotation localTargetOrientation =
-				new Rotation(RotationOrder.XYZ, targetAgnelsRad.getX(), targetAgnelsRad.getY(), 0);
+		Rotation localTargetOrientation = new Rotation(RotationOrder.XYZ, RotationConvention.VECTOR_OPERATOR,
+				targetAgnelsRad.getX(), targetAgnelsRad.getY(), 0);
 
 		// Calculate foot orientation matrix
 		// Matrix3d targetFootOrientation = new Matrix3d();
@@ -116,8 +117,8 @@ public class NaoLegCalculator extends JacobianTransposeAgentIKSolver
 		// MatrixUtil.rotateX(targetFootOrientation, targetAgnelsRad.getX());
 		// MatrixUtil.rotateY(targetFootOrientation, targetAgnelsRad.getY());
 
-		Rotation targetFootOrientation =
-				new Rotation(RotationOrder.ZXY, targetAgnelsRad.getZ(), targetAgnelsRad.getX(), targetAgnelsRad.getY());
+		Rotation targetFootOrientation = new Rotation(RotationOrder.ZXY, RotationConvention.VECTOR_OPERATOR,
+				targetAgnelsRad.getZ(), targetAgnelsRad.getX(), targetAgnelsRad.getY());
 
 		// Calculate local-targetPos as target vector from hip to ankle
 		Vector3D torsoToHip = new Vector3D(0.055 * sideFactor, -0.01, -0.115);
@@ -206,9 +207,11 @@ public class NaoLegCalculator extends JacobianTransposeAgentIKSolver
 		// }
 		Rotation yawPitchTransform;
 		if (rightLeg) {
-			yawPitchTransform = new Rotation(new Vector3D(-0.7071, 0, 0.7071), hipYawPitch);
+			yawPitchTransform =
+					new Rotation(new Vector3D(-0.7071, 0, 0.7071), hipYawPitch, RotationConvention.VECTOR_OPERATOR);
 		} else {
-			yawPitchTransform = new Rotation(new Vector3D(-0.7071, 0, -0.7071), hipYawPitch);
+			yawPitchTransform =
+					new Rotation(new Vector3D(-0.7071, 0, -0.7071), hipYawPitch, RotationConvention.VECTOR_OPERATOR);
 		}
 
 		// Transform local tragetPosition into System after the Yaw-Pitch joint

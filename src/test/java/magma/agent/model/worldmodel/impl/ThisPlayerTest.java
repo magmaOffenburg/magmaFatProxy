@@ -17,16 +17,16 @@
  *******************************************************************************/
 package magma.agent.model.worldmodel.impl;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import hso.autonomy.util.geometry.Area2D;
 import hso.autonomy.util.geometry.Geometry;
 import hso.autonomy.util.misc.FuzzyCompare;
 import org.apache.commons.math3.geometry.euclidean.threed.Rotation;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author Klaus Dorer
@@ -36,7 +36,7 @@ public class ThisPlayerTest
 {
 	private ThisPlayer testee;
 
-	@Before
+	@BeforeEach
 	public void setUp()
 	{
 		testee = new ThisPlayer("test", 0, 0.02f, 0.4f);
@@ -175,9 +175,9 @@ public class ThisPlayerTest
 	 */
 	private void testVector(Vector3D expected, Vector3D was)
 	{
-		assertTrue("Expected: (" + expected.getX() + ", " + expected.getY() + ", " + expected.getZ() + ") was: (" +
-						   was.getX() + ", " + was.getY() + ", " + was.getZ() + ")",
-				FuzzyCompare.eq(expected, was, 0.00001f));
+		assertTrue(FuzzyCompare.eq(expected, was, 0.00001f), "Expected: (" + expected.getX() + ", " + expected.getY() +
+																	 ", " + expected.getZ() + ") was: (" + was.getX() +
+																	 ", " + was.getY() + ", " + was.getZ() + ")");
 	}
 
 	@Test

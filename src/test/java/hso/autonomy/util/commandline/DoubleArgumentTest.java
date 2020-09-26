@@ -5,16 +5,17 @@
  *******************************************************************************/
 package hso.autonomy.util.commandline;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class DoubleArgumentTest
 {
 	private DoubleArgument testee;
 
-	@Before
+	@BeforeEach
 	public void setUp()
 	{
 		testee = new DoubleArgument("argument", 5.0, 3, 10, null);
@@ -28,30 +29,34 @@ public class DoubleArgumentTest
 		testParse(10.0, "--argument=10");
 	}
 
-	@Test(expected = ArgumentParsingException.class)
+	@Test
 	public void testParseValueTooSmall()
 	{
-		testee.parse("--argument=2");
-		testee.parse("--argument=-30");
+		assertThrows(ArgumentParsingException.class, () -> {
+			testee.parse("--argument=2");
+			testee.parse("--argument=-30");
+		});
 	}
 
-	@Test(expected = ArgumentParsingException.class)
+	@Test
 	public void testParseValueTooBig()
 	{
-		testParse(5.0, "--argument=11");
-		testParse(5.0, "--argument=100");
+		assertThrows(ArgumentParsingException.class, () -> {
+			testParse(5.0, "--argument=11");
+			testParse(5.0, "--argument=100");
+		});
 	}
 
-	@Test(expected = ArgumentParsingException.class)
+	@Test
 	public void testParseEmptyValue()
 	{
-		testParse(5.0, "--argument=");
+		assertThrows(ArgumentParsingException.class, () -> { testParse(5.0, "--argument="); });
 	}
 
-	@Test(expected = ArgumentParsingException.class)
+	@Test
 	public void testParseNonInteger()
 	{
-		testParse(5.0, "--argument=notInt");
+		assertThrows(ArgumentParsingException.class, () -> { testParse(5.0, "--argument=notInt"); });
 	}
 
 	@Test

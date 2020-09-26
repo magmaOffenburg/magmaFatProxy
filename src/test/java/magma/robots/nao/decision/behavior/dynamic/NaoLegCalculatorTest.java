@@ -25,9 +25,9 @@ import magma.robots.nao.INaoConstants;
 import magma.robots.nao.model.agentmeta.NaoAgentMetaModel;
 import magma.robots.nao.model.agentmodel.ik.impl.NaoLegCalculator;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  *
@@ -35,13 +35,13 @@ import org.junit.Test;
  */
 public class NaoLegCalculatorTest
 {
-	@Before
+	@BeforeEach
 	public void setUp() throws Exception
 	{
 	}
 
 	@Test
-	@Ignore
+	@Disabled
 	public void testCalculateJointAngles()
 	{
 		// left pos:

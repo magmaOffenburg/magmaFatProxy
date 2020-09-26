@@ -17,8 +17,8 @@
  *******************************************************************************/
 package magma.agent.model.worldmodel.impl;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -36,10 +36,11 @@ import magma.agent.model.agentmodel.IRoboCupAgentModel;
 import magma.agent.model.worldmeta.impl.RCServerMetaModelV63;
 import magma.agent.model.worldmodel.IPlayer;
 import org.apache.commons.math3.geometry.euclidean.threed.Rotation;
+import org.apache.commons.math3.geometry.euclidean.threed.RotationConvention;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * Tests for the {@link WorldModel} class
@@ -52,7 +53,7 @@ public class WorldModelTest
 
 	private IRoboCupAgentModel agentModelMock;
 
-	@Before
+	@BeforeEach
 	public void setUp()
 	{
 		perceptionMock = mock(IRoboCupPerception.class);
@@ -115,7 +116,8 @@ public class WorldModelTest
 		// camera is in 1m height, tilted 30 deg down, we see the ball in origin
 		// of camera
 		Pose3D thisPlayerPose = new Pose3D(Vector3D.ZERO, Rotation.IDENTITY);
-		Pose3D cameraPose = new Pose3D(new Vector3D(0, 0, 1), new Rotation(Vector3D.PLUS_I, Angle.deg(-30).radians()));
+		Pose3D cameraPose = new Pose3D(new Vector3D(0, 0, 1),
+				new Rotation(Vector3D.PLUS_I, Angle.deg(-30).radians(), RotationConvention.VECTOR_OPERATOR));
 		Vector3D position = new Vector3D(1, 0, 0);
 		Vector3D result = testee.estimateDepth(thisPlayerPose, cameraPose, position, 0);
 		assertEquals(2, result.getX(), 0.001);
@@ -129,7 +131,8 @@ public class WorldModelTest
 	{
 		// data from a bag file, expected values only roughly checked
 		Pose3D thisPlayerPose = new Pose3D(Vector3D.ZERO, Rotation.IDENTITY);
-		Pose3D cameraPose = new Pose3D(new Vector3D(0, 0, 1), new Rotation(Vector3D.PLUS_I, Angle.deg(-30).radians()));
+		Pose3D cameraPose = new Pose3D(new Vector3D(0, 0, 1),
+				new Rotation(Vector3D.PLUS_I, Angle.deg(-30).radians(), RotationConvention.VECTOR_OPERATOR));
 		Vector3D position = new Vector3D(1, -0.05, 0.25);
 		Vector3D result = testee.estimateDepth(thisPlayerPose, cameraPose, position, 0);
 		assertEquals(3.5274, result.getX(), 0.001);

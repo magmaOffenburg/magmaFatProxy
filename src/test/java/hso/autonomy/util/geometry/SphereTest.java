@@ -5,13 +5,13 @@
  *******************************************************************************/
 package hso.autonomy.util.geometry;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import hso.autonomy.util.misc.FuzzyCompare;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  *
@@ -24,7 +24,7 @@ public class SphereTest
 	/**
 	 * @throws java.lang.Exception
 	 */
-	@Before
+	@BeforeEach
 	public void setUp() throws Exception
 	{
 		testee = new Sphere(new Vector3D(1, -2, -3), Math.sqrt(14));
@@ -86,6 +86,6 @@ public class SphereTest
 
 	protected void testTrue(Vector3D expected, Vector3D intersect)
 	{
-		assertTrue("Not equal: " + expected + "/" + intersect, FuzzyCompare.eq(expected, intersect, 0.0001));
+		assertTrue(FuzzyCompare.eq(expected, intersect, 0.0001), "Not equal: " + expected + "/" + intersect);
 	}
 }

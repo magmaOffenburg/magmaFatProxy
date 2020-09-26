@@ -5,10 +5,10 @@
  *******************************************************************************/
 package hso.autonomy.util.function;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author Klaus Dorer
@@ -28,7 +28,7 @@ public class SinFunctionTest
 		return new SinFunction(1.5f, 8.1f, (float) (0.5673f * 1.5 / (2 * Math.PI)), -1.0f, 1);
 	}
 
-	@Before
+	@BeforeEach
 	public void setup()
 	{
 		testee = new SinFunction((float) (Math.PI * 2.0), 1.0f, 0, 0.0f, 1);

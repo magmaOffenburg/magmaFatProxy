@@ -5,11 +5,11 @@
  *******************************************************************************/
 package hso.autonomy.agent.model.agentmodel.impl;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  *
@@ -22,7 +22,7 @@ public class HingeJointTest
 	/**
 	 * @throws java.lang.Exception
 	 */
-	@Before
+	@BeforeEach
 	public void setUp() throws Exception
 	{
 		testee = new HingeJoint("Test", "percept", "effect", Vector3D.PLUS_I, -10, 10, 7, 2, false);

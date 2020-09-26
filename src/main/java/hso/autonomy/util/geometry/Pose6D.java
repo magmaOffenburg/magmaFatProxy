@@ -8,6 +8,7 @@ package hso.autonomy.util.geometry;
 import java.util.Locale;
 import org.apache.commons.math3.geometry.euclidean.threed.CardanEulerSingularityException;
 import org.apache.commons.math3.geometry.euclidean.threed.Rotation;
+import org.apache.commons.math3.geometry.euclidean.threed.RotationConvention;
 import org.apache.commons.math3.geometry.euclidean.threed.RotationOrder;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 
@@ -202,7 +203,8 @@ public class Pose6D implements IPose3D
 	@Override
 	public Rotation getOrientation()
 	{
-		return new Rotation(rotationOrder, Math.toRadians(xAngle), Math.toRadians(yAngle), Math.toRadians(zAngle));
+		return new Rotation(rotationOrder, RotationConvention.VECTOR_OPERATOR, Math.toRadians(xAngle),
+				Math.toRadians(yAngle), Math.toRadians(zAngle));
 	}
 
 	/**
@@ -356,7 +358,7 @@ public class Pose6D implements IPose3D
 		Vector3D ret = Vector3D.ZERO;
 
 		try {
-			double[] angles = orientation.getAngles(rotationOrder);
+			double[] angles = orientation.getAngles(rotationOrder, RotationConvention.VECTOR_OPERATOR);
 			ret = new Vector3D(angles[0], angles[1], angles[2]);
 		} catch (CardanEulerSingularityException e) {
 			e.printStackTrace();

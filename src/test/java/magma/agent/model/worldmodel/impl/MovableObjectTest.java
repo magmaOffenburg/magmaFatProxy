@@ -17,16 +17,16 @@
  *******************************************************************************/
 package magma.agent.model.worldmodel.impl;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import hso.autonomy.agent.model.worldmodel.impl.MovableObject;
 import hso.autonomy.util.misc.FuzzyCompare;
 import magma.agent.IMagmaConstants;
 import magma.agent.model.worldmodel.IBall;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author Srinivas
@@ -36,7 +36,7 @@ public class MovableObjectTest
 {
 	private MovableObject testee;
 
-	@Before
+	@BeforeEach
 	public void setUp()
 	{
 		testee = new Player(IMagmaConstants.UNKNOWN_PLAYER_NUMBER, IMagmaConstants.DEFAULT_TEAMNAME, true, 0.02f);
@@ -97,7 +97,7 @@ public class MovableObjectTest
 	 * {@link hso.autonomy.agent.model.worldmodel.impl.MovableObject#getSpeed()}.
 	 */
 	@Test
-	@Ignore
+	@Disabled
 	public void testGetSpeedForBall()
 	{
 		/** Tests for Ball */
@@ -125,7 +125,7 @@ public class MovableObjectTest
 	 * {@link hso.autonomy.agent.model.worldmodel.impl.MovableObject#getFuturePositions(int)}.
 	 */
 	@Test
-	@Ignore
+	@Disabled
 	public void testGetFuturePositionsBall()
 	{
 		testee = new Ball(0.042f, .94f, Vector3D.ZERO, IBall.COLLISION_DISTANCE, 0.02f);

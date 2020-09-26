@@ -5,18 +5,18 @@
  *******************************************************************************/
 package hso.autonomy.agent.model.agentmodel.impl;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotSame;
-import static org.junit.Assert.assertSame;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import hso.autonomy.util.geometry.Geometry;
 import org.apache.commons.math3.geometry.euclidean.threed.Rotation;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
-import org.junit.Before;
-import org.junit.Test;
-import org.mockito.Mockito;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author stilnox
@@ -43,7 +43,7 @@ public class BodyPartTest
 	/**
 	 * @throws java.lang.Exception
 	 */
-	@Before
+	@BeforeEach
 	public void setUp() throws Exception
 	{
 	}
@@ -162,13 +162,12 @@ public class BodyPartTest
 		return createJointMock(Rotation.IDENTITY, name);
 	}
 
-	@SuppressWarnings("unchecked")
 	private HingeJoint createJointMock(Rotation rotation, String name)
 	{
 		HingeJoint joint = mock(HingeJoint.class);
 		when(joint.getRotation()).thenReturn(rotation);
 		when(joint.getName()).thenReturn(name);
-		joint.updateSensors(Mockito.anyObject(), Mockito.anyObject());
+		joint.updateSensors(any(), any());
 		return joint;
 	}
 
@@ -190,13 +189,12 @@ public class BodyPartTest
 		hand = new BodyPart("hand", lowerarm, null, new Vector3D(0.01, 0.055, 0), Vector3D.ZERO, 0f, null);
 	}
 
-	@SuppressWarnings("unchecked")
 	private void createTorsoAndJoint2()
 	{
 		joint2 = mock(HingeJoint.class);
 		when(joint2.getRotation()).thenReturn(Rotation.IDENTITY);
 		when(joint2.getName()).thenReturn("joint2Name");
-		joint2.updateSensors(Mockito.anyObject(), Mockito.anyObject());
+		joint2.updateSensors(any(), any());
 
 		torso = new BodyPart("torso", null, null, Vector3D.ZERO, Vector3D.ZERO, 2.0f, null);
 	}

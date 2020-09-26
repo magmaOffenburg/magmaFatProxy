@@ -13,6 +13,7 @@ import hso.autonomy.agent.model.agentmodel.ISensor;
 import hso.autonomy.util.geometry.IPose3D;
 import hso.autonomy.util.misc.FuzzyCompare;
 import org.apache.commons.math3.geometry.euclidean.threed.Rotation;
+import org.apache.commons.math3.geometry.euclidean.threed.RotationConvention;
 import org.apache.commons.math3.geometry.euclidean.threed.RotationOrder;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 
@@ -82,7 +83,7 @@ public class GyroRate extends Sensor implements IGyroRate
 		y = Math.toRadians(gyro.getY() * cycleTime);
 		z = Math.toRadians(gyro.getZ() * cycleTime);
 
-		return new Rotation(RotationOrder.YXZ, y, x, z);
+		return new Rotation(RotationOrder.YXZ, RotationConvention.VECTOR_OPERATOR, y, x, z);
 	}
 
 	@Override

@@ -29,8 +29,8 @@ import magma.agent.model.worldmodel.IBall;
 import magma.agent.model.worldmodel.IPlayer;
 import magma.agent.model.worldmodel.IRoboCupWorldModel;
 import magma.agent.model.worldmodel.IThisPlayer;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  *
@@ -52,7 +52,7 @@ public class WorldModelBaseTest
 
 	protected IPlayer playerMock4;
 
-	@Before
+	@BeforeEach
 	public void setUp()
 	{
 		playerMock1 = createPlayerMock(playerMock1, 1);

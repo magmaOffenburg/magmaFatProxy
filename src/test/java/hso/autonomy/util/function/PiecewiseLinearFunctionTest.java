@@ -5,12 +5,12 @@
  *******************************************************************************/
 package hso.autonomy.util.function;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author Klaus Dorer
@@ -28,7 +28,7 @@ public class PiecewiseLinearFunctionTest
 	 */
 	private double[] supportPoints;
 
-	@Before
+	@BeforeEach
 	public void setUp()
 	{
 		supportPoints = new double[] {//

@@ -22,6 +22,7 @@ import magma.agent.decision.behavior.ikMovement.walk.IKWalkMovementParametersBas
 import magma.agent.decision.behavior.ikMovement.walk.IKWalkMovementParametersBase.Param;
 import magma.agent.model.thoughtmodel.IRoboCupThoughtModel;
 import org.apache.commons.math3.geometry.euclidean.threed.Rotation;
+import org.apache.commons.math3.geometry.euclidean.threed.RotationConvention;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 
 public class IKLegRotationMovementDemo extends IKStaticWalkMovement
@@ -46,6 +47,7 @@ public class IKLegRotationMovementDemo extends IKStaticWalkMovement
 	@Override
 	public Vector3D getIntendedLeaningVector()
 	{
-		return new Rotation(Vector3D.PLUS_I, Math.toRadians(0)).applyTo(Vector3D.PLUS_K);
+		return new Rotation(Vector3D.PLUS_I, Math.toRadians(0), RotationConvention.VECTOR_OPERATOR)
+				.applyTo(Vector3D.PLUS_K);
 	}
 }

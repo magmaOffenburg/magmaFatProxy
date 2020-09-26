@@ -12,6 +12,7 @@ import hso.autonomy.util.geometry.InverseKinematics;
 import hso.autonomy.util.geometry.Pose3D;
 import hso.autonomy.util.misc.FuzzyCompare;
 import org.apache.commons.math3.geometry.euclidean.threed.CardanEulerSingularityException;
+import org.apache.commons.math3.geometry.euclidean.threed.RotationConvention;
 import org.apache.commons.math3.geometry.euclidean.threed.RotationOrder;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 
@@ -54,7 +55,7 @@ public class JacobianTransposeAgentIKSolver implements IAgentIKSolver
 			// Angles HACK
 			double[] eulerAngles;
 			try {
-				eulerAngles = pose.getOrientation().getAngles(RotationOrder.YXZ);
+				eulerAngles = pose.getOrientation().getAngles(RotationOrder.YXZ, RotationConvention.VECTOR_OPERATOR);
 			} catch (CardanEulerSingularityException e) {
 				eulerAngles = new double[] {0, 0, 0};
 				e.printStackTrace();
