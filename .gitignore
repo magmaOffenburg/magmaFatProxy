@@ -13,8 +13,6 @@ jar/magmaKIJarGeneration.jardesc
 /magmaKIJarGeneration.jardesc
 /message.txt
 /schedule.txt
-srcAgent/Test.java
-srcAgent/magma/agent/behavior/basic/Temp.java
 util/excel/~$*.*
 
 #Intelij
@@ -35,3 +33,5 @@ log/
 \.DS_Store
 
 \.idea/encodings\.xml
+
+target/
