@@ -7,8 +7,6 @@ Simspark server. It extends the magmaProxy by supporting high level dash and kic
 The proxy is developed using Java 1.8.
 It should be compatible with older JREs, too, but this is not verified.
 
-![](screenshots/magmaProxy.png)
-
 ## Contents
 
 - [Installation](#installation)
