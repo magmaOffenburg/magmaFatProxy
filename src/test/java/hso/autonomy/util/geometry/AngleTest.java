@@ -7,6 +7,7 @@ package hso.autonomy.util.geometry;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
@@ -206,15 +207,15 @@ public class AngleTest
 	@Test
 	public void testEquals()
 	{
-		assertTrue(Angle.deg(102.3).equals(Angle.deg(102.3)));
-		assertTrue(Angle.deg(-12.4).equals(Angle.deg(-12.4)));
+		assertEquals(Angle.deg(102.3), Angle.deg(102.3));
+		assertEquals(Angle.deg(-12.4), Angle.deg(-12.4));
 
-		assertFalse(Angle.deg(-10.1).equals(Angle.deg(-8.97)));
-		assertFalse(Angle.deg(-10.1).equals(Angle.deg(10.3)));
-		assertFalse(Angle.deg(24.46).equals(Angle.deg(-1.02)));
-		assertFalse(Angle.deg(24.46).equals(Angle.deg(5.0001)));
+		assertNotEquals(Angle.deg(-8.97), Angle.deg(-10.1));
+		assertNotEquals(Angle.deg(10.3), Angle.deg(-10.1));
+		assertNotEquals(Angle.deg(-1.02), Angle.deg(24.46));
+		assertNotEquals(Angle.deg(5.0001), Angle.deg(24.46));
 
-		assertFalse(Angle.deg(-10.1).equals("12"));
+		assertNotEquals(Angle.deg(-10.1), "12");
 	}
 
 	/**

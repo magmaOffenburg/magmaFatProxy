@@ -18,6 +18,7 @@
 package magma.util.geometry;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -210,7 +211,7 @@ public class AttitudeEstimatorTest
 		assertEquals(0.6, testee.fusedYaw(), PRECISION);
 		assertEquals(-0.4, testee.fusedPitch(), PRECISION);
 		assertEquals(0.7, testee.fusedRoll(), PRECISION);
-		assertTrue(!testee.fusedHemi());
+		assertFalse(testee.fusedHemi());
 
 		// Check the reset function does its job
 		testee.reset(false, true);
@@ -337,12 +338,12 @@ public class AttitudeEstimatorTest
 		assertEquals(-1.1245333812991449, testee.fusedYaw(), 1e-14);
 		assertEquals(-1.1152938107481036, testee.fusedPitch(), 1e-14);
 		assertEquals(-0.1505999801369221, testee.fusedRoll(), 1e-14);
-		assertTrue(!testee.fusedHemi());
+		assertFalse(testee.fusedHemi());
 		testee.setAttitudeFused(-2.9940777491210464, -0.0180413873657193, 1.0164835253856090, false);
 		assertEquals(-2.9940777491210464, testee.fusedYaw(), 1e-14);
 		assertEquals(-0.0180413873657193, testee.fusedPitch(), 1e-14);
 		assertEquals(1.0164835253856090, testee.fusedRoll(), 1e-14);
-		assertTrue(!testee.fusedHemi());
+		assertFalse(testee.fusedHemi());
 		testee.setAttitudeFused(-0.8827575035984855, -1.0299638573151797, 0.2067085358389749, true);
 		assertEquals(-0.8827575035984855, testee.fusedYaw(), 1e-14);
 		assertEquals(-1.0299638573151797, testee.fusedPitch(), 1e-14);
@@ -413,12 +414,12 @@ public class AttitudeEstimatorTest
 		assertEquals(1.5214534918546789, testee.fusedYaw(), 1e-14);
 		assertEquals(-0.0550651280646345, testee.fusedPitch(), 1e-14);
 		assertEquals(1.4441114693495201, testee.fusedRoll(), 1e-14);
-		assertTrue(!testee.fusedHemi());
+		assertFalse(testee.fusedHemi());
 		testee.setAttitude(-0.5747725522069820, 0.6113337041221015, -0.5417310040241355, -0.0493470841370070);
 		assertEquals(0.1712899139689803, testee.fusedYaw(), 1e-14);
 		assertEquals(0.7519705909187845, testee.fusedPitch(), 1e-14);
 		assertEquals(-0.7066504864647706, testee.fusedRoll(), 1e-14);
-		assertTrue(!testee.fusedHemi());
+		assertFalse(testee.fusedHemi());
 		testee.setAttitude(-0.3208918327799606, 0.3458339031220823, 0.4891541368196635, 0.7335908761282912);
 		assertEquals(-2.3168957445381952, testee.fusedYaw(), 1e-14);
 		assertEquals(-0.9637426788118773, testee.fusedPitch(), 1e-14);

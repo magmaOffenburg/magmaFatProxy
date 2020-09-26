@@ -6,6 +6,7 @@
 package hso.autonomy.util.commandline;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
@@ -28,13 +29,14 @@ public class EnumArgumentTest
 	public void testNullDefault()
 	{
 		EnumArgument<TestEnum> arg = new EnumArgument<>("test", null, "", TestEnum.class);
-		assertEquals(arg.parse(""), null);
+		assertNull(arg.parse(""));
 	}
 
 	@Test
 	public void testInvalidValue()
 	{
 		EnumArgument<TestEnum> arg = new EnumArgument<>("test", null, "", TestEnum.class);
-		assertThrows(ArgumentParsingException.class, () -> { assertEquals(arg.parse("--test=invalid"), null); });
+		assertThrows(ArgumentParsingException.class, () -> {
+			assertNull(arg.parse("--test=invalid")); });
 	}
 }

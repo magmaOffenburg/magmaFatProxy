@@ -18,6 +18,8 @@
 package magma.agent.model.worldmodel.impl;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import hso.autonomy.util.geometry.Angle;
 import hso.autonomy.util.geometry.Geometry;
@@ -138,7 +140,7 @@ public class PlayerTest
 		allBodyParts.put("c", new Vector3D(0, 0, 0));
 		testee.setBodyParts(allBodyParts);
 		testee.updateLying(0);
-		assertEquals(true, testee.isLying());
+		assertTrue(testee.isLying());
 
 		// Test the case in which we're standing and little time has passed
 		allBodyParts = new HashMap<>();
@@ -147,7 +149,7 @@ public class PlayerTest
 		allBodyParts.put("c", new Vector3D(0, 0, 0));
 		testee.setBodyParts(allBodyParts);
 		testee.updateLying(0.2f);
-		assertEquals(true, testee.isLying());
+		assertTrue(testee.isLying());
 
 		// Test the case in which we're standing and the time has almost passed
 		allBodyParts = new HashMap<>();
@@ -156,7 +158,7 @@ public class PlayerTest
 		allBodyParts.put("c", new Vector3D(0, 0, 0));
 		testee.setBodyParts(allBodyParts);
 		testee.updateLying(1.9f);
-		assertEquals(true, testee.isLying());
+		assertTrue(testee.isLying());
 
 		// Test the case in which we're standing and the time has passed
 		allBodyParts = new HashMap<>();
@@ -165,7 +167,7 @@ public class PlayerTest
 		allBodyParts.put("c", new Vector3D(0, 0, 0));
 		testee.setBodyParts(allBodyParts);
 		testee.updateLying(IMagmaConstants.TIME_DELAY_LYING);
-		assertEquals(false, testee.isLying());
+		assertFalse(testee.isLying());
 	}
 
 	/*
@@ -181,7 +183,7 @@ public class PlayerTest
 		allBodyParts.put("c", new Vector3D(0, 0, 0));
 		testee.setBodyParts(allBodyParts);
 		testee.updateLying(0);
-		assertEquals(false, testee.isLying());
+		assertFalse(testee.isLying());
 
 		// Test the case in which we're standing and little time has passed
 		allBodyParts = new HashMap<>();
@@ -190,6 +192,6 @@ public class PlayerTest
 		allBodyParts.put("c", new Vector3D(0, 0, 0));
 		testee.setBodyParts(allBodyParts);
 		testee.updateLying(0.2f);
-		assertEquals(true, testee.isLying());
+		assertTrue(testee.isLying());
 	}
 }

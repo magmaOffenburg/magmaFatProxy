@@ -322,7 +322,7 @@ public class ServerMessageParserTest
 		TouchPerceptor touch = (TouchPerceptor) perceptor;
 
 		assertEquals(touch.getName(), "bumper");
-		assertEquals(touch.getState(), true);
+		assertTrue(touch.getState());
 	}
 
 	/**

@@ -17,7 +17,7 @@
  *******************************************************************************/
 package magma.agent.model.worldmodel.impl;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import hso.autonomy.util.geometry.Area2D;
@@ -188,10 +188,10 @@ public class ThisPlayerTest
 		testee.setPosition(new Vector3D(2.0, 0.0, 0.0));
 		testee.setGlobalOrientation(Geometry.createZRotation(Math.toRadians(90)));
 
-		assertEquals(false, testee.isInsideArea(new Vector3D(0, 0, 0), area));
-		assertEquals(false, testee.isInsideArea(new Vector3D(2, -0.1, 0), area));
-		assertEquals(true, testee.isInsideArea(new Vector3D(1.01, 0.99, 0), area));
-		assertEquals(true, testee.isInsideArea(new Vector3D(2.9, 0.99, 0), area));
+		assertFalse(testee.isInsideArea(new Vector3D(0, 0, 0), area));
+		assertFalse(testee.isInsideArea(new Vector3D(2, -0.1, 0), area));
+		assertTrue(testee.isInsideArea(new Vector3D(1.01, 0.99, 0), area));
+		assertTrue(testee.isInsideArea(new Vector3D(2.9, 0.99, 0), area));
 	}
 
 	/**
@@ -201,19 +201,19 @@ public class ThisPlayerTest
 	public void testIsLeftOf()
 	{
 		Vector3D position = new Vector3D(0.0, 1.0, 0.0);
-		assertEquals(true, testee.positionIsLeft(position));
+		assertTrue(testee.positionIsLeft(position));
 
 		position = new Vector3D(0.0, -1.0, 0.0);
-		assertEquals(false, testee.positionIsLeft(position));
+		assertFalse(testee.positionIsLeft(position));
 
 		testee.setGlobalOrientation(Geometry.createZRotation(Math.toRadians(-100)));
-		assertEquals(true, testee.positionIsLeft(position));
+		assertTrue(testee.positionIsLeft(position));
 
 		testee.setGlobalOrientation(Geometry.createZRotation(Math.toRadians(100)));
-		assertEquals(true, testee.positionIsLeft(position));
+		assertTrue(testee.positionIsLeft(position));
 
 		testee.setGlobalOrientation(Geometry.createZRotation(Math.toRadians(80)));
-		assertEquals(false, testee.positionIsLeft(position));
+		assertFalse(testee.positionIsLeft(position));
 	}
 
 	/**
@@ -223,19 +223,19 @@ public class ThisPlayerTest
 	public void testIsRightOf()
 	{
 		Vector3D position = new Vector3D(0.0, 1.0, 0.0);
-		assertEquals(false, testee.positionIsRight(position));
+		assertFalse(testee.positionIsRight(position));
 
 		position = new Vector3D(0.0, -1.0, 0.0);
-		assertEquals(true, testee.positionIsRight(position));
+		assertTrue(testee.positionIsRight(position));
 
 		testee.setGlobalOrientation(Geometry.createZRotation(Math.toRadians(-100)));
-		assertEquals(false, testee.positionIsRight(position));
+		assertFalse(testee.positionIsRight(position));
 
 		testee.setGlobalOrientation(Geometry.createZRotation(Math.toRadians(100)));
-		assertEquals(false, testee.positionIsRight(position));
+		assertFalse(testee.positionIsRight(position));
 
 		testee.setGlobalOrientation(Geometry.createZRotation(Math.toRadians(80)));
-		assertEquals(true, testee.positionIsRight(position));
+		assertTrue(testee.positionIsRight(position));
 	}
 
 	/**
@@ -245,18 +245,18 @@ public class ThisPlayerTest
 	public void testIsBehind()
 	{
 		Vector3D position = new Vector3D(1.0, 0.0, 0.0);
-		assertEquals(false, testee.positionIsBehind(position));
+		assertFalse(testee.positionIsBehind(position));
 
 		position = new Vector3D(-1.0, 0.0, 0.0);
-		assertEquals(true, testee.positionIsBehind(position));
+		assertTrue(testee.positionIsBehind(position));
 
 		testee.setGlobalOrientation(Geometry.createZRotation(Math.toRadians(-100)));
-		assertEquals(false, testee.positionIsBehind(position));
+		assertFalse(testee.positionIsBehind(position));
 
 		testee.setGlobalOrientation(Geometry.createZRotation(Math.toRadians(100)));
-		assertEquals(false, testee.positionIsBehind(position));
+		assertFalse(testee.positionIsBehind(position));
 
 		testee.setGlobalOrientation(Geometry.createZRotation(Math.toRadians(80)));
-		assertEquals(true, testee.positionIsBehind(position));
+		assertTrue(testee.positionIsBehind(position));
 	}
 }

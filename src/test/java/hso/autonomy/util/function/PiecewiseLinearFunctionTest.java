@@ -6,6 +6,8 @@
 package hso.autonomy.util.function;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
 import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
@@ -112,10 +114,10 @@ public class PiecewiseLinearFunctionTest
 	@Test
 	public void testHasSupportPointInArea()
 	{
-		assertEquals(false, testee.hasSupportPointInArea(1.0, 2.0));
-		assertEquals(true, testee.hasSupportPointInArea(3.9, 4.1));
-		assertEquals(true, testee.hasSupportPointInArea(3.0, 7));
-		assertEquals(true, testee.hasSupportPointInArea(-1.0, 1.0));
+		assertFalse(testee.hasSupportPointInArea(1.0, 2.0));
+		assertTrue(testee.hasSupportPointInArea(3.9, 4.1));
+		assertTrue(testee.hasSupportPointInArea(3.0, 7));
+		assertTrue(testee.hasSupportPointInArea(-1.0, 1.0));
 	}
 
 	/**

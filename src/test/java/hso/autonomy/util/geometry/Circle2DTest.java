@@ -7,6 +7,7 @@ package hso.autonomy.util.geometry;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
@@ -254,7 +255,7 @@ public class Circle2DTest
 	{
 		c1 = new Circle2D(-2, 0, 1);
 		c2 = new Circle2D(-2, 0, 1);
-		assertTrue(c1.equals(c2));
+		assertEquals(c2, c1);
 	}
 
 	@Test
@@ -262,7 +263,7 @@ public class Circle2DTest
 	{
 		c1 = new Circle2D(-2, 1, 1);
 		c2 = new Circle2D(-2, 0, 1);
-		assertFalse(c1.equals(c2));
+		assertNotEquals(c2, c1);
 	}
 
 	@Test

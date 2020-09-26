@@ -5,7 +5,8 @@
  *******************************************************************************/
 package hso.autonomy.util.misc;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 import org.junit.jupiter.api.Test;
@@ -23,12 +24,12 @@ public class FuzzyCompareTest
 	@Test
 	public void testEq()
 	{
-		assertEquals(true, FuzzyCompare.eq(10, 10, 0), "EQ 10 = 10 | Range 0");
-		assertEquals(true, FuzzyCompare.eq(10, 10, 5), "EQ 10 = 10 | Range 5");
-		assertEquals(true, FuzzyCompare.eq(10, 9, 1), "EQ 10 = 9 | Range 1");
-		assertEquals(true, FuzzyCompare.eq(10, 11, 1), "EQ 10 = 11 | Range 1");
-		assertEquals(false, FuzzyCompare.eq(10, 8, 1), "EQ 10 = 8 | Range 1");
-		assertEquals(false, FuzzyCompare.eq(10, 12, 1), "EQ 10 = 12 | Range 1");
+		assertTrue(FuzzyCompare.eq(10, 10, 0), "EQ 10 = 10 | Range 0");
+		assertTrue(FuzzyCompare.eq(10, 10, 5), "EQ 10 = 10 | Range 5");
+		assertTrue(FuzzyCompare.eq(10, 9, 1), "EQ 10 = 9 | Range 1");
+		assertTrue(FuzzyCompare.eq(10, 11, 1), "EQ 10 = 11 | Range 1");
+		assertFalse(FuzzyCompare.eq(10, 8, 1), "EQ 10 = 8 | Range 1");
+		assertFalse(FuzzyCompare.eq(10, 12, 1), "EQ 10 = 12 | Range 1");
 	}
 
 	/**
@@ -38,12 +39,12 @@ public class FuzzyCompareTest
 	@Test
 	public void testGt()
 	{
-		assertEquals(true, FuzzyCompare.gt(10, 10, 0), "GT 10 > 10 | Range 0");
-		assertEquals(true, FuzzyCompare.gt(10, 10, 5), "GT 10 > 10 | Range 5");
-		assertEquals(true, FuzzyCompare.gt(10, 9, 1), "GT 10 > 9 | Range 1");
-		assertEquals(true, FuzzyCompare.gt(10, 11, 1), "GT 10 > 11 | Range 1");
-		assertEquals(true, FuzzyCompare.gt(10, 8, 1), "GT 10 > 8 | Range 1");
-		assertEquals(false, FuzzyCompare.gt(10, 12, 1), "GT 10 > 12 | Range 1");
+		assertTrue(FuzzyCompare.gt(10, 10, 0), "GT 10 > 10 | Range 0");
+		assertTrue(FuzzyCompare.gt(10, 10, 5), "GT 10 > 10 | Range 5");
+		assertTrue(FuzzyCompare.gt(10, 9, 1), "GT 10 > 9 | Range 1");
+		assertTrue(FuzzyCompare.gt(10, 11, 1), "GT 10 > 11 | Range 1");
+		assertTrue(FuzzyCompare.gt(10, 8, 1), "GT 10 > 8 | Range 1");
+		assertFalse(FuzzyCompare.gt(10, 12, 1), "GT 10 > 12 | Range 1");
 	}
 
 	/**
@@ -53,12 +54,12 @@ public class FuzzyCompareTest
 	@Test
 	public void testLt()
 	{
-		assertEquals(true, FuzzyCompare.lt(10, 10, 0), "LT 10 < 10 | Range 0");
-		assertEquals(true, FuzzyCompare.lt(10, 10, 5), "LT 10 < 10 | Range 5");
-		assertEquals(true, FuzzyCompare.lt(10, 9, 1), "LT 10 < 9 | Range 1");
-		assertEquals(true, FuzzyCompare.lt(10, 11, 1), "LT 10 < 11 | Range 1");
-		assertEquals(false, FuzzyCompare.lt(10, 8, 1), "LT 10 < 8 | Range 1");
-		assertEquals(true, FuzzyCompare.lt(10, 12, 1), "LT 10 < 12 | Range 1");
+		assertTrue(FuzzyCompare.lt(10, 10, 0), "LT 10 < 10 | Range 0");
+		assertTrue(FuzzyCompare.lt(10, 10, 5), "LT 10 < 10 | Range 5");
+		assertTrue(FuzzyCompare.lt(10, 9, 1), "LT 10 < 9 | Range 1");
+		assertTrue(FuzzyCompare.lt(10, 11, 1), "LT 10 < 11 | Range 1");
+		assertFalse(FuzzyCompare.lt(10, 8, 1), "LT 10 < 8 | Range 1");
+		assertTrue(FuzzyCompare.lt(10, 12, 1), "LT 10 < 12 | Range 1");
 	}
 
 	/**
@@ -68,12 +69,12 @@ public class FuzzyCompareTest
 	@Test
 	public void testGte()
 	{
-		assertEquals(true, FuzzyCompare.gte(10, 10, 0), "GTE 10 > 10 | Range 0");
-		assertEquals(true, FuzzyCompare.gte(10, 10, 5), "GTE 10 > 10 | Range 5");
-		assertEquals(true, FuzzyCompare.gte(10, 9, 1), "GTE 10 > 9 | Range 1");
-		assertEquals(true, FuzzyCompare.gte(10, 11, 1), "GTE 10 > 11 | Range 1");
-		assertEquals(true, FuzzyCompare.gte(10, 8, 1), "GTE 10 > 8 | Range 1");
-		assertEquals(false, FuzzyCompare.gte(10, 12, 1), "GTE 10 > 12 | Range 1");
+		assertTrue(FuzzyCompare.gte(10, 10, 0), "GTE 10 > 10 | Range 0");
+		assertTrue(FuzzyCompare.gte(10, 10, 5), "GTE 10 > 10 | Range 5");
+		assertTrue(FuzzyCompare.gte(10, 9, 1), "GTE 10 > 9 | Range 1");
+		assertTrue(FuzzyCompare.gte(10, 11, 1), "GTE 10 > 11 | Range 1");
+		assertTrue(FuzzyCompare.gte(10, 8, 1), "GTE 10 > 8 | Range 1");
+		assertFalse(FuzzyCompare.gte(10, 12, 1), "GTE 10 > 12 | Range 1");
 	}
 
 	/**
@@ -83,12 +84,12 @@ public class FuzzyCompareTest
 	@Test
 	public void testLte()
 	{
-		assertEquals(true, FuzzyCompare.lte(10, 10, 0), "LTE 10 < 10 | Range 0");
-		assertEquals(true, FuzzyCompare.lte(10, 10, 5), "LTE 10 < 10 | Range 5");
-		assertEquals(true, FuzzyCompare.lte(10, 9, 1), "LTE 10 < 9 | Range 1");
-		assertEquals(true, FuzzyCompare.lte(10, 11, 1), "LTE 10 < 11 | Range 1");
-		assertEquals(false, FuzzyCompare.lte(10, 8, 1), "LTE 10 < 8 | Range 1");
-		assertEquals(true, FuzzyCompare.lte(10, 12, 1), "LTE 10 < 12 | Range 1");
+		assertTrue(FuzzyCompare.lte(10, 10, 0), "LTE 10 < 10 | Range 0");
+		assertTrue(FuzzyCompare.lte(10, 10, 5), "LTE 10 < 10 | Range 5");
+		assertTrue(FuzzyCompare.lte(10, 9, 1), "LTE 10 < 9 | Range 1");
+		assertTrue(FuzzyCompare.lte(10, 11, 1), "LTE 10 < 11 | Range 1");
+		assertFalse(FuzzyCompare.lte(10, 8, 1), "LTE 10 < 8 | Range 1");
+		assertTrue(FuzzyCompare.lte(10, 12, 1), "LTE 10 < 12 | Range 1");
 	}
 
 	/**
@@ -99,35 +100,35 @@ public class FuzzyCompareTest
 	public void testEq3D()
 	{
 		// Difference on the right side
-		assertEquals(false, FuzzyCompare.eq(new Vector3D(1.0, 2.0, 3.0), new Vector3D(2.0, 2.0, 3.0), 0.0),
+		assertFalse(FuzzyCompare.eq(new Vector3D(1.0, 2.0, 3.0), new Vector3D(2.0, 2.0, 3.0), 0.0),
 				"EQ (1, 2, 3) == (2, 2, 3) | Range 0");
-		assertEquals(true, FuzzyCompare.eq(new Vector3D(1.0, 2.0, 3.0), new Vector3D(2.0, 2.0, 3.0), 1.0),
+		assertTrue(FuzzyCompare.eq(new Vector3D(1.0, 2.0, 3.0), new Vector3D(2.0, 2.0, 3.0), 1.0),
 				"EQ (1, 2, 3) == (2, 2, 3) | Range 1");
 
-		assertEquals(false, FuzzyCompare.eq(new Vector3D(1.0, 2.0, 3.0), new Vector3D(1.0, 3.0, 3.0), 0.0),
+		assertFalse(FuzzyCompare.eq(new Vector3D(1.0, 2.0, 3.0), new Vector3D(1.0, 3.0, 3.0), 0.0),
 				"EQ (1, 2, 3) == (1, 3, 3) | Range 0");
-		assertEquals(true, FuzzyCompare.eq(new Vector3D(1.0, 2.0, 3.0), new Vector3D(1.0, 3.0, 3.0), 1.0),
+		assertTrue(FuzzyCompare.eq(new Vector3D(1.0, 2.0, 3.0), new Vector3D(1.0, 3.0, 3.0), 1.0),
 				"EQ (1, 2, 3) == (1, 3, 3) | Range 1");
 
-		assertEquals(false, FuzzyCompare.eq(new Vector3D(1.0, 2.0, 3.0), new Vector3D(1.0, 2.0, 4.0), 0.0),
+		assertFalse(FuzzyCompare.eq(new Vector3D(1.0, 2.0, 3.0), new Vector3D(1.0, 2.0, 4.0), 0.0),
 				"EQ (1, 2, 3) == (1, 2, 4) | Range 0");
-		assertEquals(true, FuzzyCompare.eq(new Vector3D(1.0, 2.0, 3.0), new Vector3D(1.0, 2.0, 4.0), 1.0),
+		assertTrue(FuzzyCompare.eq(new Vector3D(1.0, 2.0, 3.0), new Vector3D(1.0, 2.0, 4.0), 1.0),
 				"EQ (1, 2, 3) == (1, 2, 4) | Range 1");
 
 		// Difference on the left side
-		assertEquals(false, FuzzyCompare.eq(new Vector3D(2.0, 2.0, 3.0), new Vector3D(1.0, 2.0, 3.0), 0.0),
+		assertFalse(FuzzyCompare.eq(new Vector3D(2.0, 2.0, 3.0), new Vector3D(1.0, 2.0, 3.0), 0.0),
 				"EQ (2, 2, 3) == (1, 2, 3) | Range 0");
-		assertEquals(true, FuzzyCompare.eq(new Vector3D(2.0, 2.0, 3.0), new Vector3D(1.0, 2.0, 3.0), 1.0),
+		assertTrue(FuzzyCompare.eq(new Vector3D(2.0, 2.0, 3.0), new Vector3D(1.0, 2.0, 3.0), 1.0),
 				"EQ (2, 2, 3) == (1, 2, 3) | Range 1");
 
-		assertEquals(false, FuzzyCompare.eq(new Vector3D(1.0, 3.0, 3.0), new Vector3D(1.0, 2.0, 3.0), 0.0),
+		assertFalse(FuzzyCompare.eq(new Vector3D(1.0, 3.0, 3.0), new Vector3D(1.0, 2.0, 3.0), 0.0),
 				"EQ (1, 3, 3) == (1, 2, 3) | Range 0");
-		assertEquals(true, FuzzyCompare.eq(new Vector3D(1.0, 3.0, 3.0), new Vector3D(1.0, 2.0, 3.0), 1.0),
+		assertTrue(FuzzyCompare.eq(new Vector3D(1.0, 3.0, 3.0), new Vector3D(1.0, 2.0, 3.0), 1.0),
 				"EQ (1, 3, 3) == (1, 2, 3) | Range 1");
 
-		assertEquals(false, FuzzyCompare.eq(new Vector3D(1.0, 2.0, 4.0), new Vector3D(1.0, 2.0, 3.0), 0.0),
+		assertFalse(FuzzyCompare.eq(new Vector3D(1.0, 2.0, 4.0), new Vector3D(1.0, 2.0, 3.0), 0.0),
 				"EQ (1, 2, 4) == (1, 2, 3) | Range 0");
-		assertEquals(true, FuzzyCompare.eq(new Vector3D(1.0, 2.0, 4.0), new Vector3D(1.0, 2.0, 3.0), 1.0),
+		assertTrue(FuzzyCompare.eq(new Vector3D(1.0, 2.0, 4.0), new Vector3D(1.0, 2.0, 3.0), 1.0),
 				"EQ (1, 2, 4) == (1, 2, 3) | Range 1");
 	}
 }
