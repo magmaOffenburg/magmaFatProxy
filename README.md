@@ -2,7 +2,7 @@
 
 ![Build Status](https://github.com/magmaOffenburg/magmaFatProxy/workflows/Build/badge.svg)
 
-Fat Proxy for the [RoboCup 3D Soccer Simulation League](http://wiki.robocup.org/wiki/Soccer_Simulation_League) created by the [magmaOffenburg team](http://robocup.hs-offenburg.de/).
+Fat Proxy for the [RoboCup 3D Soccer Simulation League](https://ssim.robocup.org/3d-simulation/) created by the [magmaOffenburg team](http://robocup.hs-offenburg.de/).
 
 The Fat Proxy is a proxy for client agents, connecting to the
 Simspark server. It extends the magmaProxy by supporting high level dash and kick commands for agents.
@@ -87,7 +87,7 @@ Currently, the FatProxy performs tests to cut off parameter combinations that wi
 `(proxy kick <distance> <horizontalAngle> <verticalAngle>)`
 - `<distance>`: The desired distance in m (however, see kick model)
 - `<horizontalAngle>`: The horizontal kick direction relative to the player (in degrees, 0 is straight)
-- `<verticalAngle>`: The (positive) vertical angle for high kicking ([0..90] in degrees)
+- `<verticalAngle>`: The (positive) vertical angle for high kicking ([0..70] in degrees)
 
 Example: `(proxy kick 8.5 -50.028 10.0)`: Kick 8.5m 50 degrees to the right with an initial 10 degrees vertical trajectory.
 
