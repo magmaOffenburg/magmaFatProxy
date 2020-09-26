@@ -19,7 +19,6 @@ package magma.util.roboviz;
 import java.awt.Color;
 import java.nio.ByteBuffer;
 import java.util.Locale;
-
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 
 /**

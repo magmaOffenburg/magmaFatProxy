@@ -1,10 +1,9 @@
 package magma.util.scenegraph.impl;
 
-import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
-
 import magma.util.scenegraph.IBaseNode;
 import magma.util.scenegraph.IMeshNode;
 import magma.util.scenegraph.NodeType;
+import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 
 public class MeshNode extends BaseNode implements IMeshNode
 {

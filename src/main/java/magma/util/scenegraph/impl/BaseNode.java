@@ -1,7 +1,6 @@
 package magma.util.scenegraph.impl;
 
 import java.util.ArrayList;
-
 import magma.util.scenegraph.IBaseNode;
 import magma.util.scenegraph.NodeType;
 
