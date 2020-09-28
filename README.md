@@ -24,12 +24,22 @@ It should be compatible with older JREs, too, but this is not verified.
 
 ## Installation
 
-- Clone the repository: `git clone https://github.com/magmaOffenburg/magmaFatProxy`.
+### Prerequisites
+- Make sure you have [simspark and rcssserver3d](https://gitlab.com/robocup-sim/SimSpark/-/wikis/home) installed and the command `rcssserver3d` is available on your command line.
 - Make sure you have Java installed and available on your command line.
-- Make sure you have [simspark and rcsserver3d](https://gitlab.com/robocup-sim/SimSpark/-/wikis/home) installed and the command `rcssserver3d` is available on your command line.
-- The Fat Proxy itself does not require an installation.
 
-For contributions, please set up `clang-format` as described [here](https://github.com/hsoautonomy/formatting). 
+### Getting the prebuilt version
+We provide a prebuilt version of the Fat Proxy. You can download the latest version from the [Releases page](https://github.com/magmaOffenburg/magmaFatProxy/releases) (`magmaFatProxy.zip`). The Zip file contains the JAR file as well as the start script.
+
+### Building from source
+- Clone the repository: `git clone https://github.com/magmaOffenburg/magmaFatProxy`.
+- Switch into the project's root directory.
+- If you have Maven installed and available on your command line, run `mvn package`. Else, we also added a Maven wrapper to the project: run `./mvnw package` instead to use it.
+- In the target directory, you should now find a Zip file similar to the prebuilt version.
+
+The Fat Proxy itself does not require any further installation. Running the start script or the JAR file is sufficient. (Note: the start script has to stay in the same directory as the JAR file).
+
+For contributions, please set up `clang-format` as described [here](https://github.com/hsoautonomy/formatting).
 
 ## Preparation
 Before you can use the Fat Proxy, you have to configure the soccer server to run in sync mode.
