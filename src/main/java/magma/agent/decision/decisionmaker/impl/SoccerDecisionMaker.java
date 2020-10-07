@@ -179,6 +179,11 @@ public class SoccerDecisionMaker extends RoboCupDecisionMakerBase
 			return IBehaviorConstants.MOVE_ARM_TO_FALL_BACK;
 		}
 
+		if (thisPlayer.isInHandStand()) {
+			// if the robot is in a handstand, move the arms as he could otherwise start walking
+			return IBehaviorConstants.MOVE_ARM_TO_FALL_BACK;
+		}
+
 		return null;
 	}
 

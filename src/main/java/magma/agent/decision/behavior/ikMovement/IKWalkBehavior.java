@@ -210,25 +210,28 @@ public class IKWalkBehavior extends IKMovementBehaviorBase implements IBaseWalk
 
 	protected void swingArms(IBodyModel bodyModel)
 	{
+		// to avoid self collisions
+		int armRollOffset = 30;
+
 		// Arms
 		IRoboCupAgentModel agentModel = getAgentModel();
 		if (walkMovement.getSupportFoot() == SupportFoot.RIGHT) {
 			agentModel.getWriteableHJ(IHumanoidJoints.RShoulderPitch).performAxisPosition(-60, 4);
 			agentModel.getWriteableHJ(IHumanoidJoints.RShoulderYaw).performAxisPosition(-20, 4);
-			agentModel.getWriteableHJ(IHumanoidJoints.RArmRoll).performAxisPosition(25, 4);
+			agentModel.getWriteableHJ(IHumanoidJoints.RArmRoll).performAxisPosition(25 + armRollOffset, 4);
 			agentModel.getWriteableHJ(IHumanoidJoints.RArmYaw).performAxisPosition(90, 4);
 			agentModel.getWriteableHJ(IHumanoidJoints.LShoulderPitch).performAxisPosition(-120, 4);
 			agentModel.getWriteableHJ(IHumanoidJoints.LShoulderYaw).performAxisPosition(15, 4);
-			agentModel.getWriteableHJ(IHumanoidJoints.LArmRoll).performAxisPosition(-68, 4);
+			agentModel.getWriteableHJ(IHumanoidJoints.LArmRoll).performAxisPosition(-68 - armRollOffset, 4);
 			agentModel.getWriteableHJ(IHumanoidJoints.LArmYaw).performAxisPosition(-51, 4);
 		} else {
 			agentModel.getWriteableHJ(IHumanoidJoints.RShoulderPitch).performAxisPosition(-120, 4);
 			agentModel.getWriteableHJ(IHumanoidJoints.RShoulderYaw).performAxisPosition(-15, 4);
-			agentModel.getWriteableHJ(IHumanoidJoints.RArmRoll).performAxisPosition(68, 4);
+			agentModel.getWriteableHJ(IHumanoidJoints.RArmRoll).performAxisPosition(68 + armRollOffset, 4);
 			agentModel.getWriteableHJ(IHumanoidJoints.RArmYaw).performAxisPosition(51, 4);
 			agentModel.getWriteableHJ(IHumanoidJoints.LShoulderPitch).performAxisPosition(-60, 4);
 			agentModel.getWriteableHJ(IHumanoidJoints.LShoulderYaw).performAxisPosition(20, 4);
-			agentModel.getWriteableHJ(IHumanoidJoints.LArmRoll).performAxisPosition(-25, 4);
+			agentModel.getWriteableHJ(IHumanoidJoints.LArmRoll).performAxisPosition(-25 - armRollOffset, 4);
 			agentModel.getWriteableHJ(IHumanoidJoints.LArmYaw).performAxisPosition(-90, 4);
 		}
 	}

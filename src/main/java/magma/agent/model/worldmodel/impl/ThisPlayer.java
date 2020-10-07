@@ -78,7 +78,7 @@ public class ThisPlayer extends Player implements IThisPlayer
 	@Override
 	public boolean isLying()
 	{
-		return Math.abs(getOrientation().getMatrix()[2][2]) < 0.3;
+		return getOrientation().getMatrix()[2][2] < 0.3;
 	}
 
 	@Override
@@ -99,6 +99,12 @@ public class ThisPlayer extends Player implements IThisPlayer
 	{
 		double[][] orientation = getOrientation().getMatrix();
 		return orientation[2][0] > 0.7 || orientation[2][0] < -0.7;
+	}
+
+	@Override
+	public boolean isInHandStand()
+	{
+		return getOrientation().getMatrix()[2][2] < -0.5;
 	}
 
 	@Override

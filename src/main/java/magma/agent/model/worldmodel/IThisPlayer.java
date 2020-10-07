@@ -66,6 +66,8 @@ public interface IThisPlayer extends IPlayer {
 
 	boolean isLeaningToSide();
 
+	boolean isInHandStand();
+
 	/**
 	 * @return true if this is the goal keeper of our team
 	 */
