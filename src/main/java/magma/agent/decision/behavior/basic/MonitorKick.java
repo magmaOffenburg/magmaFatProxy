@@ -24,6 +24,7 @@ import hso.autonomy.util.misc.ValueUtil;
 import java.util.List;
 import magma.agent.decision.behavior.IBehaviorConstants;
 import magma.agent.model.worldmodel.IThisPlayer;
+import magma.common.spark.PlaySide;
 import magma.monitor.command.IServerCommander;
 import magma.monitor.general.impl.MonitorRuntime;
 import magma.monitor.worldmodel.ISoccerAgent;
@@ -139,11 +140,20 @@ public class MonitorKick extends RoboCupBehavior
 					// this kick model is roughly taken from 2D simulator
 					// values[0] is the distance we want to achieve and which will be achieved with factor 1.5
 					kickStartPos = oldBallPos;
+
+					// Get horizontal angle of player (global) and correct offset caused by using another coordinate
+					// system internally
+					Angle globalHorizontalPlayerAngle =
+							monitorPlayer.getBodyPartPose(SoccerAgentBodyPart.BODY).getHorizontalAngle();
+					globalHorizontalPlayerAngle = globalHorizontalPlayerAngle.add(
+							getWorldModel().getPlaySide().equals(PlaySide.LEFT) ? Angle.ANGLE_90
+																				: Angle.ANGLE_90.negate());
+
 					double kickPower = ValueUtil.limitValue(values[0] * 1.5, 0, MAX_KICK_DISTANCE);
-					double horizontalAngle = ValueUtil.limitValue(values[1], -180, 180);
+					double relativeHorizontalAngle = ValueUtil.limitValue(values[1], -180, 180);
+					Angle globalHorizontalAngle = globalHorizontalPlayerAngle.add(Angle.deg(relativeHorizontalAngle));
 					double verticalAngle = ValueUtil.limitValue(values[2], 0, 70);
-					kickDirection =
-							new Vector3D(Angle.deg(horizontalAngle).radians(), Angle.deg(verticalAngle).radians());
+					kickDirection = new Vector3D(globalHorizontalAngle.radians(), Angle.deg(verticalAngle).radians());
 					Pose3D torso = monitorPlayer.getBodyPartPose(SoccerAgentBodyPart.BODY);
 					Pose3D ball = new Pose3D(oldBallPos);
 					double deltaAngle = Math.abs(torso.getHorizontalAngleTo(ball).degrees()) / 180;
