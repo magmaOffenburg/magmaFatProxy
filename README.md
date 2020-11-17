@@ -105,10 +105,10 @@ The magmaFatProxy uses a 3D adaption of the kick model used in the 2D soccer sim
 effectiveKickPower = kickPower * 1.5 * (1 - 0.25 * deltaAngle - 0.25 * distanceBall / KICKABLE_MARGIN)
 - deltaAngle: The relative horizontal angle of the ball with respect to the player divided by 180.
 (`Math.abs(torso.getHorizontalAngleTo(ball).degrees()) / 180`). So a ball behind the player can only be kicked with 25% less power.
-- distanceBall: The 3D distance of the ball to the center of the torso. So a far ball can only be kicked with 25% less power. If the ball is outside the KICKABLE_MARGIN, it will not be kicked at all. The failed kick command will make the agent slowly walk forward (10,0,0).
-- KICKABLE_MARGIN: 0.55m which means that a ball on the ground can roughly be kicked at a distance of 0.4m. The agent may kick a ball also in the air.
+- distanceBall: The 3D distance of the ball to the 2D projected torso position. So a far ball can only be kicked with 25% less power. If the ball is outside the KICKABLE_MARGIN, it will not be kicked at all. The failed kick command will make the agent slowly walk forward (10,0,0).
+- KICKABLE_MARGIN: 0.44m which means that a ball on the ground can be kicked at a distance of 0.44m. The agent may kick a ball also in the air.
 
-With the maximum possible effectiveKickPower, the kick should have a distance of 15 meters.
+With the maximum possible effectiveKickPower, the kick should have a distance of 15 meters. (See [MonitorKick.java](src/main/java/magma/agent/decision/behavior/basic/MonitorKick.java) for the actual implementation.)
 
 It is important, that a kick command takes at least 3 simulation cycles to be performed. So the agent has to send a kick command for at least 3 consecutive cycles. If an agent sends both dash and kick commands within one cycles, the kick is prioritized.
 

@@ -39,7 +39,7 @@ import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 public class MonitorKick extends RoboCupBehavior
 {
 	/** how far a ball might be to kick it. Is 0.7 in 2D league */
-	public static final double KICKABLE_MARGIN = 0.55;
+	public static final double KICKABLE_MARGIN = 0.44;
 
 	/** the maximum distance we should be able to kick */
 	public static final double MAX_KICK_DISTANCE = 15;
@@ -187,7 +187,7 @@ public class MonitorKick extends RoboCupBehavior
 			Pose3D torso = monitorPlayer.getBodyPartPose(SoccerAgentBodyPart.BODY);
 			Vector3D ballPos = monitorRuntime.getWorldModel().getBall().getPosition();
 			Vector3D playerPos = torso.getPosition();
-			return ballPos.distance(playerPos);
+			return ballPos.distance(new Vector3D(playerPos.getX(), playerPos.getY(), 0));
 		}
 		// player is (not yet) visible in the monitor protocol
 		return 1000;
