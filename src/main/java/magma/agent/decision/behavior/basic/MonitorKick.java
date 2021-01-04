@@ -24,6 +24,7 @@ import hso.autonomy.util.misc.ValueUtil;
 import java.util.List;
 import magma.agent.decision.behavior.IBehaviorConstants;
 import magma.agent.model.worldmodel.IThisPlayer;
+import magma.common.spark.PlayMode;
 import magma.common.spark.PlaySide;
 import magma.monitor.command.IServerCommander;
 import magma.monitor.general.impl.MonitorRuntime;
@@ -167,6 +168,23 @@ public class MonitorKick extends RoboCupBehavior
 					double effectiveKickPower = kickPower * factor;
 					kickDirection = kickDirection.scalarMultiply(effectiveKickPower);
 				}
+			}
+		}
+
+		if (monitorRuntime.getWorldModel().getTime() < 300.0 ||
+				(monitorRuntime.getWorldModel().getTime() > 300.0 &&
+						monitorRuntime.getWorldModel().getTime() < 600.0)) {
+			PlayMode playMode = monitorRuntime.getWorldModel().getPlayMode();
+			switch (playMode) {
+			case CORNER_KICK_LEFT:
+			case CORNER_KICK_RIGHT:
+			case KICK_IN_LEFT:
+			case KICK_IN_RIGHT:
+				// Prevent causing another kick-in
+				serverCommander.setPlaymode(PlayMode.PLAY_ON);
+				break;
+			default:
+				break;
 			}
 		}
 
