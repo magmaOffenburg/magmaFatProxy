@@ -18,6 +18,7 @@
 package magma.monitor.messageparser;
 
 import java.util.List;
+
 import magma.common.spark.Foul;
 
 public interface ISimulationState {
@@ -66,6 +67,14 @@ public interface ISimulationState {
 	Integer getRightScore();
 
 	Integer getPlayMode();
+
+	Float getPassModeMinOppBallDist();
+
+	Float getPassModeDuration();
+
+	Float getPassModeScoreWaitLeft();
+
+	Float getPassModeScoreWaitRight();
 
 	List<Foul> getFouls();
 }

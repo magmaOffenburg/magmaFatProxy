@@ -17,6 +17,8 @@
  *******************************************************************************/
 package magma.monitor.messageparser.impl;
 
+import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
+
 import hso.autonomy.util.symboltreeparser.SymbolNode;
 import magma.common.spark.Foul;
 import magma.common.spark.Foul.FoulType;
@@ -26,7 +28,6 @@ import magma.util.scenegraph.impl.LightNode;
 import magma.util.scenegraph.impl.MeshNode;
 import magma.util.scenegraph.impl.SceneGraphHeader;
 import magma.util.scenegraph.impl.TransformNode;
-import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 
 public class RSGConverter
 {
@@ -147,6 +148,18 @@ public class RSGConverter
 					Foul foul = new Foul(state.getTime(), parseInteger(child, 1),
 							FoulType.values()[parseInteger(child, 2)], parseInteger(child, 3), parseInteger(child, 4));
 					state.addFoul(foul);
+					break;
+				case "PassModeMinOppBallDist":
+					state.setPassModeMinOppBallDist(Float.parseFloat(value));
+					break;
+				case "PassModeDuration":
+					state.setPassModeDuration(Float.parseFloat(value));
+					break;
+				case "pass_mode_score_wait_left":
+					state.setPassModeScoreWaitLeft(Float.parseFloat(value));
+					break;
+				case "pass_mode_score_wait_right":
+					state.setPassModeScoreWaitRight(Float.parseFloat(value));
 					break;
 				default:
 					// Unknown parameter

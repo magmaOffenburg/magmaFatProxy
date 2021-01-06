@@ -19,6 +19,7 @@ package magma.monitor.messageparser.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import magma.common.spark.Foul;
 import magma.monitor.messageparser.ISimulationState;
 
@@ -69,6 +70,14 @@ public class SimulationState implements ISimulationState
 	private Integer rightScore;
 
 	private Integer playMode;
+
+	private Float passModeMinOppBallDist;
+
+	private Float passModeDuration;
+
+	private Float passModeScoreWaitLeft;
+
+	private Float passModeScoreWaitRight;
 
 	private List<Foul> fouls = new ArrayList<>();
 
@@ -211,6 +220,30 @@ public class SimulationState implements ISimulationState
 	}
 
 	@Override
+	public Float getPassModeMinOppBallDist()
+	{
+		return passModeMinOppBallDist;
+	}
+
+	@Override
+	public Float getPassModeDuration()
+	{
+		return passModeDuration;
+	}
+
+	@Override
+	public Float getPassModeScoreWaitLeft()
+	{
+		return passModeScoreWaitLeft;
+	}
+
+	@Override
+	public Float getPassModeScoreWaitRight()
+	{
+		return passModeScoreWaitRight;
+	}
+
+	@Override
 	public List<Foul> getFouls()
 	{
 		return fouls;
@@ -329,6 +362,26 @@ public class SimulationState implements ISimulationState
 	public void setPlayMode(Integer playMode)
 	{
 		this.playMode = playMode;
+	}
+
+	public void setPassModeMinOppBallDist(Float passModeMinOppBallDist)
+	{
+		this.passModeMinOppBallDist = passModeMinOppBallDist;
+	}
+
+	public void setPassModeDuration(Float passModeDuration)
+	{
+		this.passModeDuration = passModeDuration;
+	}
+
+	public void setPassModeScoreWaitLeft(Float passModeScoreWaitLeft)
+	{
+		this.passModeScoreWaitLeft = passModeScoreWaitLeft;
+	}
+
+	public void setPassModeScoreWaitRight(Float passModeScoreWaitRight)
+	{
+		this.passModeScoreWaitRight = passModeScoreWaitRight;
 	}
 
 	public void addFoul(Foul foul)
