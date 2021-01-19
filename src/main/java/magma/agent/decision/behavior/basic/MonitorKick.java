@@ -171,25 +171,30 @@ public class MonitorKick extends RoboCupBehavior
 			}
 		}
 
-		if (monitorRuntime.getWorldModel().getTime() < 300.0 ||
-				(monitorRuntime.getWorldModel().getTime() > 300.0 &&
-						monitorRuntime.getWorldModel().getTime() < 600.0)) {
-			PlayMode playMode = monitorRuntime.getWorldModel().getPlayMode();
-			switch (playMode) {
-			case CORNER_KICK_LEFT:
-			case CORNER_KICK_RIGHT:
-			case KICK_IN_LEFT:
-			case KICK_IN_RIGHT:
-				// Prevent causing another kick-in
-				serverCommander.setPlaymode(PlayMode.PLAY_ON);
-				break;
-			default:
-				break;
-			}
+		float time = monitorRuntime.getWorldModel().getTime();
+		PlayMode playMode = monitorRuntime.getWorldModel().getPlayMode();
+		if ((time < 299.97 || (time > 299.97 && time < 599.97)) && shouldSetPlayOn(playMode)) {
+			// Prevent causing another kick-in or a goal kick
+			serverCommander.setPlaymode(PlayMode.PLAY_ON);
 		}
 
 		serverCommander.beamBall((float) kickStartPos.getX(), (float) kickStartPos.getY(), (float) kickStartPos.getZ(),
 				(float) kickDirection.getX(), (float) kickDirection.getY(), (float) kickDirection.getZ());
+	}
+
+	private boolean shouldSetPlayOn(PlayMode playMode)
+	{
+		switch (playMode) {
+		case BEFORE_KICK_OFF:
+		case GAME_OVER:
+		case GOAL_KICK_LEFT:
+		case GOAL_KICK_RIGHT:
+		case GOAL_LEFT:
+		case GOAL_RIGHT:
+			return false;
+		default:
+			return true;
+		}
 	}
 
 	/**
