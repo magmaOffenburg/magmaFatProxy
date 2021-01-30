@@ -146,9 +146,7 @@ public class MonitorKick extends RoboCupBehavior
 					// system internally
 					Angle globalHorizontalPlayerAngle =
 							monitorPlayer.getBodyPartPose(SoccerAgentBodyPart.BODY).getHorizontalAngle();
-					globalHorizontalPlayerAngle = globalHorizontalPlayerAngle.add(
-							getWorldModel().getPlaySide().equals(PlaySide.LEFT) ? Angle.ANGLE_90
-																				: Angle.ANGLE_90.negate());
+					globalHorizontalPlayerAngle = globalHorizontalPlayerAngle.add(Angle.ANGLE_90);
 
 					double kickPower = ValueUtil.limitValue(values[0] * 1.5, 0, MAX_KICK_DISTANCE);
 					double relativeHorizontalAngle = ValueUtil.limitValue(values[1], -180, 180);
