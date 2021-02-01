@@ -36,7 +36,6 @@ public class EnumArgumentTest
 	public void testInvalidValue()
 	{
 		EnumArgument<TestEnum> arg = new EnumArgument<>("test", null, "", TestEnum.class);
-		assertThrows(ArgumentParsingException.class, () -> {
-			assertNull(arg.parse("--test=invalid")); });
+		assertThrows(ArgumentParsingException.class, () -> { assertNull(arg.parse("--test=invalid")); });
 	}
 }

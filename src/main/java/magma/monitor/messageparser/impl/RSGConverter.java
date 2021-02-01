@@ -17,8 +17,6 @@
  *******************************************************************************/
 package magma.monitor.messageparser.impl;
 
-import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
-
 import hso.autonomy.util.symboltreeparser.SymbolNode;
 import magma.common.spark.Foul;
 import magma.common.spark.Foul.FoulType;
@@ -28,6 +26,7 @@ import magma.util.scenegraph.impl.LightNode;
 import magma.util.scenegraph.impl.MeshNode;
 import magma.util.scenegraph.impl.SceneGraphHeader;
 import magma.util.scenegraph.impl.TransformNode;
+import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 
 public class RSGConverter
 {

@@ -6,6 +6,7 @@
 package hso.autonomy.util.geometry;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.util.ArrayList;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;

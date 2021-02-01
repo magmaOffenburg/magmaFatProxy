@@ -18,7 +18,6 @@
 package magma.monitor.messageparser;
 
 import java.util.List;
-
 import magma.common.spark.Foul;
 
 public interface ISimulationState {

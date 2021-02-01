@@ -19,7 +19,6 @@ package magma.monitor.messageparser.impl;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import magma.common.spark.Foul;
 import magma.monitor.messageparser.ISimulationState;
 

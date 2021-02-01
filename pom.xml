@@ -5,7 +5,7 @@
    <groupId>magmaoffenburg</groupId>
    <artifactId>magmafatproxy</artifactId>
    <packaging>jar</packaging>
-   <version>1.2.0</version>
+   <version>1.2.1</version>
    <name>magmaFatProxy</name>
    <url>https://github.com/magmaOffenburg/magmaFatProxy</url>
 
@@ -54,7 +54,7 @@
       <dependency>
          <groupId>org.mockito</groupId>
          <artifactId>mockito-core</artifactId>
-         <version>3.6.28</version>
+         <version>3.7.7</version>
          <scope>test</scope>
       </dependency>
    </dependencies>

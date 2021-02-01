@@ -1,3 +1,9 @@
+1.2.1 (February 1, 2021)
+------------------------------
+* Fixed setting playmode during MonitorKick
+* Fixed kick direction for the right team
+* Updated magmaProxy to version 2.1.4 (fixes #3)
+  
 1.2.0 (January 6, 2021)
 ------------------------------
 * Fixed most of the occurring self collisions
