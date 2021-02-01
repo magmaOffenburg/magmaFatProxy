@@ -22,6 +22,15 @@ util/excel/~$*.*
 .idea/**/watcherTasks.xml
 .idea/dictionaries
 /buildDefault
+.idea/**/uiDesigner.xml
+.idea/libraries
+.idea/artifacts
+.idea/compiler.xml
+.idea/jarRepositories.xml
+.idea/modules.xml
+.idea/*.iml
+.idea/modules
+*.ipr
 
 test.xml
 /result.properties

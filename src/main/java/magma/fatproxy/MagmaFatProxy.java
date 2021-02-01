@@ -28,9 +28,7 @@ import magma.tools.proxy.impl.SimsparkAgentProxyServer.SimsparkAgentProxyServerP
  */
 public class MagmaFatProxy
 {
-	private static final String PROXY_VERSION = "1.0.0 ";
-
-	private SimsparkAgentProxyServer proxy;
+	private static final String PROXY_VERSION = "1.2.1";
 
 	/**
 	 * Instantiates and starts the Simspark agent proxy.
@@ -53,12 +51,17 @@ public class MagmaFatProxy
 	 *        <td>--verbose</td>
 	 *        <td>Shows the messages</td>
 	 *        </tr>
+	 *        <tr>
+	 *        <td>--daemon</td>
+	 *        <td>Disables the command line interface</td>
+	 *        </tr>
 	 *        </table>
 	 */
 	public static void main(String[] args)
 	{
 		SimsparkAgentProxyServerParameter parameterObject = MagmaProxy.parseParameters(args);
 		SimsparkAgentProxyServer proxy = new SimsparkAgentFatProxyServer(parameterObject);
-		new MagmaProxy(proxy).run();
+		System.out.println("Starting magmaFatProxy version " + PROXY_VERSION);
+		new MagmaProxy(proxy).run(parameterObject.isDaemon());
 	}
 }
