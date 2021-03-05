@@ -29,7 +29,7 @@ It should be compatible with older JREs, too, but this is not verified.
 - Make sure you have Java installed and available on your command line.
 
 ### Getting the prebuilt version
-We provide a prebuilt version of the Fat Proxy. You can download the latest version from the [Releases page](https://github.com/magmaOffenburg/magmaFatProxy/releases) (e.g. `magmafatproxy-1.2.1.zip`). The Zip file contains the JAR file as well as the start script.
+We provide a prebuilt version of the Fat Proxy. You can download the latest version from the [Releases page](https://github.com/magmaOffenburg/magmaFatProxy/releases) (e.g. `magmafatproxy-1.2.2.zip`). The Zip file contains the JAR file as well as the start script.
 
 ### Building from source
 - Clone the repository: `git clone https://github.com/magmaOffenburg/magmaFatProxy`.

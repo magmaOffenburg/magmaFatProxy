@@ -68,9 +68,11 @@ public class NaoAgentMetaModel extends RoboCupAgentMetaModel
 						Vector3D.ZERO, null, null, null, null, null);
 		configs.add(currentConfig);
 
+		// The max joint angle is actually 45 degrees
+		// However, it is limited to 0 degrees in order to prevent losing orientation by looking upwards
 		currentConfig =
 				new BodyPartConfiguration(Head, Neck, new Vector3D(0, 0, 0.065), 0.35f, new Vector3D(0.13, 0.13, 0.13),
-						new HingeJointConfiguration(NeckPitch, NeckPitchP, NeckPitchE, new Vector3D(1, 0, 0), -45, 45,
+						new HingeJointConfiguration(NeckPitch, NeckPitchP, NeckPitchE, new Vector3D(1, 0, 0), -45, 0,
 								MAX_JOINT_SPEED, false),
 						new Vector3D(0, 0, -0.005), null, null, null, null, null);
 		configs.add(currentConfig);

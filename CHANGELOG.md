@@ -1,3 +1,7 @@
+1.2.2 (March 5, 2021)
+------------------------------
+* Prevent losing orientation by limiting the maximum NeckPitch angle to zero degrees
+
 1.2.1 (February 1, 2021)
 ------------------------------
 * Fixed setting playmode during MonitorKick
