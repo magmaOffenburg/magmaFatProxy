@@ -17,7 +17,7 @@
  *******************************************************************************/
 package magma.agent.model.worldmodel.impl;
 
-import static org.mockito.Matchers.anyFloat;
+import static org.mockito.ArgumentMatchers.anyFloat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
