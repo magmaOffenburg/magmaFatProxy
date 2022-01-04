@@ -25,7 +25,6 @@ import java.util.List;
 import magma.agent.decision.behavior.IBehaviorConstants;
 import magma.agent.model.worldmodel.IThisPlayer;
 import magma.common.spark.PlayMode;
-import magma.common.spark.PlaySide;
 import magma.monitor.command.IServerCommander;
 import magma.monitor.general.impl.MonitorRuntime;
 import magma.monitor.worldmodel.ISoccerAgent;
