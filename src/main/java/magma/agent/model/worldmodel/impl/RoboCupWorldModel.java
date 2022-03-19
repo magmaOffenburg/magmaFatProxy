@@ -361,7 +361,7 @@ public class RoboCupWorldModel extends WorldModel implements IRoboCupWorldModel
 		gameState = GameState.determineGameState(playmode, playSide);
 
 		// update scored goals
-		updateGoalsScored();
+		updateGoalsScored(perception);
 	}
 
 	private void mirrorLandmarks()
@@ -385,12 +385,22 @@ public class RoboCupWorldModel extends WorldModel implements IRoboCupWorldModel
 	/**
 	 * Update the number of scored goals
 	 */
-	private void updateGoalsScored()
+	private void updateGoalsScored(IRoboCupPerception perception)
 	{
-		if (gameState == GameState.OWN_GOAL && previousGameState != GameState.OWN_GOAL) {
-			goalsWeScored++;
-		} else if (gameState == GameState.OPPONENT_GOAL && previousGameState != GameState.OPPONENT_GOAL) {
-			goalsTheyScored++;
+		IGameStatePerceptor gameState = perception.getGameState();
+		switch (getPlaySide()) {
+		case LEFT:
+			goalsWeScored = gameState.getScoreLeft();
+			goalsTheyScored = gameState.getScoreRight();
+
+			break;
+		case RIGHT:
+			goalsWeScored = gameState.getScoreRight();
+			goalsTheyScored = gameState.getScoreLeft();
+			break;
+		case UNKNOWN:
+			// Don't update the number of scored goals
+			break;
 		}
 	}
 
