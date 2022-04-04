@@ -234,6 +234,9 @@ public class SoccerDecisionMaker extends RoboCupDecisionMakerBase
 	private String determineKick(float[] values)
 	{
 		MonitorKick kick = (MonitorKick) behaviors.get(IBehaviorConstants.MONITOR_KICK);
+		if (!kick.checkPlaymode()) {
+			return IBehaviorConstants.GET_READY;
+		}
 		if (!kick.checkBallDistance()) {
 			Walk walk = (Walk) behaviors.get(IBehaviorConstants.WALK);
 			walk.walk(10, 0, 0);

@@ -228,6 +228,34 @@ public class MonitorKick extends RoboCupBehavior
 		return distance <= KICKABLE_MARGIN;
 	}
 
+	/**
+	 * check if kicking is allowed in the current play mode
+	 *
+	 * @return true, if the kick is currently allowed
+	 */
+	public boolean checkPlaymode()
+	{
+		switch (getThoughtModel().getMonitorRuntime().getWorldModel().getPlayMode()) {
+		case BEFORE_KICK_OFF:
+		case GOAL_LEFT:
+		case GOAL_RIGHT:
+			return false;
+		case KICK_OFF_LEFT:
+		case KICK_OFF_RIGHT:
+			IThisPlayer thisPlayer = getWorldModel().getThisPlayer();
+			if (getPlayer(thisPlayer.getTeamname(), thisPlayer.getID()).getPosition().distance(new Vector3D(0, 0, 0)) >
+					2) {
+				// Assumption: the kick off always happens at (0, 0) -> a bit hacky, but it should work for our purposes
+				// If the player is far away from the middle of the field, he's not going to do the kick off.
+				// -> Forbid the kick. The goalie may otherwise be able to execute a kick in the first cycle of the
+				// kick off because he may have missed the update of the ball position or something similar.
+				return false;
+			}
+		default:
+			return true;
+		}
+	}
+
 	// TODO: this method rather belongs into magmaMonitor!
 	public ISoccerAgent getPlayer(String team, int number)
 	{
