@@ -1,3 +1,10 @@
+1.2.3 (April 4, 2022)
+------------------------------
+* Improved reliability when counting scored goals
+* Kicks disrupting the game flow are now prevented from being executed
+* *Internal: Updated libraries*
+* *Internal: Removed Gson dependency*
+
 1.2.2 (March 5, 2021)
 ------------------------------
 * Prevent losing orientation by limiting the maximum NeckPitch angle to zero degrees

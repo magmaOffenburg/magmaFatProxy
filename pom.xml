@@ -5,7 +5,7 @@
    <groupId>magmaoffenburg</groupId>
    <artifactId>magmafatproxy</artifactId>
    <packaging>jar</packaging>
-   <version>1.2.2</version>
+   <version>1.2.3</version>
    <name>magmaFatProxy</name>
    <url>https://github.com/magmaOffenburg/magmaFatProxy</url>
 

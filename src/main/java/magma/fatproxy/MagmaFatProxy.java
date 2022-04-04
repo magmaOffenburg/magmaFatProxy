@@ -28,7 +28,7 @@ import magma.tools.proxy.impl.SimsparkAgentProxyServer.SimsparkAgentProxyServerP
  */
 public class MagmaFatProxy
 {
-	private static final String PROXY_VERSION = "1.2.2";
+	private static final String PROXY_VERSION = "1.2.3";
 
 	/**
 	 * Instantiates and starts the Simspark agent proxy.
