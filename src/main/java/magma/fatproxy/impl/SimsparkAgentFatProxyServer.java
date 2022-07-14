@@ -32,14 +32,16 @@ import magma.tools.proxy.impl.SimsparkAgentProxyServer;
  */
 public class SimsparkAgentFatProxyServer extends SimsparkAgentProxyServer implements IMonitorRuntimeListener
 {
+	protected int ssMonitorPort;
 	protected MonitorRuntime monitor;
 
 	/**
 	 * @param parameterObject
 	 */
-	public SimsparkAgentFatProxyServer(SimsparkAgentProxyServerParameter parameterObject)
+	public SimsparkAgentFatProxyServer(SimsparkAgentFatProxyServerParameter parameterObject)
 	{
 		super(parameterObject);
+		this.ssMonitorPort = parameterObject.getSsMonitorPort();
 	}
 
 	/**
@@ -77,7 +79,7 @@ public class SimsparkAgentFatProxyServer extends SimsparkAgentProxyServer implem
 		public void run()
 		{
 			monitor =
-					new MonitorRuntime(new MonitorParameters(ssHost, ssPort + 100, new MonitorComponentFactory(null)));
+					new MonitorRuntime(new MonitorParameters(ssHost, ssMonitorPort, new MonitorComponentFactory(null)));
 			try {
 				monitor.addRuntimeListener(SimsparkAgentFatProxyServer.this);
 				monitor.startMonitor();

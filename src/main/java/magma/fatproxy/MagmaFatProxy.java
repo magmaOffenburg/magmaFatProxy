@@ -18,9 +18,9 @@
 package magma.fatproxy;
 
 import magma.fatproxy.impl.SimsparkAgentFatProxyServer;
+import magma.fatproxy.impl.SimsparkAgentFatProxyServerParameter;
 import magma.tools.proxy.MagmaProxy;
 import magma.tools.proxy.impl.SimsparkAgentProxyServer;
-import magma.tools.proxy.impl.SimsparkAgentProxyServer.SimsparkAgentProxyServerParameter;
 
 /**
  * Proxy for RoboCup games.
@@ -59,9 +59,24 @@ public class MagmaFatProxy
 	 */
 	public static void main(String[] args)
 	{
-		SimsparkAgentProxyServerParameter parameterObject = MagmaProxy.parseParameters(args);
+		SimsparkAgentFatProxyServerParameter parameterObject = parseParameters(args);
 		SimsparkAgentProxyServer proxy = new SimsparkAgentFatProxyServer(parameterObject);
 		System.out.println("Starting magmaFatProxy version " + PROXY_VERSION);
 		new MagmaProxy(proxy).run(parameterObject.isDaemon());
+	}
+
+	public static SimsparkAgentFatProxyServerParameter parseParameters(String[] args)
+	{
+		SimsparkAgentProxyServer.SimsparkAgentProxyServerParameter magmaProxyParameters =
+				MagmaProxy.parseParameters(args);
+		int ssMonitorPort = 3200;
+		for (String arg : args) {
+			if (arg.startsWith("--monitorport=")) {
+				ssMonitorPort = Integer.parseInt(arg.replaceFirst("--monitorport=", ""));
+			}
+		}
+		return new SimsparkAgentFatProxyServerParameter(magmaProxyParameters.getProxyPort(),
+				magmaProxyParameters.getSsHost(), magmaProxyParameters.getSsPort(), ssMonitorPort,
+				magmaProxyParameters.isShowMessages(), magmaProxyParameters.isDaemon());
 	}
 }
