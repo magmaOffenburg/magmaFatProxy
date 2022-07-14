@@ -29,7 +29,7 @@ It should be compatible with older JREs, too, but this is not verified.
 - Make sure you have Java installed and available on your command line.
 
 ### Getting the prebuilt version
-We provide a prebuilt version of the Fat Proxy. You can download the latest version from the [Releases page](https://github.com/magmaOffenburg/magmaFatProxy/releases) (e.g. `magmafatproxy-1.2.3.zip`). The Zip file contains the JAR file as well as the start script.
+We provide a prebuilt version of the Fat Proxy. You can download the latest version from the [Releases page](https://github.com/magmaOffenburg/magmaFatProxy/releases) (e.g. `magmafatproxy-1.3.0.zip`). The Zip file contains the JAR file as well as the start script.
 
 ### Building from source
 - Clone the repository: `git clone https://github.com/magmaOffenburg/magmaFatProxy`.
@@ -60,6 +60,7 @@ To simplify starting of the Fat Proxy, a start script is provided:
 - `<simspark-server-Port>`: Port of the soccer server.
 - `<fatproxy-server-port>`: Port on the Fat Proxy's machine to which the players have to connect.
 
+*Note: when specifying the `--monitorport` parameter, you'll get a warning about an unknown parameter. This is expected. You don't need to worry about this.*
 
 ## Command Line Interface
 

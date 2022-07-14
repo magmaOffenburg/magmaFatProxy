@@ -1,3 +1,7 @@
+1.3.0 (July 14, 2022)
+------------------------------
+* New `monitorport` parameter
+
 1.2.3 (April 4, 2022)
 ------------------------------
 * Improved reliability when counting scored goals
