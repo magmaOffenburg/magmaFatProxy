@@ -25,7 +25,11 @@ import hso.autonomy.agent.model.thoughtmodel.IThoughtModel;
  */
 public class SidedMovementBehavior extends MovementBehavior
 {
-	public enum Side { LEFT, RIGHT }
+	public enum Side
+	{
+		LEFT,
+		RIGHT
+	}
 
 	protected Side side;
 

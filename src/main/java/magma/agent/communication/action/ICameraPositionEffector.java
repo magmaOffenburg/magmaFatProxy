@@ -19,7 +19,8 @@ package magma.agent.communication.action;
 
 import hso.autonomy.util.geometry.Pose3D;
 
-public interface ICameraPositionEffector {
+public interface ICameraPositionEffector
+{
 	Pose3D getBallWorld();
 
 	Pose3D getCameraTorso();

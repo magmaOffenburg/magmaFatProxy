@@ -22,7 +22,8 @@ import hso.autonomy.agent.communication.perception.IPerception;
 /**
  * @author Stefan Glaser
  */
-public interface IFlagModel {
+public interface IFlagModel
+{
 	/**
 	 * Called to trigger an update of the Flags based on the given perception
 	 * object.

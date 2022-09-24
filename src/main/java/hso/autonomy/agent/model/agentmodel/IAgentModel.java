@@ -18,7 +18,8 @@ import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
  *
  * @author Stefan Glaser, Klaus Dorer
  */
-public interface IAgentModel {
+public interface IAgentModel
+{
 	/**
 	 * Called to trigger an update of the AgentModel based on the given
 	 * perception object.

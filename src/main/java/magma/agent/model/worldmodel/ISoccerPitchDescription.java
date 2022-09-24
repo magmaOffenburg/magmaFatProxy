@@ -20,7 +20,8 @@ package magma.agent.model.worldmodel;
 import java.io.Serializable;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 
-public interface ISoccerPitchDescription extends Serializable {
+public interface ISoccerPitchDescription extends Serializable
+{
 	float fieldHalfLength();
 
 	float fieldHalfWidth();

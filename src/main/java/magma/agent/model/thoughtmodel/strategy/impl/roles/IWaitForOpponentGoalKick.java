@@ -22,7 +22,8 @@ import magma.agent.model.worldmodel.GameState;
 import magma.agent.model.worldmodel.IRoboCupWorldModel;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 
-public interface IWaitForOpponentGoalKick {
+public interface IWaitForOpponentGoalKick
+{
 	default Optional<Vector3D> waitForOpponentGoalKick(IRoboCupWorldModel worldModel, boolean leftSide)
 	{
 		if (worldModel.getGameState() == GameState.OPPONENT_GOAL_KICK) {

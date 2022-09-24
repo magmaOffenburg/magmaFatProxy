@@ -20,7 +20,8 @@ package magma.agent.communication.action;
 import hso.autonomy.agent.communication.action.IEffector;
 import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
 
-public interface ICupsPositionEffector extends IEffector {
+public interface ICupsPositionEffector extends IEffector
+{
 	Vector2D[] getCupPositions();
 
 	float getCup1X();

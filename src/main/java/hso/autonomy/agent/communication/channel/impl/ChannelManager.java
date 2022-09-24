@@ -56,14 +56,12 @@ public class ChannelManager implements IChannelManager
 			return;
 		}
 
-		synchronized (perceptors)
-		{
+		synchronized (perceptors) {
 			perceptors.add(newPerceptors);
 		}
 
 		// outside the synchronized block we trigger the updates
-		synchronized (this)
-		{
+		synchronized (this) {
 			notify();
 		}
 	}
@@ -71,8 +69,7 @@ public class ChannelManager implements IChannelManager
 	@Override
 	public Map<String, IPerceptor> getNextPerceptorMap()
 	{
-		synchronized (perceptors)
-		{
+		synchronized (perceptors) {
 			if (perceptors.isEmpty()) {
 				return null;
 			}
@@ -129,8 +126,7 @@ public class ChannelManager implements IChannelManager
 		inChannels.forEach(IChannel::stopChannel);
 		outChannels.forEach(IChannel::stopChannel);
 
-		synchronized (this)
-		{
+		synchronized (this) {
 			notify();
 		}
 
@@ -149,8 +145,7 @@ public class ChannelManager implements IChannelManager
 		if (mainChannel == channel) {
 			// we have to inform that a main connection is lost
 			status = ChannelManagerStatus.LOST_MAIN_CONNECTION;
-			synchronized (this)
-			{
+			synchronized (this) {
 				notify();
 			}
 			stop();

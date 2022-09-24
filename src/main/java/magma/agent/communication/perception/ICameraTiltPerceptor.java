@@ -19,7 +19,8 @@ package magma.agent.communication.perception;
 
 import hso.autonomy.agent.communication.perception.IPerceptor;
 
-public interface ICameraTiltPerceptor extends IPerceptor {
+public interface ICameraTiltPerceptor extends IPerceptor
+{
 	/**
 	 * Get Camera tilt
 	 *

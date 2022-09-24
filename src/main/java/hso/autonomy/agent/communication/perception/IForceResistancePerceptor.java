@@ -13,7 +13,8 @@ import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
  *
  * @author Simon Raffeiner
  */
-public interface IForceResistancePerceptor extends IPerceptor {
+public interface IForceResistancePerceptor extends IPerceptor
+{
 	/**
 	 * @return Force origin vector
 	 */

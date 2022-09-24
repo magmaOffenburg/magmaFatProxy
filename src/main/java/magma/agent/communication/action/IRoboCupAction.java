@@ -29,7 +29,8 @@ import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
 /**
  * Interface to all actions an agent can perform on the server
  */
-public interface IRoboCupAction extends IAction {
+public interface IRoboCupAction extends IAction
+{
 	/**
 	 * For initialization to be called after object creation
 	 */

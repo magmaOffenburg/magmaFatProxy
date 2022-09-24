@@ -24,7 +24,8 @@ import kdo.util.parameter.EnumParameterList;
  */
 public class GetUpFromBackParameters extends EnumParameterList<GetUpFromBackParameters.Param>
 {
-	public enum Param {
+	public enum Param
+	{
 		TIME1,
 		TIME2,
 		TIME3,

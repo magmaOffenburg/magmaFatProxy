@@ -11,7 +11,8 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
-public interface IAgentMetaModel extends Serializable {
+public interface IAgentMetaModel extends Serializable
+{
 	/**
 	 * Retrieve the name of this meta model.
 	 *

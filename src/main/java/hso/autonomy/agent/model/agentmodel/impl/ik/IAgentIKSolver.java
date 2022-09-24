@@ -8,7 +8,8 @@ package hso.autonomy.agent.model.agentmodel.impl.ik;
 import hso.autonomy.agent.model.agentmodel.IBodyPart;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 
-public interface IAgentIKSolver {
+public interface IAgentIKSolver
+{
 	/**
 	 * Solve the IK for a specific body part and the given target pose.<br>
 	 * The resulting angles to the joints of the limb represented by the

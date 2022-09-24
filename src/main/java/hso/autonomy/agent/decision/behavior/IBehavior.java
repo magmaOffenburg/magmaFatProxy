@@ -8,7 +8,8 @@ package hso.autonomy.agent.decision.behavior;
 /**
  * Interface to access all behaviors of the agent
  */
-public interface IBehavior {
+public interface IBehavior
+{
 	/** Name for the none behavior */
 	String NONE = "None";
 

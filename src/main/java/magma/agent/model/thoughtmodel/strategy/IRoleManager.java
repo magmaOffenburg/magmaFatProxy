@@ -22,7 +22,8 @@ import magma.agent.model.worldmodel.IPlayer;
 /**
  * @author Stephan Kammerer
  */
-public interface IRoleManager {
+public interface IRoleManager
+{
 	/**
 	 * Dynamic role assignment to agents.
 	 *

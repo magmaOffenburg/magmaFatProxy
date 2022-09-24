@@ -17,7 +17,8 @@
  *******************************************************************************/
 package magma.monitor.worldmodel;
 
-public enum SoccerAgentBodyPart {
+public enum SoccerAgentBodyPart
+{
 	HEAD,
 	LEFT_UPPER_ARM,
 	RIGHT_UPPER_ARM,

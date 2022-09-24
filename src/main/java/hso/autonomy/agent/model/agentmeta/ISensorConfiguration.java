@@ -11,7 +11,8 @@ import java.io.Serializable;
 /**
  * @author Stefan Glaser
  */
-public interface ISensorConfiguration extends Serializable {
+public interface ISensorConfiguration extends Serializable
+{
 	String getName();
 
 	String getPerceptorName();

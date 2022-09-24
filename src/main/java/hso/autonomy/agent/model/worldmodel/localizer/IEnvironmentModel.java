@@ -15,7 +15,8 @@ import java.util.List;
  *
  * @author Stefan Glaser
  */
-public interface IEnvironmentModel {
+public interface IEnvironmentModel
+{
 	/**
 	 * Retrieve the list of known reference points.
 	 * @return the known reference points

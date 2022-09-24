@@ -12,7 +12,8 @@ import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
  * Base interface for all Landmarks on the filed (goal posts, flags)
  * @author Klaus Dorer
  */
-public interface ILandmark extends IVisibleObject, IReferencePoint {
+public interface ILandmark extends IVisibleObject, IReferencePoint
+{
 	/**
 	 * @return the known position of the landmark (global coordinates)
 	 */

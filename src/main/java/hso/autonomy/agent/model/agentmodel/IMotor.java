@@ -8,7 +8,8 @@ package hso.autonomy.agent.model.agentmodel;
 /**
  * Represents a Motor of a joint
  */
-public interface IMotor {
+public interface IMotor
+{
 	float getPerceivedAngle();
 
 	void setPerceivedAngle(float angle);

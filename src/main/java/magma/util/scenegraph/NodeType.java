@@ -17,7 +17,8 @@
  *******************************************************************************/
 package magma.util.scenegraph;
 
-public enum NodeType {
+public enum NodeType
+{
 	BASE,
 	TRANSFORM,
 	LIGHT,

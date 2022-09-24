@@ -19,7 +19,8 @@ package magma.util.scenegraph;
 
 import java.util.ArrayList;
 
-public interface IBaseNode extends Cloneable {
+public interface IBaseNode extends Cloneable
+{
 	NodeType getNodeType();
 
 	void setParent(IBaseNode parent);

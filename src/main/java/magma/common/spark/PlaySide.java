@@ -23,7 +23,8 @@ package magma.common.spark;
  *
  * @author Stefan Glaser
  */
-public enum PlaySide {
+public enum PlaySide
+{
 	/** We play from left to right */
 	LEFT("left"),
 

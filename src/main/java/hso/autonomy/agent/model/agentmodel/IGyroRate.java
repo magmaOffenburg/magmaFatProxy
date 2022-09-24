@@ -24,7 +24,8 @@ import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
  *
  * @author Stefan Glaser, Srinivasa Ragavan
  */
-public interface IGyroRate extends ISensor {
+public interface IGyroRate extends ISensor
+{
 	/**
 	 * Retrieve gyro values <br>
 	 * where &lt;x, y, z&gt; is a vector containing the angle-change around the

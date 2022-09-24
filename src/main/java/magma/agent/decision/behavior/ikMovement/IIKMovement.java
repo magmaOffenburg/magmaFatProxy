@@ -24,7 +24,8 @@ import magma.agent.decision.behavior.SupportFoot;
 /**
  * @author Stefan Glaser
  */
-public interface IIKMovement extends IBalancingEngineParameters, Serializable {
+public interface IIKMovement extends IBalancingEngineParameters, Serializable
+{
 	/**
 	 * @return the name of the movement
 	 */

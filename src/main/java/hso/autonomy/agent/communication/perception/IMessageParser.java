@@ -13,7 +13,8 @@ import java.util.Map;
  *
  * @author Simon Raffeiner
  */
-public interface IMessageParser {
+public interface IMessageParser
+{
 	/**
 	 * Parses a message into IPerceptor objects
 	 * @param message the message to parse

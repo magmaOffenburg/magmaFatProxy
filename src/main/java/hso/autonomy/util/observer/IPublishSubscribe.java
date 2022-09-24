@@ -11,7 +11,8 @@ package hso.autonomy.util.observer;
  * @author Klaus Dorer
  * @param <T> Data type transported in updates
  */
-public interface IPublishSubscribe<T> {
+public interface IPublishSubscribe<T>
+{
 	/**
 	 * Add an observer to the list of observers
 	 *

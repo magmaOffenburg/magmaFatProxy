@@ -7,7 +7,8 @@ package hso.autonomy.agent.model.agentmeta;
 
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 
-public interface IHingeJointConfiguration extends ISensorConfiguration {
+public interface IHingeJointConfiguration extends ISensorConfiguration
+{
 	/**
 	 * @return the name of this effector
 	 */

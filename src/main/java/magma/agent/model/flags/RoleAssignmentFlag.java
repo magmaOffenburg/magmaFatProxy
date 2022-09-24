@@ -22,7 +22,8 @@ package magma.agent.model.flags;
  *
  * @author Stefan Glaser
  */
-public enum RoleAssignmentFlag {
+public enum RoleAssignmentFlag
+{
 	/** Dynamic role assignment based on internal logic */
 	DYNAMIC,
 

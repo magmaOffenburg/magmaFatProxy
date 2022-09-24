@@ -29,7 +29,8 @@ import java.util.Map;
  *
  * @author Stefan Glaser
  */
-public interface IThoughtModel {
+public interface IThoughtModel
+{
 	IAgentModel getAgentModel();
 
 	IWorldModel getWorldModel();

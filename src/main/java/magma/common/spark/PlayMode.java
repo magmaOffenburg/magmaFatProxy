@@ -24,7 +24,8 @@ package magma.common.spark;
  *
  * @author Stefan Glaser
  */
-public enum PlayMode {
+public enum PlayMode
+{
 	/** The game has not started yet, set in humanoid games */
 	BEFORE_KICK_OFF("BeforeKickOff"),
 

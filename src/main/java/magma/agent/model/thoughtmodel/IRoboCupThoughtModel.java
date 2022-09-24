@@ -57,7 +57,8 @@ import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
  *
  * @author Stefan Glaser
  */
-public interface IRoboCupThoughtModel extends IThoughtModel {
+public interface IRoboCupThoughtModel extends IThoughtModel
+{
 	@Override
 	IRoboCupAgentModel getAgentModel();
 

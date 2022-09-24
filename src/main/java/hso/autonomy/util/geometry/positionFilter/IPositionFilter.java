@@ -11,7 +11,8 @@ import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
  *
  * @author kdorer
  */
-public interface IPositionFilter {
+public interface IPositionFilter
+{
 	/**
 	 * Execute a filter pass: takes the current position of an object, adds it to
 	 * the internal buffer, and interpolates a (hopefully) more reliable

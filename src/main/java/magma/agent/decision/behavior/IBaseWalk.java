@@ -24,7 +24,8 @@ import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
  * Interface for all underlying basic walk behaviors
  * @author kdorer
  */
-public interface IBaseWalk extends IBehavior {
+public interface IBaseWalk extends IBehavior
+{
 	/**
 	 * Instrumentation for the walk
 	 * @param forwardsBackwards percentage of forward backward speed (-100 is

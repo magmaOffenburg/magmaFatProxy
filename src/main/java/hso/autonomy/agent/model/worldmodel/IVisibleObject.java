@@ -13,7 +13,8 @@ import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
  * Base Interface for all visible objects in the world model
  * @author Klaus Dorer
  */
-public interface IVisibleObject {
+public interface IVisibleObject
+{
 	/**
 	 * @return the name of this object
 	 */

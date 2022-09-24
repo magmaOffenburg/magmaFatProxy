@@ -17,7 +17,8 @@
  *******************************************************************************/
 package magma.agent;
 
-public interface IHumanoidJoints {
+public interface IHumanoidJoints
+{
 	String NeckYaw = "NeckYaw";
 
 	String NeckPitch = "NeckPitch";

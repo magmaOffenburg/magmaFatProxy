@@ -26,7 +26,8 @@ import hso.autonomy.agent.communication.perception.IPerceptor;
  *
  * @author Simon Raffeiner
  */
-public interface IAgentStatePerceptor extends IPerceptor {
+public interface IAgentStatePerceptor extends IPerceptor
+{
 	/**
 	 * Get Temperature (in degrees)
 	 */

@@ -22,7 +22,8 @@ import java.util.Map;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
 
-public interface IRoboCupWorldMetaModel extends Serializable {
+public interface IRoboCupWorldMetaModel extends Serializable
+{
 	/**
 	 * Returns the version of the meta model (server version)
 	 *

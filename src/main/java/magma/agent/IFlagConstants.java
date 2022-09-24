@@ -22,7 +22,8 @@ package magma.agent;
  *
  * @author Stefan Glaser
  */
-public interface IFlagConstants {
+public interface IFlagConstants
+{
 	String PREFIX = "flg:";
 
 	String PAUSE = PREFIX + "hardPause";

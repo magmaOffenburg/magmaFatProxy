@@ -13,7 +13,8 @@ import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
  * Base class for all functions used as motor functions.
  * @author Klaus Dorer
  */
-public interface IFunction extends Serializable {
+public interface IFunction extends Serializable
+{
 	/**
 	 * Returns the name of the function
 	 *

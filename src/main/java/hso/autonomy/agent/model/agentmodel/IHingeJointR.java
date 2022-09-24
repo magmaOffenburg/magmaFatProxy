@@ -14,7 +14,8 @@ import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
  *
  * @author Stefan Glaser, Klaus Dorer
  */
-public interface IHingeJointR extends ISensor, Serializable {
+public interface IHingeJointR extends ISensor, Serializable
+{
 	/**
 	 * Retrieve the joint axis.
 	 * @return

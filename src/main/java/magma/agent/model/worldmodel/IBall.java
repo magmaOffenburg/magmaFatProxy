@@ -20,7 +20,8 @@ package magma.agent.model.worldmodel;
 import hso.autonomy.agent.model.worldmodel.IMoveableObject;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 
-public interface IBall extends IMoveableObject {
+public interface IBall extends IMoveableObject
+{
 	float COLLISION_DISTANCE = 0.28f;
 
 	float getRadius();

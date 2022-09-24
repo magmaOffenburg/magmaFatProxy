@@ -19,7 +19,8 @@ package magma.agent.communication.action;
 
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 
-public interface IMixedTeamEffector {
+public interface IMixedTeamEffector
+{
 	String NAME = "MixedTeamEffector";
 
 	Vector3D getGlobalPlayerPos();

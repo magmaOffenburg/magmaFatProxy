@@ -24,7 +24,8 @@ import magma.agent.decision.behavior.IBehaviorConstants;
  *
  * @author Stefan Glaser
  */
-public enum MovementCommands {
+public enum MovementCommands
+{
 	NONE("None", 0),
 
 	GET_READY(IBehaviorConstants.GET_READY, 1),

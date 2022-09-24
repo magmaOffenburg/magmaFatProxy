@@ -13,7 +13,8 @@ import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
  *
  * @author Simon Raffeiner
  */
-public interface IAccelerometerPerceptor extends IPerceptor {
+public interface IAccelerometerPerceptor extends IPerceptor
+{
 	/**
 	 * Get acceleration values in the form of a Vector3D object
 	 */

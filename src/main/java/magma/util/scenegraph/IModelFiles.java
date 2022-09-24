@@ -17,7 +17,8 @@
  *******************************************************************************/
 package magma.util.scenegraph;
 
-public interface IModelFiles {
+public interface IModelFiles
+{
 	@Deprecated
 	String DIR = "models/";
 

@@ -20,7 +20,8 @@ package magma.agent.decision.behavior.ikMovement.walk;
 import magma.agent.decision.behavior.ikMovement.IIKMovement;
 import magma.agent.decision.behavior.ikMovement.StepParameters;
 
-public interface IIKWalkMovement extends IIKMovement {
+public interface IIKWalkMovement extends IIKMovement
+{
 	/**
 	 * @return the parameters of the walk
 	 */

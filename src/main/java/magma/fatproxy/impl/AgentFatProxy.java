@@ -155,8 +155,7 @@ public class AgentFatProxy extends AgentProxy implements IServerConnection, ISim
 
 		// inform our agent runtime about the new perceptions. This will trigger a sendMessage() below
 		if (agentRuntime != null && lastMessageFromServer != null) {
-			synchronized (this)
-			{
+			synchronized (this) {
 				// we do not want to send old server messages
 				lastAgentRuntimeToServerMessage = null;
 			}
@@ -168,8 +167,7 @@ public class AgentFatProxy extends AgentProxy implements IServerConnection, ISim
 			observer.onStateChange(all);
 
 			// we have to wait until agent runtime wants to send a message to server
-			synchronized (this)
-			{
+			synchronized (this) {
 				try {
 					if (lastAgentRuntimeToServerMessage == null) {
 						wait();
@@ -299,8 +297,7 @@ public class AgentFatProxy extends AgentProxy implements IServerConnection, ISim
 	@Override
 	public void sendMessage(byte[] msg) throws ConnectionException
 	{
-		synchronized (this)
-		{
+		synchronized (this) {
 			if (lastAgentRuntimeToServerMessage == null) {
 				lastAgentRuntimeToServerMessage = msg;
 			} else {

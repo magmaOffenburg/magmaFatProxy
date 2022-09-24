@@ -14,7 +14,8 @@ import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
  *
  * @author Stefan Glaser
  */
-public interface IPose3D extends Serializable {
+public interface IPose3D extends Serializable
+{
 	/**
 	 * Retrieve the x-position value.
 	 *

@@ -20,7 +20,8 @@ package magma.agent.decision.behavior;
 /**
  * @author sturmflut
  */
-public interface IBehaviorConstants {
+public interface IBehaviorConstants
+{
 	// General Behaviors
 	String STOP = "Stop";
 

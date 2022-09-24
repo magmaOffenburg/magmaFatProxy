@@ -27,7 +27,8 @@ import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
  * Interface to access visible player information
  * @author Klaus Dorer
  */
-public interface IPlayer extends IMoveableObject {
+public interface IPlayer extends IMoveableObject
+{
 	/**
 	 * @return the player number
 	 */

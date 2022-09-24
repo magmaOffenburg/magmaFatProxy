@@ -10,7 +10,8 @@ package hso.autonomy.agent.communication.perception;
  *
  * @author Simon Raffeiner
  */
-public interface IPerceptor {
+public interface IPerceptor
+{
 	/**
 	 * @return perceptor name
 	 */

@@ -13,7 +13,8 @@ import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
  * @author Stefan Glaser
  *
  */
-public interface ILocalizationLine {
+public interface ILocalizationLine
+{
 	/**
 	 * @return the first observed position under which we see the line (relative
 	 *         to the root body)

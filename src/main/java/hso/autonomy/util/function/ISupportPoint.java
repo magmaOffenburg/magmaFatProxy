@@ -10,7 +10,8 @@ package hso.autonomy.util.function;
  *
  * @author Stefan Glaser
  */
-public interface ISupportPoint extends IPoint {
+public interface ISupportPoint extends IPoint
+{
 	/**
 	 * @return the tangential sub-support point before the actual support point
 	 */

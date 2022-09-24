@@ -11,7 +11,8 @@ import hso.autonomy.util.geometry.Angle;
  * @author david
  *
  */
-public interface ICompass extends ISensor {
+public interface ICompass extends ISensor
+{
 	Angle getAngle();
 
 	void setAngle(Angle angle);

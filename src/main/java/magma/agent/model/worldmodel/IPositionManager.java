@@ -24,7 +24,8 @@ import java.util.List;
  * Interface to access desired positions
  * @author Klaus Dorer
  */
-public interface IPositionManager {
+public interface IPositionManager
+{
 	List<PoseSpeed2D> getDesiredPositions();
 
 	/**

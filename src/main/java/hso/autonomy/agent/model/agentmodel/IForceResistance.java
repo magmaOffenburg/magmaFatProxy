@@ -12,7 +12,8 @@ import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
  *
  * @author Klaus Dorer
  */
-public interface IForceResistance extends ISensor {
+public interface IForceResistance extends ISensor
+{
 	/**
 	 * Retrieve the force origin (the point in 3-dimensional space the force
 	 * effects on)

@@ -20,7 +20,8 @@ package magma.robots.nao;
 import magma.agent.IHumanoidConstants;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 
-public interface INaoConstants extends IHumanoidConstants {
+public interface INaoConstants extends IHumanoidConstants
+{
 	// General constants
 	String ACTION_SCENE = "rsg/agent/nao/nao.rsg";
 

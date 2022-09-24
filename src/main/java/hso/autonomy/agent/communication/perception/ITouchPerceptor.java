@@ -11,7 +11,8 @@ package hso.autonomy.agent.communication.perception;
  *
  * @author Simon Raffeiner
  */
-public interface ITouchPerceptor extends IPerceptor {
+public interface ITouchPerceptor extends IPerceptor
+{
 	/**
 	 * Get perceptor state
 	 *

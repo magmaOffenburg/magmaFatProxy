@@ -11,7 +11,8 @@ import org.apache.commons.math3.geometry.euclidean.threed.Rotation;
 /**
  * @author Stefan Glaser
  */
-public interface IIMU extends ISensor {
+public interface IIMU extends ISensor
+{
 	/**
 	 * Retrieve IMU orientation.
 	 *

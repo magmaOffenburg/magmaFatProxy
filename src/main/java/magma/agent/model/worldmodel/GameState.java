@@ -27,7 +27,8 @@ import magma.common.spark.PlaySide;
  *
  * @author Stefan Glaser
  */
-public enum GameState {
+public enum GameState
+{
 	/** The game has not started yet */
 	BEFORE_KICK_OFF,
 

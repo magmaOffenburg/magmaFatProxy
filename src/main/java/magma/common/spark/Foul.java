@@ -19,7 +19,8 @@ package magma.common.spark;
 
 public class Foul
 {
-	public enum FoulType {
+	public enum FoulType
+	{
 		CROWDING(0, "crowding"),
 		TOUCHING(1, "touching"),
 		ILLEGAL_DEFENCE(2, "illegal defence"),

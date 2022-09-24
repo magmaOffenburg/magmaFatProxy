@@ -10,7 +10,8 @@ import hso.autonomy.agent.decision.behavior.IBehavior;
 /**
  * Interface to decision making modules
  */
-public interface IDecisionMaker {
+public interface IDecisionMaker
+{
 	/**
 	 * Called to take a decision on what to do next. The effect of the decision
 	 * will be that one or more behaviors are performed

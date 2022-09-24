@@ -13,7 +13,8 @@ import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
  * @author Stefan Glaser
  *
  */
-public interface IReferenceLine {
+public interface IReferenceLine
+{
 	/**
 	 * Update the local position of the reference points of the line (relative to
 	 * the root body)<br>

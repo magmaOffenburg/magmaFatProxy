@@ -29,8 +29,17 @@ import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
 /**
  * Represents all environment data available to the agent
  */
-public interface IRoboCupWorldModel extends IWorldModel, ISoccerPitchDescription {
-	public enum BallPassing { CENTER, SHORT_LEFT, SHORT_RIGHT, FAR_LEFT, FAR_RIGHT, UNREACHABLE }
+public interface IRoboCupWorldModel extends IWorldModel, ISoccerPitchDescription
+{
+	public enum BallPassing
+	{
+		CENTER,
+		SHORT_LEFT,
+		SHORT_RIGHT,
+		FAR_LEFT,
+		FAR_RIGHT,
+		UNREACHABLE
+	}
 
 	/**
 	 * Get a reference to the ball object

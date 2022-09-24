@@ -27,7 +27,8 @@ import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
  */
 public class IKWalkMovementParametersBase extends EnumParameterList<IKWalkMovementParametersBase.Param>
 {
-	public enum Param {
+	public enum Param
+	{
 		/** number of cycles per step */
 		CYCLE_PER_STEP,
 		/** walking height */

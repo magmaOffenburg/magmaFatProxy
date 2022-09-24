@@ -8,7 +8,8 @@ package hso.autonomy.agent.model.agentmeta;
 import java.io.Serializable;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 
-public interface IBodyPartConfiguration extends Serializable {
+public interface IBodyPartConfiguration extends Serializable
+{
 	/**
 	 * Returns the name of the body part.
 	 *

@@ -17,7 +17,8 @@
  *******************************************************************************/
 package magma.agent.communication.perception;
 
-public interface ISimsparkPerceptorNames {
+public interface ISimsparkPerceptorNames
+{
 	String LToesP = "llj7";
 
 	String LFootRollP = "llj6";

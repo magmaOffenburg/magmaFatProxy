@@ -11,6 +11,7 @@ import java.util.Map;
  * Interface for the protocol encoding layer
  * @author kdorer
  */
-public interface IMessageEncoder {
+public interface IMessageEncoder
+{
 	byte[] encodeMessage(Map<String, IEffector> effectors);
 }

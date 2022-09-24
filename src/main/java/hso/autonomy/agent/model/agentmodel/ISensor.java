@@ -13,7 +13,8 @@ import java.util.Map;
  *
  * @author dorer
  */
-public interface ISensor {
+public interface ISensor
+{
 	/**
 	 * Retrieve the unique sensor name.
 	 * @return Sensor name

@@ -10,7 +10,8 @@ package hso.autonomy.agent.communication.perception;
  *
  * @author Simon Raffeiner
  */
-public interface ICompositeJointPerceptor extends IPerceptor {
+public interface ICompositeJointPerceptor extends IPerceptor
+{
 	/**
 	 * @return the first hinge joint perceptor
 	 */

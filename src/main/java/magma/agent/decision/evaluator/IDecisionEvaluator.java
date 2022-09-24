@@ -21,7 +21,8 @@ package magma.agent.decision.evaluator;
  * @author kdorer
  *
  */
-public interface IDecisionEvaluator {
+public interface IDecisionEvaluator
+{
 	/**
 	 * Called to evaluate the current state of the agent
 	 */

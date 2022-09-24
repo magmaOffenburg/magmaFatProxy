@@ -12,7 +12,8 @@ import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
  *
  * @author dorer
  */
-public interface IBodyModel {
+public interface IBodyModel
+{
 	/**
 	 * @param name the name of the sensor to return
 	 * @return the first sensor in a body part that is found having passed name

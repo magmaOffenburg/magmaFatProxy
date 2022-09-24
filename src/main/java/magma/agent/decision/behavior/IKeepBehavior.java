@@ -20,5 +20,6 @@ package magma.agent.decision.behavior;
 /*
  * marker interface for keep behaviors
  */
-public interface IKeepBehavior {
+public interface IKeepBehavior
+{
 }

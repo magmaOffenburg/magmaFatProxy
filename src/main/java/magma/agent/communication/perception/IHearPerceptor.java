@@ -25,7 +25,8 @@ import hso.autonomy.agent.communication.perception.IPerceptor;
  *
  * @author Simon Raffeiner
  */
-public interface IHearPerceptor extends IPerceptor {
+public interface IHearPerceptor extends IPerceptor
+{
 	/**
 	 * Get team name of the speaker (new in protocol 0.6.7), "" if not available
 	 *

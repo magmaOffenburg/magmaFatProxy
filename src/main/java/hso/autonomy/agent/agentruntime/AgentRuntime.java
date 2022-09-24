@@ -143,8 +143,7 @@ public abstract class AgentRuntime implements IObserver<Map<String, IPerceptor>>
 
 		while (channelManager.isConnected()) {
 			try {
-				synchronized (channelManager)
-				{
+				synchronized (channelManager) {
 					channelManager.wait();
 				}
 				Map<String, IPerceptor> nextMap;

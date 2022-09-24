@@ -7,7 +7,8 @@ package hso.autonomy.util.geometry.orientationFilter;
 
 import org.apache.commons.math3.geometry.euclidean.threed.Rotation;
 
-public interface IOrientationFilter {
+public interface IOrientationFilter
+{
 	/**
 	 * Execute a filter pass: takes the current orientation of an object, adds it
 	 * to the internal buffer, and interpolates a (hopefully) more reliable

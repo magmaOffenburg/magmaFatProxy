@@ -13,7 +13,8 @@ import java.io.Serializable;
  *
  * @author Stefan Glaser
  */
-public interface IPoseInterpolator extends Serializable {
+public interface IPoseInterpolator extends Serializable
+{
 	/**
 	 * @param initialPose: the initial pose
 	 * @param targetPose: the target pose

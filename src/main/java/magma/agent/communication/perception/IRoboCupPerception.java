@@ -26,7 +26,8 @@ import java.util.List;
  * @author Simon Raffeiner
  *
  */
-public interface IRoboCupPerception extends IPerception {
+public interface IRoboCupPerception extends IPerception
+{
 	/** object name constants */
 	String BALL = "B";
 

@@ -24,7 +24,8 @@ import kdo.util.parameter.ParameterList;
  */
 public abstract class FullSearchMovementParameters extends ParameterList
 {
-	public enum Param {
+	public enum Param
+	{
 		PHASES,
 		MODE,
 		POS_X,

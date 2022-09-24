@@ -19,7 +19,8 @@ package magma.agent.communication.action;
 
 import java.util.Map;
 
-public interface IDecisionEffector {
+public interface IDecisionEffector
+{
 	int getHeadCommand();
 
 	float getHeadTargetYaw();

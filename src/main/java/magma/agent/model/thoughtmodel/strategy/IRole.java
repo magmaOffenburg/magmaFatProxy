@@ -25,7 +25,8 @@ import hso.autonomy.util.geometry.IPose2D;
  *
  * @author Stephan Kammerer
  */
-public interface IRole {
+public interface IRole
+{
 	/**
 	 * @return the name of the role
 	 */

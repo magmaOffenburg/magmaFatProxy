@@ -9,7 +9,8 @@ package hso.autonomy.agent.communication.action;
  *
  * @author kdorer
  */
-public interface IEffector {
+public interface IEffector
+{
 	/**
 	 * @return the name of this effector
 	 */

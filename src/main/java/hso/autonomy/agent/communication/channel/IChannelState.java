@@ -8,7 +8,8 @@ package hso.autonomy.agent.communication.channel;
 /**
  * @author rschilli
  */
-public interface IChannelState {
+public interface IChannelState
+{
 	enum ConnectionState
 	{
 		NOT_CONNECTED,

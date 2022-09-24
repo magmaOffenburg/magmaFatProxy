@@ -7,7 +7,8 @@ package hso.autonomy.agent.communication.perception;
 
 import java.util.List;
 import java.util.Map;
-public interface IPerception {
+public interface IPerception
+{
 	/**
 	 * Get a specific Accelerometer Perceptor
 	 *

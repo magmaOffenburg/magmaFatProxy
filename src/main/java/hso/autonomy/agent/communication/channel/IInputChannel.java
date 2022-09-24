@@ -9,5 +9,6 @@ package hso.autonomy.agent.communication.channel;
  *
  * @author kdorer
  */
-public interface IInputChannel extends IChannel {
+public interface IInputChannel extends IChannel
+{
 }

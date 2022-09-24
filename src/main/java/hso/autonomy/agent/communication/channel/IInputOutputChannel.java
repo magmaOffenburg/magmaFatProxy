@@ -5,5 +5,6 @@
  *******************************************************************************/
 package hso.autonomy.agent.communication.channel;
 
-public interface IInputOutputChannel extends IInputChannel, IOutputChannel {
+public interface IInputOutputChannel extends IInputChannel, IOutputChannel
+{
 }

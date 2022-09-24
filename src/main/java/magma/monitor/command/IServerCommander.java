@@ -19,7 +19,8 @@ package magma.monitor.command;
 
 import magma.common.spark.PlayMode;
 
-public interface IServerCommander {
+public interface IServerCommander
+{
 	/**
 	 * Method to beam the ball to the specified position and velocity.
 	 *

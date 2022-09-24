@@ -8,7 +8,8 @@ package hso.autonomy.agent.communication.action;
 /**
  * Interface to all actions an agent can perform on the server
  */
-public interface IAction {
+public interface IAction
+{
 	/**
 	 * Sets the values of the passed effector as required by the specific
 	 * effector

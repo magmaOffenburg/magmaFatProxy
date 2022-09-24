@@ -21,7 +21,8 @@ package magma.common.spark;
  * Identifier for the team's color
  * @author kdorer
  */
-public enum TeamColor {
+public enum TeamColor
+{
 	BLUE,
 	RED,
 	UNKNOWN;

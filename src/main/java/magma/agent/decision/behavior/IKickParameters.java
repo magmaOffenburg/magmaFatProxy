@@ -22,7 +22,8 @@ import hso.autonomy.util.geometry.Pose2D;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
 
-public interface IKickParameters {
+public interface IKickParameters
+{
 	Angle getIntendedKickDirection();
 
 	void setIntendedKickDirection(Angle intendedKickDirection);

@@ -12,7 +12,8 @@ import java.util.Map;
  *
  * @author Stefan Glaser, Klaus Dorer
  */
-public interface IHingeJoint extends IHingeJointR {
+public interface IHingeJoint extends IHingeJointR
+{
 	/**
 	 * Let the hinge joint perform a movement with the given speed in the current
 	 * cycle.

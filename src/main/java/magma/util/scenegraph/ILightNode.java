@@ -17,7 +17,8 @@
  *******************************************************************************/
 package magma.util.scenegraph;
 
-public interface ILightNode extends IBaseNode {
+public interface ILightNode extends IBaseNode
+{
 	float[] getDiffuse();
 
 	float[] getAmbient();

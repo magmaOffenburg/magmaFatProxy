@@ -19,6 +19,7 @@ package magma.agent.model.thoughtmodel.strategy;
 
 import hso.autonomy.util.geometry.Pose2D;
 
-public interface IFormation {
+public interface IFormation
+{
 	Pose2D getPlayerPose(int id);
 }

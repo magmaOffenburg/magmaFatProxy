@@ -21,7 +21,8 @@ import hso.autonomy.util.geometry.PoseSpeed2D;
 import java.util.List;
 import magma.agent.model.worldmodel.IThisPlayer;
 
-public interface IWalkEstimator {
+public interface IWalkEstimator
+{
 	enum WalkMode
 	{
 		FORWARD,

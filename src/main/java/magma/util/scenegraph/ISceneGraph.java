@@ -17,7 +17,8 @@
  *******************************************************************************/
 package magma.util.scenegraph;
 
-public interface ISceneGraph {
+public interface ISceneGraph
+{
 	IBaseNode getRootNode();
 
 	ISceneGraphHeader getHeader();

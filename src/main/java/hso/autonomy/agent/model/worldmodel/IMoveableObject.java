@@ -11,7 +11,8 @@ import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
  * Base interface for all movable objects
  * @author Klaus Dorer
  */
-public interface IMoveableObject extends IVisibleObject {
+public interface IMoveableObject extends IVisibleObject
+{
 	/**
 	 * Returns a list of future positions as predicted by the speed.
 	 *

@@ -24,7 +24,8 @@ import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
  *
  * @author dorer
  */
-public interface IRoboCupBodyModel extends IBodyModel {
+public interface IRoboCupBodyModel extends IBodyModel
+{
 	/**
 	 * Center of Mass relative to the ground
 	 *

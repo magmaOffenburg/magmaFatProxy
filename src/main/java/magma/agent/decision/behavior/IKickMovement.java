@@ -24,7 +24,8 @@ import magma.agent.decision.behavior.base.KickDistribution;
  * The subset of the <code>IKick</code> interface which is needed for the kick
  * part of <code>StabilizeAndKick</code> behaviors.
  */
-public interface IKickMovement extends IBehavior {
+public interface IKickMovement extends IBehavior
+{
 	/**
 	 * @return the maximum kick distance this kick is able to kick
 	 */

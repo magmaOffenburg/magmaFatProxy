@@ -12,7 +12,8 @@ import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
  *
  * @author Simon Raffeiner
  */
-public interface IGyroPerceptor extends IPerceptor {
+public interface IGyroPerceptor extends IPerceptor
+{
 	/**
 	 * Get gyro values
 	 */

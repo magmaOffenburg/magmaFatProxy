@@ -10,7 +10,8 @@ package hso.autonomy.agent.communication.perception;
  *
  * @author Simon Raffeiner
  */
-public interface IHingeJointPerceptor extends IPerceptor {
+public interface IHingeJointPerceptor extends IPerceptor
+{
 	float getAxis();
 
 	void setAxis(float angle);

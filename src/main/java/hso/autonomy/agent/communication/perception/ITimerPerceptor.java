@@ -10,6 +10,7 @@ package hso.autonomy.agent.communication.perception;
  *
  * @author Simon Raffeiner
  */
-public interface ITimerPerceptor extends IPerceptor {
+public interface ITimerPerceptor extends IPerceptor
+{
 	float getTime();
 }

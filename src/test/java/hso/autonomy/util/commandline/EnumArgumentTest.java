@@ -13,7 +13,11 @@ import org.junit.jupiter.api.Test;
 
 public class EnumArgumentTest
 {
-	private enum TestEnum { VALUE, OTHER_VALUE }
+	private enum TestEnum
+	{
+		VALUE,
+		OTHER_VALUE
+	}
 
 	@Test
 	public void testValidValues()

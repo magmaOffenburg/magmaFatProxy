@@ -10,6 +10,7 @@ import hso.autonomy.util.geometry.Angle;
 /**
  * @author David Zimmermann
  */
-public interface ICompassPerceptor extends IPerceptor {
+public interface ICompassPerceptor extends IPerceptor
+{
 	Angle getAngle();
 }

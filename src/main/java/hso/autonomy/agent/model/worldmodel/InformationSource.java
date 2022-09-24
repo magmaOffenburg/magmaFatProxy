@@ -12,4 +12,9 @@ package hso.autonomy.agent.model.worldmodel;
  *
  * @author kdorer
  */
-public enum InformationSource { NONE, VISION, AUDIO }
+public enum InformationSource
+{
+	NONE,
+	VISION,
+	AUDIO
+}

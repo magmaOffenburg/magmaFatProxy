@@ -12,7 +12,8 @@ import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
  *
  * @author Stefan Glaser
  */
-public interface IPoint {
+public interface IPoint
+{
 	/**
 	 * @return the x coordinate
 	 */

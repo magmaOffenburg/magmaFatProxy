@@ -19,7 +19,8 @@ package magma.robots.nao;
 
 import magma.agent.IHumanoidJoints;
 
-public interface INaoJoints extends IHumanoidJoints {
+public interface INaoJoints extends IHumanoidJoints
+{
 	String RHipYawPitch = "RHipYawPitch";
 
 	String LHipYawPitch = "LHipYawPitch";

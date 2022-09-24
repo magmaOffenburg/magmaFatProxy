@@ -12,7 +12,8 @@ import org.apache.commons.math3.geometry.euclidean.threed.Rotation;
  *
  * @author Stefan Glaser
  */
-public interface IIMUPerceptor extends IPerceptor {
+public interface IIMUPerceptor extends IPerceptor
+{
 	/**
 	 * Get gyro orientation
 	 */

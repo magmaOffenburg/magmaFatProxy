@@ -12,7 +12,8 @@ import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
  *
  * @author Klaus Dorer, Fabian Korak
  */
-public interface ILinePerceptor extends IVisibleObjectPerceptor {
+public interface ILinePerceptor extends IVisibleObjectPerceptor
+{
 	Vector3D getPosition2();
 
 	double getLatitudeAngleDeg2();

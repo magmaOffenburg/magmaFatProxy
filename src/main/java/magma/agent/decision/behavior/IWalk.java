@@ -21,7 +21,8 @@ import hso.autonomy.agent.decision.behavior.IBehavior;
 import hso.autonomy.util.geometry.Pose2D;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 
-public interface IWalk extends IBehavior {
+public interface IWalk extends IBehavior
+{
 	/**
 	 * Set parameters for Walk. It is possible to combine all different
 	 * parameters, e.g. forwards and sidesteps.

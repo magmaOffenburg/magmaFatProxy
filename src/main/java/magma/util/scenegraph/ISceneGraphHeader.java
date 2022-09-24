@@ -17,7 +17,8 @@
  *******************************************************************************/
 package magma.util.scenegraph;
 
-public interface ISceneGraphHeader {
+public interface ISceneGraphHeader
+{
 	String getType();
 
 	int getMajorVersion();

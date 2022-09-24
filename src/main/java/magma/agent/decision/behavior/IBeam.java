@@ -20,7 +20,8 @@ package magma.agent.decision.behavior;
 import hso.autonomy.agent.decision.behavior.IBehavior;
 import hso.autonomy.util.geometry.Pose2D;
 
-public interface IBeam extends IBehavior {
+public interface IBeam extends IBehavior
+{
 	/**
 	 * Set target beaming position
 	 */

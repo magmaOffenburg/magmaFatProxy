@@ -13,7 +13,8 @@ import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
  * @author Stefan Glaser
  *
  */
-public interface IFieldLine extends IVisibleObject {
+public interface IFieldLine extends IVisibleObject
+{
 	/**
 	 * @return the first local position of the line (relative to the global root
 	 *         body system)

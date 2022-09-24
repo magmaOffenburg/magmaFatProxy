@@ -20,7 +20,8 @@ import org.apache.commons.math3.geometry.euclidean.threed.Rotation;
  * @author Stefan Glaser
  *
  */
-public interface ILocalizer {
+public interface ILocalizer
+{
 	/**
 	 * Determine the absolute position and orientation of the view-port in the 3D
 	 * environment.

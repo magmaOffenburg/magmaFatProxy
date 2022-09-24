@@ -22,7 +22,8 @@ package magma.agent.model.thoughtmodel.impl;
  *
  * @author Stefan Glaser
  */
-public enum HeadCommands {
+public enum HeadCommands
+{
 	NONE("", 0),
 
 	ZERO_POS("", 1),

@@ -14,7 +14,8 @@ import org.apache.commons.math3.geometry.euclidean.twod.Vector2D;
  *
  * @author Stefan Glaser
  */
-public interface IPose2D extends Serializable {
+public interface IPose2D extends Serializable
+{
 	/**
 	 * Retrieve the x-position value.
 	 *

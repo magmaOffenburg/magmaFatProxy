@@ -22,7 +22,8 @@ package magma.agent;
  *
  * @author kdorer
  */
-public interface IHumanoidConstants {
+public interface IHumanoidConstants
+{
 	// Body parts
 	String LFoot = "lfoot";
 

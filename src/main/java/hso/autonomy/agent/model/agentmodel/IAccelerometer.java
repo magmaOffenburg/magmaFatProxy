@@ -12,7 +12,8 @@ import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
  *
  * @author Ingo Schindler
  */
-public interface IAccelerometer extends ISensor {
+public interface IAccelerometer extends ISensor
+{
 	/**
 	 * @return the acceleration in x, y and z direction (units ??)
 	 */

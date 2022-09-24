@@ -20,7 +20,8 @@ package magma.agent.model.agentmeta;
 import hso.autonomy.agent.model.agentmeta.IAgentMetaModel;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 
-public interface IRoboCupAgentMetaModel extends IAgentMetaModel {
+public interface IRoboCupAgentMetaModel extends IAgentMetaModel
+{
 	/**
 	 * Returns the corresponding action scene string, to this meta model.
 	 *

@@ -25,7 +25,8 @@ import magma.monitor.messageparser.IMonitorMessageParser;
 import magma.util.scenegraph.impl.SceneGraph;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 
-public interface IMonitorWorldModel extends IObserver<IMonitorMessageParser> {
+public interface IMonitorWorldModel extends IObserver<IMonitorMessageParser>
+{
 	SceneGraph getSceneGraph();
 
 	boolean hasSceneGraphStructureChanged();

@@ -27,7 +27,8 @@ import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
  *
  * @author Stefan Glaser, Klaus Dorer
  */
-public interface IRoboCupAgentModel extends IAgentModel {
+public interface IRoboCupAgentModel extends IAgentModel
+{
 	/**
 	 * Set the message to say in that cycle.
 	 */

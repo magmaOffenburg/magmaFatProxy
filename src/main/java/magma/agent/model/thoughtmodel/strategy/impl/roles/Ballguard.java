@@ -107,5 +107,10 @@ public class Ballguard extends Role
 		return new Pose2D(target, ballDirection);
 	}
 
-	public enum BallguardPosition { LEFT, CENTER, RIGHT }
+	public enum BallguardPosition
+	{
+		LEFT,
+		CENTER,
+		RIGHT
+	}
 }

@@ -22,7 +22,8 @@ package magma.agent.model.thoughtmodel.impl;
  *
  * @author Stefan Glaser
  */
-public enum SayCommands {
+public enum SayCommands
+{
 	NONE("None", 0),
 
 	WELCOME("welcome", 1),

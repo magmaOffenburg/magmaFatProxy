@@ -17,7 +17,8 @@
  *******************************************************************************/
 package magma.monitor.command;
 
-public enum Team {
+public enum Team
+{
 	LEFT("Left"),
 	RIGHT("Right"),
 	RANDOM("None");

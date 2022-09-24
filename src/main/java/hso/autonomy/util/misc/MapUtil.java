@@ -14,7 +14,12 @@ import java.util.stream.Collectors;
 
 public class MapUtil
 {
-	public enum Sorting { NONE, KEYS, VALUES }
+	public enum Sorting
+	{
+		NONE,
+		KEYS,
+		VALUES
+	}
 
 	private final Sorting sorting;
 

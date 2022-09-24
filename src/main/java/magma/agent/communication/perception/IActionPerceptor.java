@@ -22,7 +22,8 @@ import hso.autonomy.agent.communication.perception.IPerceptor;
 /**
  * @author Stefan Glaser
  */
-public interface IActionPerceptor extends IPerceptor {
+public interface IActionPerceptor extends IPerceptor
+{
 	int getHeadAction();
 
 	int getBodyAction();

@@ -13,7 +13,8 @@ import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
  * @author Stefan Glaser
  *
  */
-public interface IReferencePoint extends Comparable<IReferencePoint> {
+public interface IReferencePoint extends Comparable<IReferencePoint>
+{
 	/**
 	 * @return the observed position under which we see the reference point
 	 *         (relative to the root body)

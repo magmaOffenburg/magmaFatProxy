@@ -14,7 +14,8 @@ import java.util.List;
 /**
  * Represents all environment data available to the agent
  */
-public interface IWorldModel extends ISubscribe<IWorldModel> {
+public interface IWorldModel extends ISubscribe<IWorldModel>
+{
 	/**
 	 * Called to trigger an update of the AgentModel based on the given
 	 * perception object.

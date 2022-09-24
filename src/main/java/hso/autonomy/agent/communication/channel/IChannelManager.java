@@ -14,7 +14,8 @@ import java.util.Map;
  *
  * @author kdorer
  */
-public interface IChannelManager extends IActionPerformer {
+public interface IChannelManager extends IActionPerformer
+{
 	enum ChannelManagerStatus
 	{
 		CREATED,

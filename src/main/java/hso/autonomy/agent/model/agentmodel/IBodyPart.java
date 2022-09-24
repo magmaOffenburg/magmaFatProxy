@@ -18,7 +18,8 @@ import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
  *
  * @author Ingo Schindler
  */
-public interface IBodyPart {
+public interface IBodyPart
+{
 	/**
 	 * Retrieve the name of the body part.
 	 * @return name of the body part

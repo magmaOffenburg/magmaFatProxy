@@ -17,4 +17,8 @@
  *******************************************************************************/
 package magma.agent.model.thoughtmodel.strategy.impl.roles;
 
-public enum FieldArea { UPPER, LOWER }
+public enum FieldArea
+{
+	UPPER,
+	LOWER
+}

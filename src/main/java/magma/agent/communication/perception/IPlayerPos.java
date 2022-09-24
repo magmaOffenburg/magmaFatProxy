@@ -29,7 +29,8 @@ import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
  *
  * @author Simon Raffeiner
  */
-public interface IPlayerPos extends IVisibleObjectPerceptor {
+public interface IPlayerPos extends IVisibleObjectPerceptor
+{
 	int getId();
 
 	String getTeamname();

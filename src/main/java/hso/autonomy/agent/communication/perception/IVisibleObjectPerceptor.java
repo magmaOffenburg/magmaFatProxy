@@ -13,7 +13,8 @@ import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
  *
  * @author Simon Raffeiner
  */
-public interface IVisibleObjectPerceptor extends IPerceptor {
+public interface IVisibleObjectPerceptor extends IPerceptor
+{
 	/**
 	 * @return true if this perceptor has depth information in the position
 	 */

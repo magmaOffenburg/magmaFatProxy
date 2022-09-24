@@ -11,6 +11,7 @@ import java.util.Map;
 /**
  * @author kdorer
  */
-public interface IOutputChannel extends IChannel {
+public interface IOutputChannel extends IChannel
+{
 	void sendMessage(Map<String, IEffector> effectors);
 }

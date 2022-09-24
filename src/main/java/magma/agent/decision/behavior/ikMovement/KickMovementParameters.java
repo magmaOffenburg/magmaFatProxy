@@ -27,7 +27,8 @@ public abstract class KickMovementParameters extends EnumParameterList<KickMovem
 {
 	protected KickDistribution distribution;
 
-	public enum Param {
+	public enum Param
+	{
 		TIME0,
 		TIME1,
 		TIME2,

@@ -24,7 +24,8 @@ import magma.agent.IFlagConstants;
  *
  * @author Stefan Glaser
  */
-public enum Flag {
+public enum Flag
+{
 	/** Flag for penalty shoot-out situation */
 	PENALTY(IFlagConstants.PENALTY, false),
 

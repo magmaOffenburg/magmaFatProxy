@@ -22,7 +22,8 @@ import java.util.List;
 /**
  * @author Stephan Kammerer
  */
-public interface ITeamStrategy {
+public interface ITeamStrategy
+{
 	String getName();
 	/**
 	 * @return List of all available team roles

@@ -24,7 +24,8 @@ import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
  *
  * @author Stefan Glaser
  */
-public interface IBalancingEngineParameters {
+public interface IBalancingEngineParameters
+{
 	/**
 	 * The intended leaning vector the balancing engine is adjusting to.
 	 *

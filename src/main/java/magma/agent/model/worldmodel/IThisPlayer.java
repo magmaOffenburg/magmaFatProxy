@@ -29,7 +29,8 @@ import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
  * Interface to access visible player information
  * @author Klaus Dorer, Stefan Glaser
  */
-public interface IThisPlayer extends IPlayer {
+public interface IThisPlayer extends IPlayer
+{
 	/**
 	 * Returns the relative angle this player's torso has to the specified
 	 * position

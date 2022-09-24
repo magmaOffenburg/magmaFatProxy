@@ -11,6 +11,7 @@ import java.util.Map;
  *
  * @author kdorer
  */
-public interface IActionPerformer {
+public interface IActionPerformer
+{
 	void performAction(Map<String, IEffector> effectors);
 }

@@ -22,7 +22,8 @@ package magma.agent;
  * specific to our team
  * @author Klaus Dorer
  */
-public interface IMagmaConstants {
+public interface IMagmaConstants
+{
 	/** the default name of the own team */
 	String DEFAULT_TEAMNAME = "magmaOffenburg";
 

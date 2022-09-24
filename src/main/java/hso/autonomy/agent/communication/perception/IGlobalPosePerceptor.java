@@ -13,7 +13,8 @@ import hso.autonomy.util.geometry.Pose3D;
  *
  * @author Simon Raffeiner
  */
-public interface IGlobalPosePerceptor {
+public interface IGlobalPosePerceptor
+{
 	/**
 	 * Retrieve position and rotation of the torso in global coordinate system
 	 *

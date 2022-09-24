@@ -24,6 +24,7 @@ import java.util.List;
  *
  * @author kdorer
  */
-public interface IRoboCupChannel extends IInputChannel {
+public interface IRoboCupChannel extends IInputChannel
+{
 	void init(List<String> initParams);
 }

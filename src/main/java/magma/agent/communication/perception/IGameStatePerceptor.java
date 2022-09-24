@@ -27,7 +27,8 @@ import magma.common.spark.TeamColor;
  *
  * @author Simon Raffeiner
  */
-public interface IGameStatePerceptor extends IPerceptor {
+public interface IGameStatePerceptor extends IPerceptor
+{
 	String NAME = "GS";
 
 	String getPlaymode();

@@ -12,7 +12,8 @@ import hso.autonomy.util.observer.ISubscribe;
  *
  * @author Klaus Dorer
  */
-public interface IServerConnection extends ISubscribe<byte[]> {
+public interface IServerConnection extends ISubscribe<byte[]>
+{
 	/**
 	 * Creates a connection to the server and initializes the input and output
 	 * stream

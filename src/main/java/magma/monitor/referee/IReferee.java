@@ -17,7 +17,8 @@
  *******************************************************************************/
 package magma.monitor.referee;
 
-public interface IReferee {
+public interface IReferee
+{
 	enum RefereeState
 	{
 		CREATED,

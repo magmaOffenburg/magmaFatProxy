@@ -7,7 +7,8 @@ package hso.autonomy.agent.communication.perception;
 
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 
-public interface IReferencePointPerceptor extends IPerceptor {
+public interface IReferencePointPerceptor extends IPerceptor
+{
 	public String getLabel();
 
 	public void setLabel(String label);

@@ -9,7 +9,8 @@ package hso.autonomy.agent.communication.channel;
  *
  * @author kdorer
  */
-public interface IChannel {
+public interface IChannel
+{
 	boolean startChannel();
 
 	void stopChannel();

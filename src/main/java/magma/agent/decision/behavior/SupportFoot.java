@@ -20,4 +20,10 @@ package magma.agent.decision.behavior;
 /**
  * @author Stefan Glaser
  */
-public enum SupportFoot { LEFT, RIGHT, NONE, BOTH }
+public enum SupportFoot
+{
+	LEFT,
+	RIGHT,
+	NONE,
+	BOTH
+}

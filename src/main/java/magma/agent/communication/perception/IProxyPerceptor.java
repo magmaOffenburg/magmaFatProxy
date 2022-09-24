@@ -22,6 +22,7 @@ import hso.autonomy.agent.communication.perception.IPerceptor;
 /**
  * @author Hannes Braun
  */
-public interface IProxyPerceptor extends IPerceptor {
+public interface IProxyPerceptor extends IPerceptor
+{
 	float[] getValues();
 }

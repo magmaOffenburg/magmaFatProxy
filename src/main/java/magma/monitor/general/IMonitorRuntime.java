@@ -23,7 +23,8 @@ import magma.monitor.messageparser.IMonitorMessageParser;
 import magma.monitor.referee.IReferee;
 import magma.monitor.worldmodel.IMonitorWorldModel;
 
-public interface IMonitorRuntime {
+public interface IMonitorRuntime
+{
 	IServerConnection getServerConnection();
 
 	IMonitorMessageParser getMessageParser();

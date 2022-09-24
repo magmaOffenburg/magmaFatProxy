@@ -10,7 +10,8 @@ package hso.autonomy.agent.communication.perception;
  *
  * @author Stefan Glaser
  */
-public interface IFlagPerceptor extends IPerceptor {
+public interface IFlagPerceptor extends IPerceptor
+{
 	/**
 	 * Retrieve the flag information.
 	 *

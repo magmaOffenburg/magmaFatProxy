@@ -12,7 +12,8 @@ import java.io.Serializable;
  *
  * @author Stefan Glaser
  */
-public interface IValueInterpolator extends Serializable {
+public interface IValueInterpolator extends Serializable
+{
 	/**
 	 * @param initial: the initial value
 	 * @param target: the target value
