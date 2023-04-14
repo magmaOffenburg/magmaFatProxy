@@ -60,7 +60,7 @@ To simplify starting of the Fat Proxy, a start script is provided:
 - `<simspark-server-Port>`: Port of the soccer server.
 - `<fatproxy-server-port>`: Port on the Fat Proxy's machine to which the players have to connect.
 
-*Note: when specifying the `--monitorport` parameter, you'll get a warning about an unknown parameter. This is expected. You don't need to worry about this.*
+If you're not using the provided start script, there's another parameter (in addition to those available in the regular magmaProxy) called `--monitorport` that allows you to specify the monitor port of the soccer server.
 
 ## Command Line Interface
 

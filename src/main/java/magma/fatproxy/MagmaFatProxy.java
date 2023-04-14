@@ -17,6 +17,8 @@
  *******************************************************************************/
 package magma.fatproxy;
 
+import java.util.ArrayList;
+import java.util.List;
 import magma.fatproxy.impl.SimsparkAgentFatProxyServer;
 import magma.fatproxy.impl.SimsparkAgentFatProxyServerParameter;
 import magma.tools.proxy.MagmaProxy;
@@ -28,7 +30,7 @@ import magma.tools.proxy.impl.SimsparkAgentProxyServer;
  */
 public class MagmaFatProxy
 {
-	private static final String PROXY_VERSION = "1.3.0";
+	private static final String PROXY_VERSION = "1.3.1";
 
 	/**
 	 * Instantiates and starts the Simspark agent proxy.
@@ -67,14 +69,25 @@ public class MagmaFatProxy
 
 	public static SimsparkAgentFatProxyServerParameter parseParameters(String[] args)
 	{
+		List<String> unparsedParameters = new ArrayList<>();
 		SimsparkAgentProxyServer.SimsparkAgentProxyServerParameter magmaProxyParameters =
-				MagmaProxy.parseParameters(args);
+				MagmaProxy.parseParameters(args, unparsedParameters);
+
 		int ssMonitorPort = 3200;
-		for (String arg : args) {
+		boolean printUsage = false;
+
+		for (String arg : unparsedParameters) {
 			if (arg.startsWith("--monitorport=")) {
 				ssMonitorPort = Integer.parseInt(arg.replaceFirst("--monitorport=", ""));
+			} else {
+				System.out.println("Unknown parameter: " + arg);
+				printUsage = true;
 			}
 		}
+		if (printUsage) {
+			System.out.println("Usage example: --server=127.0.0.1 --serverport=3100 --proxyport=3120");
+		}
+
 		return new SimsparkAgentFatProxyServerParameter(magmaProxyParameters.getProxyPort(),
 				magmaProxyParameters.getSsHost(), magmaProxyParameters.getSsPort(), ssMonitorPort,
 				magmaProxyParameters.isShowMessages(), magmaProxyParameters.isDaemon());
