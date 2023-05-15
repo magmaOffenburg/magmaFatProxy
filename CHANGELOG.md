@@ -1,3 +1,7 @@
+1.3.1 (May 16, 2023)
+------------------------------
+* Support ball holding fouls
+
 1.3.0 (July 14, 2022)
 ------------------------------
 * New `monitorport` parameter
