@@ -56,12 +56,14 @@ public class MovementPhaseTest
 		assertEquals(4.0f, testee.find("J2").getSpeed(), 0.001);
 	}
 
+	@Test
 	public void testSetSpeedsNoPreviousPhase()
 	{
 		testee.setSpeeds(null);
 		assertEquals(3.0f, testee.find("J1").getSpeed(), 0.001);
 	}
 
+	@Test
 	public void testSetSpeedsEmptyCycle()
 	{
 		testee = new MovementPhase("testee", 0).add("J1", 30);
@@ -69,6 +71,7 @@ public class MovementPhaseTest
 		assertEquals(1.0f, testee.find("J1").getSpeed(), 0.001);
 	}
 
+	@Test
 	public void testSetSpeedsNegative()
 	{
 		testee = new MovementPhase("testee", 10).add("J1", -10);
