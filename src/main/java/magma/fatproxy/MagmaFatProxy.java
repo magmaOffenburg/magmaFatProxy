@@ -64,7 +64,7 @@ public class MagmaFatProxy
 		SimsparkAgentFatProxyServerParameter parameterObject = parseParameters(args);
 		SimsparkAgentProxyServer proxy = new SimsparkAgentFatProxyServer(parameterObject);
 		System.out.println("Starting magmaFatProxy version " + PROXY_VERSION);
-		new MagmaProxy(proxy).run(parameterObject.isDaemon());
+		new MagmaProxy(proxy).run(parameterObject.proxyParameter().daemon());
 	}
 
 	public static SimsparkAgentFatProxyServerParameter parseParameters(String[] args)
@@ -88,8 +88,6 @@ public class MagmaFatProxy
 			System.out.println("Usage example: --server=127.0.0.1 --serverport=3100 --proxyport=3120");
 		}
 
-		return new SimsparkAgentFatProxyServerParameter(magmaProxyParameters.getProxyPort(),
-				magmaProxyParameters.getSsHost(), magmaProxyParameters.getSsPort(), ssMonitorPort,
-				magmaProxyParameters.isShowMessages(), magmaProxyParameters.isDaemon());
+		return new SimsparkAgentFatProxyServerParameter(magmaProxyParameters, ssMonitorPort);
 	}
 }

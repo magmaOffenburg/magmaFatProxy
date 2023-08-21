@@ -40,8 +40,8 @@ public class SimsparkAgentFatProxyServer extends SimsparkAgentProxyServer implem
 	 */
 	public SimsparkAgentFatProxyServer(SimsparkAgentFatProxyServerParameter parameterObject)
 	{
-		super(parameterObject);
-		this.ssMonitorPort = parameterObject.getSsMonitorPort();
+		super(parameterObject.proxyParameter());
+		this.ssMonitorPort = parameterObject.ssMonitorPort();
 	}
 
 	/**

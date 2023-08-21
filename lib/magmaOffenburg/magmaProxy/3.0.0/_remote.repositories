@@ -1,4 +1,4 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Fri Apr 14 15:31:40 CEST 2023
-magmaproxy-2.2.0.jar>=
-magmaproxy-2.2.0.pom>=
+#Mon Aug 21 16:51:27 CEST 2023
+magmaProxy-3.0.0.jar>=
+magmaProxy-3.0.0.pom>=
