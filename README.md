@@ -6,8 +6,7 @@ Fat Proxy for the [RoboCup 3D Soccer Simulation League](https://ssim.robocup.org
 
 The Fat Proxy is a proxy for client agents, connecting to the
 Simspark server. It extends the magmaProxy by supporting high level dash and kick commands for agents.
-The proxy is developed using Java 1.8.
-It should be compatible with older JREs, too, but this is not verified.
+The proxy is developed using Java 17.
 
 ## Contents
 
