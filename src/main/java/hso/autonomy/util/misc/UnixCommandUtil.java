@@ -19,29 +19,6 @@ import java.util.List;
 public class UnixCommandUtil
 {
 	/**
-	 * Retrieves the pid of a unix process. (Possibly in Java 1.8 this will be
-	 * added to the API of process??).
-	 * @param process the process object to get the pid from
-	 * @return the pid, -1 if not able to get it
-	 * @throws NoSuchFieldException
-	 * @throws SecurityException
-	 * @throws IllegalArgumentException
-	 * @throws IllegalAccessException
-	 */
-	public static int getPID(Process process)
-			throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException
-	{
-		if (process.getClass().getName().equals("java.lang.UNIXProcess")) {
-			/* get the PID on unix/linux systems */
-			Field f = process.getClass().getDeclaredField("pid");
-			f.setAccessible(true);
-			return f.getInt(process);
-		} else {
-			return -1;
-		}
-	}
-
-	/**
 	 * Checks if the process with pid passed contains the passed name when run
 	 * with ps. If so it is killed.
 	 * @param pid the pid of the process to kill.
