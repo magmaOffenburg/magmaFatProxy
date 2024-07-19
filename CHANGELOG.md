@@ -1,3 +1,7 @@
+1.3.2 (July 19, 2024)
+------------------------------
+* Update minimum required Java version to 17
+
 1.3.1 (May 16, 2023)
 ------------------------------
 * Support ball holding fouls

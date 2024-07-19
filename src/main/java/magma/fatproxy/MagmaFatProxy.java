@@ -30,7 +30,7 @@ import magma.tools.proxy.impl.SimsparkAgentProxyServer;
  */
 public class MagmaFatProxy
 {
-	private static final String PROXY_VERSION = "1.3.1";
+	private static final String PROXY_VERSION = "1.3.2";
 
 	/**
 	 * Instantiates and starts the Simspark agent proxy.
